@@ -1,0 +1,207 @@
+[
+  {
+    "id": "european-organic",
+    "label": "Medieval organic (Europe)",
+    "fantasy": false
+  },
+  {
+    "id": "bastide",
+    "label": "Bastide (planned grid)",
+    "fantasy": false
+  },
+  {
+    "id": "medina",
+    "label": "Medina (North Africa)",
+    "fantasy": false
+  },
+  {
+    "id": "chinese",
+    "label": "Chinese walled city",
+    "fantasy": false
+  },
+  {
+    "id": "japanese-jokamachi",
+    "label": "Japanese castle town (jōkamachi)",
+    "fantasy": false
+  },
+  {
+    "id": "indian-temple",
+    "label": "Indian temple town",
+    "fantasy": false
+  },
+  {
+    "id": "roman-core",
+    "label": "Roman castrum core",
+    "fantasy": false
+  },
+  {
+    "id": "elven",
+    "label": "Elven forest town",
+    "fantasy": true
+  },
+  {
+    "id": "dwarven",
+    "label": "Dwarven hold",
+    "fantasy": true
+  },
+  {
+    "id": "necropolis",
+    "label": "Necropolis (city of the dead)",
+    "fantasy": true
+  },
+  {
+    "id": "russian-kremlin",
+    "label": "Russian kremlin and posad",
+    "fantasy": false
+  },
+  {
+    "id": "aztec",
+    "label": "Aztec city (Tenochtitlan)",
+    "fantasy": false
+  },
+  {
+    "id": "inca",
+    "label": "Inca city (Cusco)",
+    "fantasy": false
+  },
+  {
+    "id": "byzantine-greek",
+    "label": "Byzantine hill town (Mystras)",
+    "fantasy": false
+  },
+  {
+    "id": "venetian-lagoon",
+    "label": "Venetian lagoon town",
+    "fantasy": false
+  },
+  {
+    "id": "persian",
+    "label": "Persian city (Isfahan)",
+    "fantasy": false
+  },
+  {
+    "id": "ottoman",
+    "label": "Ottoman town (Bursa)",
+    "fantasy": false
+  },
+  {
+    "id": "sahel",
+    "label": "Sahelian mud town (Djenne)",
+    "fantasy": false
+  },
+  {
+    "id": "hanseatic",
+    "label": "Hanseatic port (Lubeck)",
+    "fantasy": false
+  },
+  {
+    "id": "korean",
+    "label": "Korean walled town (Hanyang)",
+    "fantasy": false
+  },
+  {
+    "id": "wizard-city",
+    "label": "Wizard city",
+    "fantasy": true
+  },
+  {
+    "id": "gnomish",
+    "label": "Gnomish canal town",
+    "fantasy": true
+  },
+  {
+    "id": "stilt-town",
+    "label": "Stilt town (marsh folk)",
+    "fantasy": true
+  },
+  {
+    "id": "barbarian",
+    "label": "Barbarian: Germanic village",
+    "fantasy": false
+  },
+  {
+    "id": "barbarian-celtic",
+    "label": "Barbarian: Celtic ringfort",
+    "fantasy": false
+  },
+  {
+    "id": "barbarian-norse",
+    "label": "Barbarian: Norse farmstead cluster",
+    "fantasy": false
+  },
+  {
+    "id": "norse-ringfort",
+    "label": "Norse ring fortress (Trelleborg)",
+    "fantasy": false
+  },
+  {
+    "id": "maya",
+    "label": "Maya city (ceremonial core, sacbeob)",
+    "fantasy": false
+  },
+  {
+    "id": "khmer",
+    "label": "Khmer city (Angkor)",
+    "fantasy": false
+  },
+  {
+    "id": "celtic-oppidum",
+    "label": "Celtic oppidum",
+    "fantasy": false
+  },
+  {
+    "id": "orcish",
+    "label": "Orcish war camp",
+    "fantasy": true
+  },
+  {
+    "id": "halfling",
+    "label": "Halfling shire",
+    "fantasy": true
+  },
+  {
+    "id": "kraal",
+    "label": "Kraal (African homestead)",
+    "fantasy": false
+  },
+  {
+    "id": "native-iroquoian",
+    "label": "Native American: Iroquoian longhouse village",
+    "fantasy": false
+  },
+  {
+    "id": "native-pueblo",
+    "label": "Native American: Pueblo",
+    "fantasy": false
+  },
+  {
+    "id": "native-plains",
+    "label": "Native American: Plains tipi camp",
+    "fantasy": false
+  },
+  {
+    "id": "nomad-camp",
+    "label": "Nomad camp (steppe ordu)",
+    "fantasy": false
+  },
+  {
+    "id": "swahili-stone-town",
+    "label": "Swahili stone town (Lamu / Zanzibar)",
+    "fantasy": false
+  },
+  {
+    "id": "drow-enclave",
+    "label": "Drow enclave",
+    "fantasy": true
+  },
+  {
+    "id": "duergar-hold",
+    "label": "Duergar industrial hold",
+    "fantasy": true
+  },
+  {
+    "id": "myconid-colony",
+    "label": "Myconid colony",
+    "fantasy": true
+  }
+]

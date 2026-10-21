@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Error",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "field": {
+      "type": "string"
+    },
+    "message": {
+      "$ref": "#/$defs/Text"
+    },
+    "suggestions": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/RelatedSystem"
+      }
+    }
+  },
+  "required": [
+    "code",
+    "field",
+    "message"
+  ],
+  "$defs": {
+    "RelatedSystem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "label": {
+          "$ref": "#/$defs/Text"
+        }
+      },
+      "required": [
+        "id",
+        "label"
+      ]
+    },
+    "Text": {
+      "type": "object",
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "fr": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {
+        "type": "string"
+      },
+      "required": [
+        "fr",
+        "en"
+      ]
+    }
+  }
+}

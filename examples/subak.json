@@ -1,9 +1,0 @@
-{
-  "schema_version": "1.0",
-  "locale": "fr",
-  "culture": "balinese_subak_reference",
-  "organization": {
-    "kind": "irrigation_association",
-    "scale": "local"
-  }
-}

@@ -1,0 +1,7 @@
+{
+  "name": "pecking-order-browser-checks",
+  "private": true,
+  "type": "module",
+  "scripts": {"test:browser": "node scripts/check_browser.mjs"},
+  "devDependencies": {"playwright": "1.64.1"}
+}

@@ -1,90 +1,73 @@
 # Pecking Order
 
-**Who holds the title? Who holds the power?** A standalone institutional knowledge
-base for worldbuilders, with French, English and original-language titles.
+**One system. One culture. Every role.** A Rust content engine for organizational
+titles, offices, authority levels, importance, responsibilities and relationships.
 
-[Français](README.md) · [Query contract](docs/contract.en.md) · [Coverage](docs/coverage.md)
+[Français](README.md) · [API contract](docs/API.en.md) · [Full catalogue](docs/CATALOG.md)
 
-Pecking Order supplies institutional blueprints for Lineage Lab populations and
-Magna Urbis settlements. Namebench supplies names for office holders. These are
-independent projects: integration uses JSON and stable identifiers.
+![Titles and roles explorer](docs/images/demo.png)
 
-![Local explorer in French](docs/images/demo.png)
-
-The initial release contains **85 generic blueprints**, **12 bounded cultural
-profiles**, **18 cultural bindings** and **12 sources**. This is a broad institutional
-taxonomy and an initial historical reference corpus, not an exhaustive history of
-every culture. Unsupported contexts remain explicit.
+**242 systems · 67 themes · 1,713 defined roles · 6,124 bilingual title entries.**
+All 41 Magna Urbis culture IDs are supported. Every system combines with every
+theme, from an empire to a four-person secret cult cell.
 
 ## Run
 
-Python 3.12+. On Windows, double-click `demo.cmd`, then open
-**http://127.0.0.1:8773**. Alternatively:
+Rust 1.88+. On Windows double-click `demo.cmd`, or run:
 
-```powershell
-python -m venv .venv
-.venv\Scripts\python.exe -m pip install -e ".[dev]"
-.venv\Scripts\python.exe -m pecking_order studio
+```sh
+cargo run --release -- studio
 ```
 
-On Linux/macOS use `.venv/bin/python`. The loopback-only explorer needs no LLM,
-account, API key, external database or sibling repository. Switch FR/EN, inspect
-offices, powers and sources, and import/export JSON requests and results.
+Open **http://127.0.0.1:8773**. The compiled executable embeds the engine, content
+and UI. It runs independently of Python, a model service, API keys or sibling projects.
 
-## Query
+Choose **system → size / structure / authority → culture**. Explore all matching
+offices or filter by title, level and importance. Switch FR/EN, browse whole cultural
+lexicons and import/export JSON requests and responses.
 
-```python
-from pecking_order import KnowledgeBase
-
-result = KnowledgeBase().resolve({
-    "culture": "tswana",
-    "organization": {"kind": "village_council", "scale": "local"},
-    "role": "executive",
-    "locale": "en",
-})
-print(result.display["head.title"])  # Kgosi (chief)
+```json
+{"system":"kingdom","theme":"russian-kremlin"}
 ```
 
-```powershell
-pecking-order resolve examples/tswana-village.json
-pecking-order catalog
-pecking-order validate
+```json
+{"system":"cult_cell","theme":"drow-enclave","members":4,"structure":"cellular"}
 ```
 
-HTTP: `GET /api/catalog`, `GET /api/sources`, `POST /api/resolve`.
-[JSON Schema](schemas/) and [OpenAPI](schemas/openapi.json) describe the same contract.
+An Eastern European aristocratic nation uses Tsar, Kniaz, Boiar and Voivode titles;
+the same system with a Western European theme uses King, Duke, Count and Baron.
+A Tswana village includes Kgosi and Kgotla; an Indian corporate joint family includes
+Kulapati and Karta. Themes are freely composable worldbuilding lore.
 
-An office, its cultural title, a rank and a person are different things. Structures
-can contain collective bodies and multiple sources of authority. A sourced title
-does not turn an authored power into a historical claim: evidence is attached to
-individual titles, powers, relations and rules.
+## Contract
 
-`historical` requires a researched binding; `inspired` permits an explicit
-worldbuilding adaptation; `generic` requires `culture: "*"`. Broad contexts such as
-“Hindu” or “African” return `needs_context`, never a supposedly universal title.
-Only institutional kinship is included: joint estates, corporate lineages, noble
-houses, clans, dynasties and inter-house alliances. Trivial parent/child structures
-are outside scope.
+`POST /api/resolve`, `GET /api/catalog`, `GET /api/themes/{id}`, `GET /api/schema/query`.
+CLI: `cargo run -- resolve examples/nation-east.json`, `lexicon chinese`, `catalog`.
 
-[Authoritarian Raya example](examples/authoritarian-raya.json): explicitly turn a
-fictional office into an authoritarian executive while keeping the referenced title.
-This is rejected in historical mode and labelled as an adaptation.
+Each role separates stable ID, semantic function, cultural title, level, importance,
+scope, reporting relationships, duties, powers, access to office and optional status.
+Titles preserve French, English, original forms and authored variants. Level 0 is
+the top tier. Importance 0–100 measures weight inside that system, not a universal
+comparison between organizations. Collective bodies are supported.
 
-## Validate
+The Rust library exposes `Engine::embedded()`, `Engine::from_json()` and
+`Engine::resolve(Query)`. The core also compiles to `wasm32-unknown-unknown`; the local
+HTTP explorer is native. Content lives in `data/systems*.json` and `data/themes*.json`.
+No historical-source selection mode or culture-ambiguity gate.
 
-```powershell
-python -m pytest
-ruff check src tests tools
-python -m pecking_order validate
-python -m build
+## Check
+
+```sh
+cargo fmt --check
+cargo clippy --all-targets -- -D warnings
+cargo test
+cargo run -- validate
+cargo check --lib --target wasm32-unknown-unknown
 ```
 
-Optional browser checks: install `.[browser]`, start the studio, then run
-`python tools/check_browser.py`. `STUDIO_BROWSER` selects a Chromium executable;
-`PECKING_ORDER_URL` selects another local URL. Screenshots go to ignored `output/`.
+Validation resolves all **16,214 system/theme combinations**. Optional browser checks:
+`npm ci`, start the studio, `npm run test:browser`. `STUDIO_BROWSER` selects Chromium/Edge.
 
-The packaged [catalogue](src/pecking_order/data/catalog.json) is generated from
-[the authored source](tools/build_catalog.py). Use `KnowledgeBase(path)` or
-`pecking-order --data catalog.json …` for a complete custom knowledge pack.
-See [provenance](PROVENANCE.md), [design](docs/design.fr.md),
-[authoring](docs/authoring.fr.md) and [integration](docs/integration.fr.md).
+This release replaces the original Python prototype with **API 2.0**. Namebench,
+Lineage Lab and Magna Urbis can consume stable office IDs and JSON without a
+runtime dependency on each other.

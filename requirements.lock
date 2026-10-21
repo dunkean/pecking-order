@@ -1,6 +1,0 @@
-# Runtime versions validated on Python 3.12, Windows. Development tools are optional.
-annotated-types==0.8.0
-pydantic==2.14.1
-pydantic_core==2.50.1
-typing-inspection==0.4.4
-typing_extensions==4.16.0

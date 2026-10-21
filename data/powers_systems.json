@@ -1,0 +1,550 @@
+{
+  "account": {
+    "fr": "rendre compte",
+    "en": "account"
+  },
+  "act": {
+    "fr": "agir",
+    "en": "act"
+  },
+  "administer": {
+    "fr": "administrer",
+    "en": "administer"
+  },
+  "advise": {
+    "fr": "conseiller",
+    "en": "advise"
+  },
+  "alert": {
+    "fr": "alerter",
+    "en": "alert"
+  },
+  "allocate": {
+    "fr": "répartir",
+    "en": "allocate"
+  },
+  "announce": {
+    "fr": "annoncer",
+    "en": "announce"
+  },
+  "appoint": {
+    "fr": "nommer",
+    "en": "appoint"
+  },
+  "archive": {
+    "fr": "archiver",
+    "en": "archive"
+  },
+  "assess": {
+    "fr": "évaluer",
+    "en": "assess"
+  },
+  "assist": {
+    "fr": "assister",
+    "en": "assist"
+  },
+  "audit": {
+    "fr": "auditer",
+    "en": "audit"
+  },
+  "authenticate": {
+    "fr": "authentifier",
+    "en": "authenticate"
+  },
+  "budget": {
+    "fr": "budgéter",
+    "en": "budget"
+  },
+  "care": {
+    "fr": "soigner",
+    "en": "care"
+  },
+  "carry": {
+    "fr": "transporter",
+    "en": "carry"
+  },
+  "catalog": {
+    "fr": "cataloguer",
+    "en": "catalog"
+  },
+  "certify": {
+    "fr": "certifier",
+    "en": "certify"
+  },
+  "chart": {
+    "fr": "cartographier",
+    "en": "chart"
+  },
+  "clean": {
+    "fr": "nettoyer",
+    "en": "clean"
+  },
+  "collect": {
+    "fr": "collecter",
+    "en": "collect"
+  },
+  "command": {
+    "fr": "commander",
+    "en": "command"
+  },
+  "commission": {
+    "fr": "mandater",
+    "en": "commission"
+  },
+  "conceal": {
+    "fr": "dissimuler",
+    "en": "conceal"
+  },
+  "contain": {
+    "fr": "contenir",
+    "en": "contain"
+  },
+  "contribute": {
+    "fr": "contribuer",
+    "en": "contribute"
+  },
+  "convene": {
+    "fr": "convoquer",
+    "en": "convene"
+  },
+  "coordinate": {
+    "fr": "coordonner",
+    "en": "coordinate"
+  },
+  "copy": {
+    "fr": "copier",
+    "en": "copy"
+  },
+  "corroborate": {
+    "fr": "corroborer",
+    "en": "corroborate"
+  },
+  "decide": {
+    "fr": "décider",
+    "en": "decide"
+  },
+  "deliberate": {
+    "fr": "délibérer",
+    "en": "deliberate"
+  },
+  "deliver": {
+    "fr": "livrer",
+    "en": "deliver"
+  },
+  "deploy": {
+    "fr": "déployer",
+    "en": "deploy"
+  },
+  "deputize": {
+    "fr": "suppléer",
+    "en": "deputize"
+  },
+  "design": {
+    "fr": "concevoir",
+    "en": "design"
+  },
+  "disburse": {
+    "fr": "débourser",
+    "en": "disburse"
+  },
+  "drill": {
+    "fr": "entraîner",
+    "en": "drill"
+  },
+  "escort": {
+    "fr": "escorter",
+    "en": "escort"
+  },
+  "evade": {
+    "fr": "éluder",
+    "en": "evade"
+  },
+  "examine": {
+    "fr": "examiner",
+    "en": "examine"
+  },
+  "execute": {
+    "fr": "exécuter",
+    "en": "execute"
+  },
+  "explain": {
+    "fr": "expliquer",
+    "en": "explain"
+  },
+  "fortify": {
+    "fr": "fortifier",
+    "en": "fortify"
+  },
+  "fund": {
+    "fr": "financer",
+    "en": "fund"
+  },
+  "gather": {
+    "fr": "récolter",
+    "en": "gather"
+  },
+  "govern": {
+    "fr": "gouverner",
+    "en": "govern"
+  },
+  "guard": {
+    "fr": "garder",
+    "en": "guard"
+  },
+  "hear": {
+    "fr": "entendre",
+    "en": "hear"
+  },
+  "inherit": {
+    "fr": "hériter",
+    "en": "inherit"
+  },
+  "inquire": {
+    "fr": "enquêter",
+    "en": "inquire"
+  },
+  "inspect": {
+    "fr": "inspecter",
+    "en": "inspect"
+  },
+  "interpret": {
+    "fr": "interpréter",
+    "en": "interpret"
+  },
+  "investigate": {
+    "fr": "instruire",
+    "en": "investigate"
+  },
+  "invite": {
+    "fr": "inviter",
+    "en": "invite"
+  },
+  "issue": {
+    "fr": "délivrer",
+    "en": "issue"
+  },
+  "judge": {
+    "fr": "juger",
+    "en": "judge"
+  },
+  "law": {
+    "fr": "légiférer",
+    "en": "law"
+  },
+  "lead": {
+    "fr": "conduire",
+    "en": "lead"
+  },
+  "learn": {
+    "fr": "apprendre",
+    "en": "learn"
+  },
+  "legislate": {
+    "fr": "légiférer",
+    "en": "legislate"
+  },
+  "levy": {
+    "fr": "lever",
+    "en": "levy"
+  },
+  "license": {
+    "fr": "autoriser",
+    "en": "license"
+  },
+  "listen": {
+    "fr": "écouter",
+    "en": "listen"
+  },
+  "maintain": {
+    "fr": "entretenir",
+    "en": "maintain"
+  },
+  "make": {
+    "fr": "fabriquer",
+    "en": "make"
+  },
+  "manage": {
+    "fr": "gérer",
+    "en": "manage"
+  },
+  "match": {
+    "fr": "apparier",
+    "en": "match"
+  },
+  "measure": {
+    "fr": "mesurer",
+    "en": "measure"
+  },
+  "mediate": {
+    "fr": "médier",
+    "en": "mediate"
+  },
+  "mentor": {
+    "fr": "accompagner",
+    "en": "mentor"
+  },
+  "mobilize": {
+    "fr": "mobiliser",
+    "en": "mobilize"
+  },
+  "moderate": {
+    "fr": "modérer",
+    "en": "moderate"
+  },
+  "monitor": {
+    "fr": "surveiller",
+    "en": "monitor"
+  },
+  "negotiate": {
+    "fr": "négocier",
+    "en": "negotiate"
+  },
+  "notify": {
+    "fr": "notifier",
+    "en": "notify"
+  },
+  "observe": {
+    "fr": "observer",
+    "en": "observe"
+  },
+  "officiate": {
+    "fr": "officier",
+    "en": "officiate"
+  },
+  "oversee": {
+    "fr": "superviser",
+    "en": "oversee"
+  },
+  "patrol": {
+    "fr": "patrouiller",
+    "en": "patrol"
+  },
+  "petition": {
+    "fr": "pétitionner",
+    "en": "petition"
+  },
+  "plan": {
+    "fr": "planifier",
+    "en": "plan"
+  },
+  "practice": {
+    "fr": "pratiquer",
+    "en": "practice"
+  },
+  "pray": {
+    "fr": "prier",
+    "en": "pray"
+  },
+  "prepare": {
+    "fr": "préparer",
+    "en": "prepare"
+  },
+  "preserve": {
+    "fr": "préserver",
+    "en": "preserve"
+  },
+  "procure": {
+    "fr": "approvisionner",
+    "en": "procure"
+  },
+  "produce": {
+    "fr": "produire",
+    "en": "produce"
+  },
+  "propose": {
+    "fr": "proposer",
+    "en": "propose"
+  },
+  "protect": {
+    "fr": "protéger",
+    "en": "protect"
+  },
+  "provide": {
+    "fr": "fournir",
+    "en": "provide"
+  },
+  "publish": {
+    "fr": "publier",
+    "en": "publish"
+  },
+  "qualify": {
+    "fr": "qualifier",
+    "en": "qualify"
+  },
+  "question": {
+    "fr": "interroger",
+    "en": "question"
+  },
+  "ratify": {
+    "fr": "ratifier",
+    "en": "ratify"
+  },
+  "reconcile": {
+    "fr": "rapprocher",
+    "en": "reconcile"
+  },
+  "record": {
+    "fr": "consigner",
+    "en": "record"
+  },
+  "register": {
+    "fr": "enregistrer",
+    "en": "register"
+  },
+  "remedy": {
+    "fr": "réparer",
+    "en": "remedy"
+  },
+  "remember": {
+    "fr": "se souvenir",
+    "en": "remember"
+  },
+  "remit": {
+    "fr": "reverser",
+    "en": "remit"
+  },
+  "repair": {
+    "fr": "réparer",
+    "en": "repair"
+  },
+  "report": {
+    "fr": "rapporter",
+    "en": "report"
+  },
+  "represent": {
+    "fr": "représenter",
+    "en": "represent"
+  },
+  "return": {
+    "fr": "rapporter",
+    "en": "return"
+  },
+  "review": {
+    "fr": "examiner",
+    "en": "review"
+  },
+  "route": {
+    "fr": "acheminer",
+    "en": "route"
+  },
+  "schedule": {
+    "fr": "planifier",
+    "en": "schedule"
+  },
+  "seal": {
+    "fr": "sceller",
+    "en": "seal"
+  },
+  "secure": {
+    "fr": "sécuriser",
+    "en": "secure"
+  },
+  "serve": {
+    "fr": "servir",
+    "en": "serve"
+  },
+  "set_policy": {
+    "fr": "fixer la politique",
+    "en": "set policy"
+  },
+  "set_rules": {
+    "fr": "fixer les règles",
+    "en": "set rules"
+  },
+  "shelter": {
+    "fr": "héberger",
+    "en": "shelter"
+  },
+  "sing": {
+    "fr": "chanter",
+    "en": "sing"
+  },
+  "steer": {
+    "fr": "piloter",
+    "en": "steer"
+  },
+  "store": {
+    "fr": "stocker",
+    "en": "store"
+  },
+  "study": {
+    "fr": "étudier",
+    "en": "study"
+  },
+  "submit": {
+    "fr": "soumettre",
+    "en": "submit"
+  },
+  "summarize": {
+    "fr": "résumer",
+    "en": "summarize"
+  },
+  "summon": {
+    "fr": "convoquer",
+    "en": "summon"
+  },
+  "supply": {
+    "fr": "ravitailler",
+    "en": "supply"
+  },
+  "tax": {
+    "fr": "imposer",
+    "en": "tax"
+  },
+  "teach": {
+    "fr": "enseigner",
+    "en": "teach"
+  },
+  "track": {
+    "fr": "suivre",
+    "en": "track"
+  },
+  "train": {
+    "fr": "former",
+    "en": "train"
+  },
+  "transfer": {
+    "fr": "transférer",
+    "en": "transfer"
+  },
+  "translate": {
+    "fr": "traduire",
+    "en": "translate"
+  },
+  "transmit": {
+    "fr": "transmettre",
+    "en": "transmit"
+  },
+  "verify": {
+    "fr": "vérifier",
+    "en": "verify"
+  },
+  "vet": {
+    "fr": "examiner",
+    "en": "vet"
+  },
+  "veto": {
+    "fr": "opposer son veto",
+    "en": "veto"
+  },
+  "visit": {
+    "fr": "visiter",
+    "en": "visit"
+  },
+  "vote": {
+    "fr": "voter",
+    "en": "vote"
+  },
+  "watch": {
+    "fr": "veiller",
+    "en": "watch"
+  },
+  "withdraw": {
+    "fr": "se retirer",
+    "en": "withdraw"
+  },
+  "work": {
+    "fr": "travailler",
+    "en": "work"
+  }
+}

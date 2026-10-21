@@ -1,148 +1,152 @@
 {
-  "$defs": {
-    "Adaptation": {
-      "additionalProperties": false,
-      "properties": {
-        "kind": {
-          "enum": [
-            "authoritarian",
-            "elective_succession",
-            "hereditary_succession"
-          ],
-          "title": "Kind",
-          "type": "string"
-        },
-        "target_role": {
-          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
-          "title": "Target Role",
-          "type": "string"
-        }
-      },
-      "required": [
-        "kind",
-        "target_role"
-      ],
-      "title": "Adaptation",
-      "type": "object"
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Query",
+  "type": "object",
+  "properties": {
+    "api_version": {
+      "type": "string",
+      "default": "2.0"
     },
-    "Organization": {
-      "additionalProperties": false,
-      "properties": {
-        "kind": {
-          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
-          "title": "Kind",
-          "type": "string"
+    "authority": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Authority"
         },
-        "scale": {
-          "enum": [
-            "household",
-            "local",
-            "district",
-            "regional",
-            "polity",
-            "imperial",
-            "transregional"
-          ],
-          "title": "Scale",
-          "type": "string"
-        },
-        "traits": {
-          "items": {
-            "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
-            "type": "string"
-          },
-          "maxItems": 20,
-          "title": "Traits",
-          "type": "array"
+        {
+          "type": "null"
         }
-      },
-      "required": [
-        "kind",
-        "scale"
       ],
-      "title": "Organization",
-      "type": "object"
+      "default": null
+    },
+    "filter": {
+      "$ref": "#/$defs/RoleFilter",
+      "default": {
+        "functions": [],
+        "max_level": null,
+        "min_importance": null,
+        "scopes": [],
+        "text": ""
+      }
+    },
+    "locale": {
+      "type": "string",
+      "default": "fr"
+    },
+    "members": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "uint32",
+      "default": null,
+      "minimum": 0
+    },
+    "size": {
+      "$ref": "#/$defs/Size",
+      "default": "full"
+    },
+    "structure": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Structure"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "system": {
+      "type": "string"
+    },
+    "theme": {
+      "type": "string",
+      "default": "generic"
     }
   },
   "additionalProperties": false,
-  "properties": {
-    "schema_version": {
-      "const": "1.0",
-      "default": "1.0",
-      "title": "Schema Version",
-      "type": "string"
-    },
-    "culture": {
-      "maxLength": 4000,
-      "minLength": 1,
-      "title": "Culture",
-      "type": "string"
-    },
-    "organization": {
-      "$ref": "#/$defs/Organization"
-    },
-    "role": {
-      "anyOf": [
-        {
-          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
-          "type": "string"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "default": null,
-      "title": "Role"
-    },
-    "as_of": {
-      "anyOf": [
-        {
-          "maximum": 10000,
-          "minimum": -10000,
-          "type": "integer"
-        },
-        {
-          "type": "null"
-        }
-      ],
-      "default": null,
-      "title": "As Of"
-    },
-    "mode": {
-      "default": "historical",
-      "enum": [
-        "historical",
-        "inspired",
-        "generic"
-      ],
-      "title": "Mode",
-      "type": "string"
-    },
-    "locale": {
-      "default": "fr",
-      "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
-      "title": "Locale",
-      "type": "string"
-    },
-    "fallback_locale": {
-      "default": "en",
-      "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
-      "title": "Fallback Locale",
-      "type": "string"
-    },
-    "adaptations": {
-      "items": {
-        "$ref": "#/$defs/Adaptation"
-      },
-      "maxItems": 8,
-      "title": "Adaptations",
-      "type": "array"
-    }
-  },
   "required": [
-    "culture",
-    "organization"
+    "system"
   ],
-  "title": "Query",
-  "type": "object"
+  "$defs": {
+    "Authority": {
+      "type": "string",
+      "enum": [
+        "hereditary",
+        "aristocratic",
+        "authoritarian",
+        "democratic",
+        "theocratic",
+        "military",
+        "bureaucratic",
+        "meritocratic",
+        "consensual",
+        "personal"
+      ]
+    },
+    "RoleFilter": {
+      "type": "object",
+      "properties": {
+        "functions": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string"
+          }
+        },
+        "max_level": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "uint8",
+          "default": null,
+          "maximum": 255,
+          "minimum": 0
+        },
+        "min_importance": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "uint8",
+          "default": null,
+          "maximum": 255,
+          "minimum": 0
+        },
+        "scopes": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string"
+          }
+        },
+        "text": {
+          "type": "string",
+          "default": ""
+        }
+      },
+      "additionalProperties": false
+    },
+    "Size": {
+      "type": "string",
+      "enum": [
+        "tiny",
+        "small",
+        "medium",
+        "large",
+        "vast",
+        "full"
+      ]
+    },
+    "Structure": {
+      "type": "string",
+      "enum": [
+        "hierarchical",
+        "horizontal",
+        "network",
+        "cellular"
+      ]
+    }
+  }
 }

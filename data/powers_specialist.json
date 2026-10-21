@@ -1,0 +1,538 @@
+{
+  "account": {
+    "fr": "rendre compte",
+    "en": "account"
+  },
+  "advise": {
+    "fr": "conseiller",
+    "en": "advise"
+  },
+  "allocate": {
+    "fr": "répartir",
+    "en": "allocate"
+  },
+  "announce": {
+    "fr": "annoncer",
+    "en": "announce"
+  },
+  "appoint": {
+    "fr": "nommer",
+    "en": "appoint"
+  },
+  "archive": {
+    "fr": "archiver",
+    "en": "archive"
+  },
+  "assess": {
+    "fr": "évaluer",
+    "en": "assess"
+  },
+  "assist": {
+    "fr": "assister",
+    "en": "assist"
+  },
+  "audit": {
+    "fr": "auditer",
+    "en": "audit"
+  },
+  "care": {
+    "fr": "soigner",
+    "en": "care"
+  },
+  "carry": {
+    "fr": "transporter",
+    "en": "carry"
+  },
+  "certify": {
+    "fr": "certifier",
+    "en": "certify"
+  },
+  "collect": {
+    "fr": "collecter",
+    "en": "collect"
+  },
+  "coordinate": {
+    "fr": "coordonner",
+    "en": "coordinate"
+  },
+  "deliberate": {
+    "fr": "délibérer",
+    "en": "deliberate"
+  },
+  "deliver": {
+    "fr": "livrer",
+    "en": "deliver"
+  },
+  "disburse": {
+    "fr": "débourser",
+    "en": "disburse"
+  },
+  "escort": {
+    "fr": "escorter",
+    "en": "escort"
+  },
+  "examine": {
+    "fr": "examiner",
+    "en": "examine"
+  },
+  "govern": {
+    "fr": "gouverner",
+    "en": "govern"
+  },
+  "guard": {
+    "fr": "garder",
+    "en": "guard"
+  },
+  "hear": {
+    "fr": "entendre",
+    "en": "hear"
+  },
+  "inspect": {
+    "fr": "inspecter",
+    "en": "inspect"
+  },
+  "interpret": {
+    "fr": "interpréter",
+    "en": "interpret"
+  },
+  "investigate": {
+    "fr": "instruire",
+    "en": "investigate"
+  },
+  "issue": {
+    "fr": "délivrer",
+    "en": "issue"
+  },
+  "lead": {
+    "fr": "conduire",
+    "en": "lead"
+  },
+  "license": {
+    "fr": "autoriser",
+    "en": "license"
+  },
+  "listen": {
+    "fr": "écouter",
+    "en": "listen"
+  },
+  "maintain": {
+    "fr": "entretenir",
+    "en": "maintain"
+  },
+  "measure": {
+    "fr": "mesurer",
+    "en": "measure"
+  },
+  "mediate": {
+    "fr": "médier",
+    "en": "mediate"
+  },
+  "monitor": {
+    "fr": "surveiller",
+    "en": "monitor"
+  },
+  "negotiate": {
+    "fr": "négocier",
+    "en": "negotiate"
+  },
+  "notify": {
+    "fr": "notifier",
+    "en": "notify"
+  },
+  "observe": {
+    "fr": "observer",
+    "en": "observe"
+  },
+  "plan": {
+    "fr": "planifier",
+    "en": "plan"
+  },
+  "prepare": {
+    "fr": "préparer",
+    "en": "prepare"
+  },
+  "preserve": {
+    "fr": "préserver",
+    "en": "preserve"
+  },
+  "protect": {
+    "fr": "protéger",
+    "en": "protect"
+  },
+  "provide": {
+    "fr": "fournir",
+    "en": "provide"
+  },
+  "publish": {
+    "fr": "publier",
+    "en": "publish"
+  },
+  "qualify": {
+    "fr": "qualifier",
+    "en": "qualify"
+  },
+  "record": {
+    "fr": "consigner",
+    "en": "record"
+  },
+  "register": {
+    "fr": "enregistrer",
+    "en": "register"
+  },
+  "repair": {
+    "fr": "réparer",
+    "en": "repair"
+  },
+  "report": {
+    "fr": "rapporter",
+    "en": "report"
+  },
+  "represent": {
+    "fr": "représenter",
+    "en": "represent"
+  },
+  "return": {
+    "fr": "rapporter",
+    "en": "return"
+  },
+  "review": {
+    "fr": "examiner",
+    "en": "review"
+  },
+  "route": {
+    "fr": "acheminer",
+    "en": "route"
+  },
+  "schedule": {
+    "fr": "planifier",
+    "en": "schedule"
+  },
+  "serve": {
+    "fr": "servir",
+    "en": "serve"
+  },
+  "supply": {
+    "fr": "ravitailler",
+    "en": "supply"
+  },
+  "teach": {
+    "fr": "enseigner",
+    "en": "teach"
+  },
+  "track": {
+    "fr": "suivre",
+    "en": "track"
+  },
+  "transmit": {
+    "fr": "transmettre",
+    "en": "transmit"
+  },
+  "verify": {
+    "fr": "vérifier",
+    "en": "verify"
+  },
+  "visit": {
+    "fr": "visiter",
+    "en": "visit"
+  },
+  "watch": {
+    "fr": "veiller",
+    "en": "watch"
+  },
+  "accommodate": {
+    "fr": "s’adapter à",
+    "en": "accommodate"
+  },
+  "accompany": {
+    "fr": "accompagner",
+    "en": "accompany"
+  },
+  "admit": {
+    "fr": "admettre",
+    "en": "admit"
+  },
+  "adopt": {
+    "fr": "adopter",
+    "en": "adopt"
+  },
+  "answer": {
+    "fr": "répondre",
+    "en": "answer"
+  },
+  "ask": {
+    "fr": "demander",
+    "en": "ask"
+  },
+  "assign": {
+    "fr": "affecter",
+    "en": "assign"
+  },
+  "attribute": {
+    "fr": "attribuer",
+    "en": "attribute"
+  },
+  "authorize": {
+    "fr": "autoriser",
+    "en": "authorize"
+  },
+  "calibrate": {
+    "fr": "étalonner",
+    "en": "calibrate"
+  },
+  "clarify": {
+    "fr": "clarifier",
+    "en": "clarify"
+  },
+  "classify": {
+    "fr": "classer",
+    "en": "classify"
+  },
+  "cleanse": {
+    "fr": "purifier",
+    "en": "cleanse"
+  },
+  "close": {
+    "fr": "fermer",
+    "en": "close"
+  },
+  "comfort": {
+    "fr": "réconforter",
+    "en": "comfort"
+  },
+  "compare": {
+    "fr": "comparer",
+    "en": "compare"
+  },
+  "conduct": {
+    "fr": "conduire",
+    "en": "conduct"
+  },
+  "confirm": {
+    "fr": "confirmer",
+    "en": "confirm"
+  },
+  "connect": {
+    "fr": "relier",
+    "en": "connect"
+  },
+  "consecrate": {
+    "fr": "consacrer",
+    "en": "consecrate"
+  },
+  "correct": {
+    "fr": "corriger",
+    "en": "correct"
+  },
+  "demonstrate": {
+    "fr": "démontrer",
+    "en": "demonstrate"
+  },
+  "direct": {
+    "fr": "diriger",
+    "en": "direct"
+  },
+  "discharge": {
+    "fr": "organiser la sortie de",
+    "en": "discharge"
+  },
+  "disclose": {
+    "fr": "divulguer",
+    "en": "disclose"
+  },
+  "distribute": {
+    "fr": "distribuer",
+    "en": "distribute"
+  },
+  "document": {
+    "fr": "documenter",
+    "en": "document"
+  },
+  "dress": {
+    "fr": "vêtir",
+    "en": "dress"
+  },
+  "edit": {
+    "fr": "éditer",
+    "en": "edit"
+  },
+  "evaluate": {
+    "fr": "évaluer",
+    "en": "evaluate"
+  },
+  "ferry": {
+    "fr": "faire traverser",
+    "en": "ferry"
+  },
+  "follow": {
+    "fr": "suivre",
+    "en": "follow"
+  },
+  "guide": {
+    "fr": "guider",
+    "en": "guide"
+  },
+  "host": {
+    "fr": "accueillir",
+    "en": "host"
+  },
+  "include": {
+    "fr": "inclure",
+    "en": "include"
+  },
+  "inform": {
+    "fr": "informer",
+    "en": "inform"
+  },
+  "inventory": {
+    "fr": "inventorier",
+    "en": "inventory"
+  },
+  "limit": {
+    "fr": "limiter",
+    "en": "limit"
+  },
+  "map": {
+    "fr": "cartographier",
+    "en": "map"
+  },
+  "navigate": {
+    "fr": "naviguer",
+    "en": "navigate"
+  },
+  "offer": {
+    "fr": "proposer",
+    "en": "offer"
+  },
+  "pace": {
+    "fr": "cadencer",
+    "en": "pace"
+  },
+  "pause": {
+    "fr": "mettre en pause",
+    "en": "pause"
+  },
+  "perform": {
+    "fr": "accomplir",
+    "en": "perform"
+  },
+  "preach": {
+    "fr": "prêcher",
+    "en": "preach"
+  },
+  "prioritize": {
+    "fr": "prioriser",
+    "en": "prioritize"
+  },
+  "recall": {
+    "fr": "rappeler",
+    "en": "recall"
+  },
+  "recite": {
+    "fr": "réciter",
+    "en": "recite"
+  },
+  "refer": {
+    "fr": "orienter",
+    "en": "refer"
+  },
+  "release": {
+    "fr": "libérer",
+    "en": "release"
+  },
+  "remove": {
+    "fr": "retirer",
+    "en": "remove"
+  },
+  "reopen": {
+    "fr": "rouvrir",
+    "en": "reopen"
+  },
+  "rescue": {
+    "fr": "secourir",
+    "en": "rescue"
+  },
+  "respect": {
+    "fr": "respecter",
+    "en": "respect"
+  },
+  "restrict": {
+    "fr": "restreindre",
+    "en": "restrict"
+  },
+  "retrieve": {
+    "fr": "récupérer",
+    "en": "retrieve"
+  },
+  "revise": {
+    "fr": "réviser",
+    "en": "revise"
+  },
+  "rotate": {
+    "fr": "faire tourner",
+    "en": "rotate"
+  },
+  "safeguard": {
+    "fr": "mettre en sûreté",
+    "en": "safeguard"
+  },
+  "sanitize": {
+    "fr": "assainir",
+    "en": "sanitize"
+  },
+  "settle": {
+    "fr": "régler",
+    "en": "settle"
+  },
+  "signal": {
+    "fr": "signaler",
+    "en": "signal"
+  },
+  "sort": {
+    "fr": "trier",
+    "en": "sort"
+  },
+  "stop": {
+    "fr": "arrêter",
+    "en": "stop"
+  },
+  "support": {
+    "fr": "soutenir",
+    "en": "support"
+  },
+  "suspend": {
+    "fr": "suspendre",
+    "en": "suspend"
+  },
+  "test": {
+    "fr": "mettre à l’épreuve",
+    "en": "test"
+  },
+  "trace": {
+    "fr": "suivre la trace de",
+    "en": "trace"
+  },
+  "travel": {
+    "fr": "voyager",
+    "en": "travel"
+  },
+  "treat": {
+    "fr": "soigner",
+    "en": "treat"
+  },
+  "triage": {
+    "fr": "trier les urgences",
+    "en": "triage"
+  },
+  "validate": {
+    "fr": "valider",
+    "en": "validate"
+  },
+  "warn": {
+    "fr": "avertir",
+    "en": "warn"
+  },
+  "witness": {
+    "fr": "témoigner",
+    "en": "witness"
+  }
+}

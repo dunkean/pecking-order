@@ -1,0 +1,3242 @@
+[
+  {
+    "id": "temple_granary_office",
+    "family": "religious",
+    "label": {
+      "fr": "Office du grenier sacré",
+      "en": "Temple Granary Office"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Bureau du temple qui reçoit les récoltes, protège les réserves rituelles et répartit les vivres pendant les disettes.",
+      "en": "Temple bureau that receives harvests, protects ritual stores and distributes food during shortages."
+    },
+    "default_structure": "hierarchical",
+    "default_authority": "bureaucratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "granary_steward",
+        "key": "steward",
+        "function": "store_governance",
+        "level": 0,
+        "importance": 96,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Fixe les seuils de réserve, autorise les sorties et répond de la distribution en période de pénurie.",
+          "en": "Sets reserve thresholds, authorizes releases and accounts for distribution during shortages."
+        },
+        "powers": [
+          "allocate",
+          "authorize",
+          "audit"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "grain_keeper",
+        "key": "keeper",
+        "function": "grain_storage",
+        "level": 1,
+        "importance": 79,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "granary_steward"
+        ],
+        "duties": {
+          "fr": "Inspecte les silos, contrôle humidité et nuisibles, puis organise la rotation des sacs.",
+          "en": "Inspects silos, checks moisture and pests, and rotates stored grain."
+        },
+        "powers": [
+          "inspect",
+          "preserve",
+          "rotate"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "harvest_scribe",
+        "key": "scribe",
+        "function": "contribution_records",
+        "level": 2,
+        "importance": 62,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "granary_steward"
+        ],
+        "duties": {
+          "fr": "Consigne les apports par domaine, les pertes et les créances de semence.",
+          "en": "Records contributions by estate, losses and seed-loan obligations."
+        },
+        "powers": [
+          "record",
+          "measure",
+          "account"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "ration_caller",
+        "key": "representative",
+        "function": "ration_distribution",
+        "level": 3,
+        "importance": 45,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "granary_steward"
+        ],
+        "duties": {
+          "fr": "Tient les listes de bénéficiaires et règle les files de distribution sans retarder les urgences.",
+          "en": "Maintains beneficiary rolls and manages distribution lines while prioritizing urgent needs."
+        },
+        "powers": [
+          "register",
+          "distribute",
+          "mediate"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "sacred_calendar_council",
+    "family": "religious",
+    "label": {
+      "fr": "Conseil du calendrier sacré",
+      "en": "Sacred Calendar Council"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Collège d’observateurs qui fixe les dates rituelles à partir de relevés partagés et annonce les corrections au territoire.",
+      "en": "A college of observers that sets ritual dates from shared records and announces corrections across the territory."
+    },
+    "default_structure": "horizontal",
+    "default_authority": "meritocratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "calendar_circle",
+        "key": "assembly",
+        "function": "date_consensus",
+        "level": 0,
+        "importance": 96,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Compare les observations et adopte le calendrier commun à la majorité des maisons participantes.",
+          "en": "Compares observations and adopts the shared calendar by agreement among participating houses."
+        },
+        "powers": [
+          "deliberate",
+          "schedule",
+          "publish"
+        ],
+        "collective": true,
+        "optional": false
+      },
+      {
+        "id": "sky_observer",
+        "key": "scholar",
+        "function": "celestial_observation",
+        "level": 1,
+        "importance": 79,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "calendar_circle"
+        ],
+        "duties": {
+          "fr": "Relève les phases, solstices et anomalies selon une méthode commune.",
+          "en": "Records phases, solstices and anomalies using a shared method."
+        },
+        "powers": [
+          "observe",
+          "measure",
+          "verify"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "date_recorder",
+        "key": "scribe",
+        "function": "calendar_recordkeeping",
+        "level": 2,
+        "importance": 62,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "calendar_circle"
+        ],
+        "duties": {
+          "fr": "Conserve les séries, explique les corrections et transmet les dates aux sanctuaires.",
+          "en": "Keeps the records, explains corrections and sends dates to shrines."
+        },
+        "powers": [
+          "record",
+          "interpret",
+          "transmit"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "temple_messenger",
+        "key": "messenger",
+        "function": "calendar_notice",
+        "level": 3,
+        "importance": 45,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "calendar_circle"
+        ],
+        "duties": {
+          "fr": "Achemine les annonces et recueille les accusés de réception des maisons éloignées.",
+          "en": "Carries notices and gathers acknowledgments from distant houses."
+        },
+        "powers": [
+          "carry",
+          "notify",
+          "confirm"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "pilgrimage_wayhouse_network",
+    "family": "religious",
+    "label": {
+      "fr": "Réseau des maisons d’étape",
+      "en": "Pilgrimage Wayhouse Network"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Maisons espacées qui offrent gîte, eau, premiers soins et renseignements aux voyageurs d’un itinéraire sacré.",
+      "en": "Spaced houses offering lodging, water, first aid and route information to travelers on a sacred road."
+    },
+    "default_structure": "network",
+    "default_authority": "consensual",
+    "related": [],
+    "roles": [
+      {
+        "id": "route_host",
+        "key": "steward",
+        "function": "wayhouse_coordination",
+        "level": 0,
+        "importance": 96,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Coordonne les horaires d’accueil, les capacités de couchage et les relais entre étapes.",
+          "en": "Coordinates opening times, sleeping capacity and handoffs between wayhouses."
+        },
+        "powers": [
+          "coordinate",
+          "host",
+          "allocate"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "house_keeper",
+        "key": "keeper",
+        "function": "wayhouse_maintenance",
+        "level": 1,
+        "importance": 79,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "route_host"
+        ],
+        "duties": {
+          "fr": "Entretient le puits, les couchages et les réserves communes de son étape.",
+          "en": "Maintains the well, sleeping quarters and shared supplies at the station."
+        },
+        "powers": [
+          "maintain",
+          "supply",
+          "inspect"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "road_guide",
+        "key": "navigator",
+        "function": "pilgrim_route_guidance",
+        "level": 2,
+        "importance": 62,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "route_host"
+        ],
+        "duties": {
+          "fr": "Informe les voyageurs sur les passages, les distances et les fermetures saisonnières.",
+          "en": "Advises travelers on crossings, distances and seasonal closures."
+        },
+        "powers": [
+          "guide",
+          "inform",
+          "warn"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "wayhouse_healer",
+        "key": "healer",
+        "function": "traveler_first_aid",
+        "level": 3,
+        "importance": 45,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "route_host"
+        ],
+        "duties": {
+          "fr": "Soigne les blessures légères, repère les urgences et organise un transport vers un lieu de soins.",
+          "en": "Treats minor injuries, spots emergencies and arranges transport to a place of care."
+        },
+        "powers": [
+          "treat",
+          "triage",
+          "refer"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "procession_company",
+    "family": "religious",
+    "label": {
+      "fr": "Compagnie processionnelle",
+      "en": "Procession Company"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Équipe temporaire qui règle le parcours, le rythme, les chants et la sécurité d’une procession publique.",
+      "en": "A temporary team that manages the route, pace, songs and safety of a public procession."
+    },
+    "default_structure": "hierarchical",
+    "default_authority": "meritocratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "procession_marshal",
+        "key": "marshal",
+        "function": "procession_command",
+        "level": 0,
+        "importance": 96,
+        "scope": "unit",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Ouvre et ferme le parcours, règle les arrêts et adapte le cortège aux conditions de foule.",
+          "en": "Opens and closes the route, sets stops and adapts the procession to crowd conditions."
+        },
+        "powers": [
+          "direct",
+          "route",
+          "protect"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "chant_leader",
+        "key": "cantor",
+        "function": "procession_music",
+        "level": 1,
+        "importance": 79,
+        "scope": "unit",
+        "min_size": "tiny",
+        "reports_to": [
+          "procession_marshal"
+        ],
+        "duties": {
+          "fr": "Choisit les chants, donne le ton et maintient une cadence que le cortège peut suivre.",
+          "en": "Chooses the chants, sets the pitch and keeps a pace the procession can follow."
+        },
+        "powers": [
+          "lead",
+          "perform",
+          "pace"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "banner_herald",
+        "key": "herald",
+        "function": "procession_signaling",
+        "level": 2,
+        "importance": 62,
+        "scope": "unit",
+        "min_size": "tiny",
+        "reports_to": [
+          "procession_marshal"
+        ],
+        "duties": {
+          "fr": "Porte les signes de route et transmet les changements au début et à la fin du cortège.",
+          "en": "Carries route signs and relays changes between the front and rear of the procession."
+        },
+        "powers": [
+          "signal",
+          "announce",
+          "coordinate"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "procession_steward",
+        "key": "steward",
+        "function": "procession_logistics",
+        "level": 3,
+        "importance": 45,
+        "scope": "unit",
+        "min_size": "tiny",
+        "reports_to": [
+          "procession_marshal"
+        ],
+        "duties": {
+          "fr": "Distribue l’eau, prépare les objets rituels et rend compte des dépenses de l’événement.",
+          "en": "Distributes water, prepares ritual objects and accounts for event expenses."
+        },
+        "powers": [
+          "prepare",
+          "supply",
+          "account"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "vow_renewal_court",
+    "family": "religious",
+    "label": {
+      "fr": "Cour de renouvellement des vœux",
+      "en": "Vow Renewal Court"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Instance qui vérifie les engagements périodiques, clarifie leurs termes et inscrit les renouvellements consentis.",
+      "en": "A body that reviews periodic commitments, clarifies their terms and records renewals given freely."
+    },
+    "default_structure": "hierarchical",
+    "default_authority": "bureaucratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "vow_judge",
+        "key": "judge",
+        "function": "vow_review",
+        "level": 0,
+        "importance": 96,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Entend les parties séparément, vérifie que les termes restent compris et valide les renouvellements.",
+          "en": "Hears parties separately, checks that terms remain understood and validates renewals."
+        },
+        "powers": [
+          "hear",
+          "review",
+          "validate"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "vow_registrar",
+        "key": "scribe",
+        "function": "vow_registration",
+        "level": 1,
+        "importance": 79,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "vow_judge"
+        ],
+        "duties": {
+          "fr": "Consigne les termes renouvelés, leur durée et les personnes chargées d’en rappeler l’échéance.",
+          "en": "Records renewed terms, their duration and who must remind participants of deadlines."
+        },
+        "powers": [
+          "record",
+          "register",
+          "notify"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "vow_witness",
+        "key": "representative",
+        "function": "consent_witness",
+        "level": 2,
+        "importance": 62,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "vow_judge"
+        ],
+        "duties": {
+          "fr": "Confirme que les participants ont pu poser leurs questions et refuser sans pression.",
+          "en": "Confirms participants could ask questions and decline without pressure."
+        },
+        "powers": [
+          "witness",
+          "verify",
+          "protect"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "vow_mediator",
+        "key": "magistrate",
+        "function": "vow_dispute_mediation",
+        "level": 3,
+        "importance": 45,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "vow_judge"
+        ],
+        "duties": {
+          "fr": "Aide à reformuler les clauses contestées et renvoie les questions non réglées à la cour.",
+          "en": "Helps restate disputed clauses and refers unresolved questions to the court."
+        },
+        "powers": [
+          "mediate",
+          "clarify",
+          "refer"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "vow_release_circle",
+    "family": "religious",
+    "label": {
+      "fr": "Cercle de déliaison des vœux",
+      "en": "Vow Release Circle"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Petit cercle rituel qui reçoit les demandes de libération d’un vœu et organise la clôture des obligations restantes.",
+      "en": "A small ritual circle that hears requests to release a vow and arranges closure of remaining obligations."
+    },
+    "default_structure": "horizontal",
+    "default_authority": "consensual",
+    "related": [],
+    "roles": [
+      {
+        "id": "release_circle",
+        "key": "assembly",
+        "function": "release_deliberation",
+        "level": 0,
+        "importance": 96,
+        "scope": "cell",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Écoute la demande, vérifie que les personnes concernées ont été entendues et convient d’une clôture.",
+          "en": "Hears the request, checks affected people were heard and agrees a way to close the vow."
+        },
+        "powers": [
+          "deliberate",
+          "release",
+          "mediate"
+        ],
+        "collective": true,
+        "optional": false
+      },
+      {
+        "id": "oath_keeper",
+        "key": "keeper",
+        "function": "oath_record_custody",
+        "level": 1,
+        "importance": 79,
+        "scope": "cell",
+        "min_size": "tiny",
+        "reports_to": [
+          "release_circle"
+        ],
+        "duties": {
+          "fr": "Retrouve le texte du vœu et précise quelles obligations sont encore en vigueur.",
+          "en": "Finds the vow record and clarifies which obligations remain active."
+        },
+        "powers": [
+          "retrieve",
+          "interpret",
+          "record"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "restitution_steward",
+        "key": "steward",
+        "function": "obligation_restitution",
+        "level": 2,
+        "importance": 62,
+        "scope": "cell",
+        "min_size": "tiny",
+        "reports_to": [
+          "release_circle"
+        ],
+        "duties": {
+          "fr": "Organise le retour des biens confiés ou la réparation convenue avant la libération.",
+          "en": "Arranges return of entrusted goods or agreed repair before release."
+        },
+        "powers": [
+          "return",
+          "repair",
+          "settle"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "release_witness",
+        "key": "elder",
+        "function": "closure_witnessing",
+        "level": 3,
+        "importance": 45,
+        "scope": "cell",
+        "min_size": "tiny",
+        "reports_to": [
+          "release_circle"
+        ],
+        "duties": {
+          "fr": "Prononce la clôture devant les membres et conserve mémoire de l’accord sans exposer de secrets inutiles.",
+          "en": "Witnesses closure before members and preserves the agreement without exposing needless secrets."
+        },
+        "powers": [
+          "witness",
+          "close",
+          "preserve"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "funerary_boat_brotherhood",
+    "family": "religious",
+    "label": {
+      "fr": "Confrérie des passeurs funèbres",
+      "en": "Funerary Boat Brotherhood"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Équipage rituel qui transporte les défunts et leurs proches par voie d’eau jusqu’aux lieux de sépulture.",
+      "en": "A ritual crew that carries the dead and their kin by water to burial grounds."
+    },
+    "default_structure": "horizontal",
+    "default_authority": "consensual",
+    "related": [],
+    "roles": [
+      {
+        "id": "boat_circle",
+        "key": "assembly",
+        "function": "ferry_collective",
+        "level": 0,
+        "importance": 96,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Répartit les traversées, accueille les familles et décide des itinéraires praticables.",
+          "en": "Schedules crossings, receives families and chooses navigable routes."
+        },
+        "powers": [
+          "schedule",
+          "ferry",
+          "deliberate"
+        ],
+        "collective": true,
+        "optional": false
+      },
+      {
+        "id": "funeral_pilot",
+        "key": "navigator",
+        "function": "funeral_navigation",
+        "level": 1,
+        "importance": 79,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "boat_circle"
+        ],
+        "duties": {
+          "fr": "Choisit un passage sûr selon le courant, la saison et l’état de l’embarcation.",
+          "en": "Chooses a safe passage based on current, season and vessel condition."
+        },
+        "powers": [
+          "navigate",
+          "inspect",
+          "warn"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "farewell_cantor",
+        "key": "cantor",
+        "function": "water_farewell_rites",
+        "level": 2,
+        "importance": 62,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "boat_circle"
+        ],
+        "duties": {
+          "fr": "Conduit les chants d’adieu et maintient le rythme des gestes funéraires à bord.",
+          "en": "Leads farewells and keeps funerary rites in time aboard the boat."
+        },
+        "powers": [
+          "lead",
+          "perform",
+          "guide"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "boat_keeper",
+        "key": "keeper",
+        "function": "funeral_vessel_care",
+        "level": 3,
+        "importance": 45,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "boat_circle"
+        ],
+        "duties": {
+          "fr": "Entretient la barque, tient les listes de traversée et réserve une place aux passagers sans ressources.",
+          "en": "Maintains the boat, keeps crossing lists and reserves places for passengers without means."
+        },
+        "powers": [
+          "maintain",
+          "record",
+          "provide"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "mortuary_purification_house",
+    "family": "religious",
+    "label": {
+      "fr": "Maison de purification mortuaire",
+      "en": "Mortuary Purification House"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Atelier rituel qui prépare les corps, les vêtements et les outils avant la veille ou la sépulture.",
+      "en": "A ritual workshop that prepares bodies, garments and tools before a vigil or burial."
+    },
+    "default_structure": "hierarchical",
+    "default_authority": "theocratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "purification_master",
+        "key": "ritualist",
+        "function": "mortuary_preparation",
+        "level": 0,
+        "importance": 96,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Fixe la séquence de préparation et vérifie que les rites adaptés à chaque défunt sont respectés.",
+          "en": "Sets the preparation sequence and checks rites appropriate to each deceased person."
+        },
+        "powers": [
+          "prepare",
+          "direct",
+          "verify"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "body_keeper",
+        "key": "keeper",
+        "function": "body_care",
+        "level": 1,
+        "importance": 79,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "purification_master"
+        ],
+        "duties": {
+          "fr": "Lave et habille les défunts selon les instructions reçues et les usages de la maison.",
+          "en": "Washes and dresses the dead according to received instructions and house customs."
+        },
+        "powers": [
+          "cleanse",
+          "dress",
+          "care"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "linen_steward",
+        "key": "steward",
+        "function": "mortuary_supplies",
+        "level": 2,
+        "importance": 62,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "purification_master"
+        ],
+        "duties": {
+          "fr": "Maintient les linges, aromates et instruments propres, disponibles et séparés après usage.",
+          "en": "Keeps linens, aromatics and tools clean, stocked and separated after use."
+        },
+        "powers": [
+          "maintain",
+          "supply",
+          "sanitize"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "mortuary_scribe",
+        "key": "scribe",
+        "function": "funerary_preferences",
+        "level": 3,
+        "importance": 45,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "purification_master"
+        ],
+        "duties": {
+          "fr": "Consigne les volontés connues, les objets remis à la famille et les étapes accomplies.",
+          "en": "Records known wishes, items returned to kin and completed steps."
+        },
+        "powers": [
+          "record",
+          "confirm",
+          "return"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "ancestor_feast_compact",
+    "family": "kinship",
+    "label": {
+      "fr": "Pacte des festins ancestraux",
+      "en": "Ancestor Feast Compact"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Alliance de maisons qui partage les dates, les contributions et l’accueil des repas commémoratifs.",
+      "en": "A compact of houses sharing dates, contributions and hosting for commemorative meals."
+    },
+    "default_structure": "network",
+    "default_authority": "consensual",
+    "related": [],
+    "roles": [
+      {
+        "id": "feast_council",
+        "key": "assembly",
+        "function": "feast_coordination",
+        "level": 0,
+        "importance": 96,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Arrête le calendrier commun, répartit les lieux d’accueil et résout les conflits de dates.",
+          "en": "Sets the shared calendar, assigns hosts and resolves date conflicts."
+        },
+        "powers": [
+          "schedule",
+          "allocate",
+          "mediate"
+        ],
+        "collective": true,
+        "optional": false
+      },
+      {
+        "id": "house_host",
+        "key": "family_head",
+        "function": "commemorative_hosting",
+        "level": 1,
+        "importance": 79,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "feast_council"
+        ],
+        "duties": {
+          "fr": "Accueille les maisons invitées et réserve une part aux parents éloignés ou sans foyer.",
+          "en": "Hosts visiting houses and reserves a share for distant kin or those without a household."
+        },
+        "powers": [
+          "host",
+          "include",
+          "provide"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "offering_steward",
+        "key": "steward",
+        "function": "feast_contributions",
+        "level": 2,
+        "importance": 62,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "feast_council"
+        ],
+        "duties": {
+          "fr": "Tient les contributions en nature et règle les dépenses communes après chaque repas.",
+          "en": "Tracks in-kind contributions and settles shared expenses after each meal."
+        },
+        "powers": [
+          "collect",
+          "account",
+          "disburse"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "name_cantor",
+        "key": "cantor",
+        "function": "ancestor_name_recitation",
+        "level": 3,
+        "importance": 45,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "feast_council"
+        ],
+        "duties": {
+          "fr": "Récite les noms convenus et recueille les corrections des représentants de chaque maison.",
+          "en": "Recites agreed names and gathers corrections from each house’s representatives."
+        },
+        "powers": [
+          "recite",
+          "record",
+          "represent"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "lineage_memory_archive",
+    "family": "kinship",
+    "label": {
+      "fr": "Archive des mémoires de lignée",
+      "en": "Lineage Memory Archive"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Dépôt familial qui conserve généalogies, contrats d’adoption et récits de transmission sans officier de culte.",
+      "en": "A family repository preserving genealogies, adoption agreements and succession accounts without serving as a cult office."
+    },
+    "default_structure": "hierarchical",
+    "default_authority": "meritocratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "genealogy_keeper",
+        "key": "archivist",
+        "function": "genealogical_custody",
+        "level": 0,
+        "importance": 96,
+        "scope": "household",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Classe les branches de parenté et protège les documents contre l’ajout ou le retrait clandestin.",
+          "en": "Classifies kin branches and protects records from secret additions or removals."
+        },
+        "powers": [
+          "preserve",
+          "classify",
+          "protect"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "lineage_scribe",
+        "key": "scribe",
+        "function": "genealogy_recording",
+        "level": 1,
+        "importance": 79,
+        "scope": "household",
+        "min_size": "tiny",
+        "reports_to": [
+          "genealogy_keeper"
+        ],
+        "duties": {
+          "fr": "Consigne filiations déclarées, dates et désaccords sans transformer une version contestée en certitude.",
+          "en": "Records claimed descent, dates and disputes without treating a contested account as certain."
+        },
+        "powers": [
+          "record",
+          "qualify",
+          "compare"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "adoption_registrar",
+        "key": "clerk",
+        "function": "adoption_registration",
+        "level": 2,
+        "importance": 62,
+        "scope": "household",
+        "min_size": "tiny",
+        "reports_to": [
+          "genealogy_keeper"
+        ],
+        "duties": {
+          "fr": "Enregistre les adoptions reconnues et les droits qui changent avec elles.",
+          "en": "Registers recognized adoptions and the rights that change with them."
+        },
+        "powers": [
+          "register",
+          "verify",
+          "notify"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "memory_reader",
+        "key": "teacher",
+        "function": "family_record_access",
+        "level": 3,
+        "importance": 45,
+        "scope": "household",
+        "min_size": "tiny",
+        "reports_to": [
+          "genealogy_keeper"
+        ],
+        "duties": {
+          "fr": "Aide les membres à consulter les archives et explique les signes utilisés par les générations précédentes.",
+          "en": "Helps members consult records and explains marks used by earlier generations."
+        },
+        "powers": [
+          "teach",
+          "interpret",
+          "retrieve"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "diviner_apprentice_house",
+    "family": "educational",
+    "label": {
+      "fr": "Maison d’apprentissage divinatoire",
+      "en": "Diviner Apprentice House"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Petite école où les novices apprennent les méthodes, les limites et la tenue de registres des arts divinatoires.",
+      "en": "A small school where novices learn methods, limits and recordkeeping for divinatory arts."
+    },
+    "default_structure": "hierarchical",
+    "default_authority": "meritocratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "divination_tutor",
+        "key": "teacher",
+        "function": "divination_instruction",
+        "level": 0,
+        "importance": 96,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Enseigne les méthodes de tirage et distingue observation, interprétation et supposition.",
+          "en": "Teaches reading methods and separates observation, interpretation and guesswork."
+        },
+        "powers": [
+          "teach",
+          "demonstrate",
+          "correct"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "instrument_keeper",
+        "key": "keeper",
+        "function": "divination_tools",
+        "level": 1,
+        "importance": 79,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "divination_tutor"
+        ],
+        "duties": {
+          "fr": "Étalonne et distribue les objets de pratique, puis consigne leur entretien.",
+          "en": "Calibrates and issues practice tools, then records their maintenance."
+        },
+        "powers": [
+          "calibrate",
+          "issue",
+          "maintain"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "practice_examiner",
+        "key": "scholar",
+        "function": "divination_assessment",
+        "level": 2,
+        "importance": 62,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "divination_tutor"
+        ],
+        "duties": {
+          "fr": "Évalue des exercices aveugles pour vérifier que les apprentis peuvent reconnaître une lecture incertaine.",
+          "en": "Uses blind exercises to test whether apprentices can recognize an uncertain reading."
+        },
+        "powers": [
+          "test",
+          "evaluate",
+          "qualify"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "novice_recorder",
+        "key": "scribe",
+        "function": "divination_journaling",
+        "level": 3,
+        "importance": 45,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "divination_tutor"
+        ],
+        "duties": {
+          "fr": "Tient les journaux des exercices et compare les résultats annoncés avec les événements observés.",
+          "en": "Keeps exercise journals and compares stated readings with observed outcomes."
+        },
+        "powers": [
+          "record",
+          "compare",
+          "review"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "dream_interpretation_circle",
+    "family": "religious",
+    "label": {
+      "fr": "Cercle d’interprétation des rêves",
+      "en": "Dream Interpretation Circle"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Groupe de pairs qui examine les rêves à la demande, confronte les interprétations et évite d’en faire des ordres.",
+      "en": "A peer group that considers requested dreams, compares interpretations and prevents them becoming commands."
+    },
+    "default_structure": "horizontal",
+    "default_authority": "consensual",
+    "related": [],
+    "roles": [
+      {
+        "id": "dream_circle",
+        "key": "assembly",
+        "function": "shared_interpretation",
+        "level": 0,
+        "importance": 96,
+        "scope": "cell",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Entend le récit avec l’accord du rêveur et formule plusieurs lectures possibles.",
+          "en": "Hears the account with the dreamer’s consent and offers several possible readings."
+        },
+        "powers": [
+          "listen",
+          "interpret",
+          "deliberate"
+        ],
+        "collective": true,
+        "optional": false
+      },
+      {
+        "id": "dream_recorder",
+        "key": "scribe",
+        "function": "dream_record_care",
+        "level": 1,
+        "importance": 79,
+        "scope": "cell",
+        "min_size": "tiny",
+        "reports_to": [
+          "dream_circle"
+        ],
+        "duties": {
+          "fr": "Note les symboles que le rêveur souhaite conserver et retire les détails privés sur demande.",
+          "en": "Records symbols the dreamer wishes to keep and removes private details on request."
+        },
+        "powers": [
+          "record",
+          "protect",
+          "remove"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "sleep_watcher",
+        "key": "warden",
+        "function": "sleep_wellbeing",
+        "level": 2,
+        "importance": 62,
+        "scope": "cell",
+        "min_size": "tiny",
+        "reports_to": [
+          "dream_circle"
+        ],
+        "duties": {
+          "fr": "Protège le repos lors des veilles et appelle un guérisseur en cas de détresse.",
+          "en": "Protects rest during vigils and calls a healer when distress arises."
+        },
+        "powers": [
+          "guard",
+          "observe",
+          "refer"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "ritual_cantor",
+        "key": "cantor",
+        "function": "dream_reflection_rite",
+        "level": 3,
+        "importance": 45,
+        "scope": "cell",
+        "min_size": "tiny",
+        "reports_to": [
+          "dream_circle"
+        ],
+        "duties": {
+          "fr": "Conduit une courte clôture rituelle afin que les participants quittent le cercle apaisés.",
+          "en": "Leads a brief closing rite so participants can leave the circle settled."
+        },
+        "powers": [
+          "lead",
+          "close",
+          "comfort"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "itinerant_prophets_movement",
+    "family": "religious",
+    "label": {
+      "fr": "Mouvement des prophètes itinérants",
+      "en": "Itinerant Prophets Movement"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Réseau mobile de prédicateurs qui visite les communautés, collecte les récits et transmet des appels à la réforme.",
+      "en": "A mobile network of preachers visiting communities, gathering accounts and carrying calls for reform."
+    },
+    "default_structure": "network",
+    "default_authority": "personal",
+    "related": [],
+    "roles": [
+      {
+        "id": "movement_voice",
+        "key": "proselytizer",
+        "function": "itinerant_preaching",
+        "level": 0,
+        "importance": 96,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Choisit les étapes, expose les enseignements du mouvement et répond publiquement aux questions.",
+          "en": "Chooses stops, presents the movement’s teaching and answers questions in public."
+        },
+        "powers": [
+          "preach",
+          "travel",
+          "answer"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "route_messenger",
+        "key": "messenger",
+        "function": "prophetic_route_coordination",
+        "level": 1,
+        "importance": 79,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "movement_voice"
+        ],
+        "duties": {
+          "fr": "Transmet les invitations, avertissements de route et comptes rendus entre groupes éloignés.",
+          "en": "Carries invitations, route warnings and reports between distant groups."
+        },
+        "powers": [
+          "carry",
+          "coordinate",
+          "warn"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "vision_recorder",
+        "key": "scribe",
+        "function": "prophetic_testimony",
+        "level": 2,
+        "importance": 62,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "movement_voice"
+        ],
+        "duties": {
+          "fr": "Consigne les paroles attribuées au prophète en séparant témoignage direct et récit rapporté.",
+          "en": "Records words attributed to the prophet, separating direct testimony from hearsay."
+        },
+        "powers": [
+          "record",
+          "attribute",
+          "qualify"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "guest_keeper",
+        "key": "steward",
+        "function": "itinerant_guest_care",
+        "level": 3,
+        "importance": 45,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "movement_voice"
+        ],
+        "duties": {
+          "fr": "Organise le gîte, les repas et les dons reçus sans imposer de contribution aux hôtes.",
+          "en": "Arranges lodging, meals and gifts received without imposing payment on hosts."
+        },
+        "powers": [
+          "host",
+          "provide",
+          "account"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "mendicant_preaching_network",
+    "family": "religious",
+    "label": {
+      "fr": "Réseau de prédication mendiante",
+      "en": "Mendicant Preaching Network"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Petites fraternités sans domaine foncier qui parcourent les quartiers et vivent d’offrandes volontaires.",
+      "en": "Small landless fraternities that visit neighborhoods and live from voluntary gifts."
+    },
+    "default_structure": "network",
+    "default_authority": "consensual",
+    "related": [],
+    "roles": [
+      {
+        "id": "route_preacher",
+        "key": "proselytizer",
+        "function": "mendicant_preaching",
+        "level": 0,
+        "importance": 96,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Répartit les quartiers de visite et adapte les sermons aux questions de la communauté.",
+          "en": "Assigns visiting districts and adapts sermons to community questions."
+        },
+        "powers": [
+          "preach",
+          "visit",
+          "listen"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "fraternity_circle",
+        "key": "assembly",
+        "function": "fraternity_rule",
+        "level": 1,
+        "importance": 79,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "route_preacher"
+        ],
+        "duties": {
+          "fr": "Adopte la règle de vie, partage les tâches et peut relever un frère de sa mission.",
+          "en": "Sets the common rule, shares duties and can recall a member from service."
+        },
+        "powers": [
+          "deliberate",
+          "assign",
+          "recall"
+        ],
+        "collective": true,
+        "optional": false
+      },
+      {
+        "id": "gift_recorder",
+        "key": "treasurer",
+        "function": "voluntary_gift_accounting",
+        "level": 2,
+        "importance": 62,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "route_preacher"
+        ],
+        "duties": {
+          "fr": "Enregistre les dons volontaires et publie leur usage auprès des fraternités.",
+          "en": "Records voluntary gifts and reports their use to the fraternities."
+        },
+        "powers": [
+          "record",
+          "account",
+          "disclose"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "road_brother",
+        "key": "messenger",
+        "function": "neighborhood_visitation",
+        "level": 3,
+        "importance": 45,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "route_preacher"
+        ],
+        "duties": {
+          "fr": "Porte les invitations et relie les frères aux hôtes qui offrent un espace de réunion.",
+          "en": "Carries invitations and connects members with hosts who offer meeting space."
+        },
+        "powers": [
+          "carry",
+          "connect",
+          "notify"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "mendicant_almonry",
+    "family": "religious",
+    "label": {
+      "fr": "Aumônerie mendiante",
+      "en": "Mendicant Almonry"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Service de fraternité qui transforme les aumônes en repas, vêtements et abri de courte durée pour les personnes de passage.",
+      "en": "A fraternity service turning alms into meals, clothing and short-term shelter for people in transit."
+    },
+    "default_structure": "hierarchical",
+    "default_authority": "theocratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "almoner",
+        "key": "healer",
+        "function": "alms_service",
+        "level": 0,
+        "importance": 96,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Décide des aides urgentes selon les besoins constatés et la réserve disponible.",
+          "en": "Assigns urgent aid from observed needs and available stores."
+        },
+        "powers": [
+          "assess",
+          "allocate",
+          "refer"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "alms_steward",
+        "key": "steward",
+        "function": "alms_inventory",
+        "level": 1,
+        "importance": 79,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "almoner"
+        ],
+        "duties": {
+          "fr": "Trie les dons, suit les réserves et signale les biens inadaptés ou dangereux.",
+          "en": "Sorts gifts, tracks stock and flags unsuitable or unsafe items."
+        },
+        "powers": [
+          "sort",
+          "inventory",
+          "inspect"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "meal_cook",
+        "key": "laborer",
+        "function": "communal_meals",
+        "level": 2,
+        "importance": 62,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "almoner"
+        ],
+        "duties": {
+          "fr": "Prépare des repas simples et adapte les portions aux personnes hébergées.",
+          "en": "Prepares simple meals and adjusts portions for those staying at the house."
+        },
+        "powers": [
+          "prepare",
+          "serve",
+          "accommodate"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "shelter_keeper",
+        "key": "keeper",
+        "function": "short_term_shelter",
+        "level": 3,
+        "importance": 45,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "almoner"
+        ],
+        "duties": {
+          "fr": "Tient les couchages, explique les règles d’accueil et organise les départs du matin.",
+          "en": "Maintains sleeping space, explains guest rules and organizes morning departures."
+        },
+        "powers": [
+          "host",
+          "maintain",
+          "coordinate"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "exorcist_lodge",
+    "family": "religious",
+    "label": {
+      "fr": "Loge des exorcistes",
+      "en": "Exorcists’ Lodge"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Petit ordre de praticiens qui évalue les phénomènes de hantise, intervient avec témoins et organise le suivi des foyers.",
+      "en": "A small order that assesses hauntings, intervenes with witnesses and arranges follow-up for affected households."
+    },
+    "default_structure": "hierarchical",
+    "default_authority": "meritocratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "lodge_master",
+        "key": "high_priest",
+        "function": "exorcist_standards",
+        "level": 0,
+        "importance": 96,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Fixe les règles d’intervention, attribue les cas et suspend les pratiques dangereuses.",
+          "en": "Sets intervention rules, assigns cases and suspends unsafe practices."
+        },
+        "powers": [
+          "license",
+          "assign",
+          "suspend"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "case_examiner",
+        "key": "scholar",
+        "function": "haunting_assessment",
+        "level": 1,
+        "importance": 79,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "lodge_master"
+        ],
+        "duties": {
+          "fr": "Recueille les récits, inspecte les lieux et distingue les traces observées des interprétations.",
+          "en": "Collects accounts, inspects locations and separates observed traces from interpretation."
+        },
+        "powers": [
+          "investigate",
+          "compare",
+          "qualify"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "rite_leader",
+        "key": "ritualist",
+        "function": "exorcism_rite",
+        "level": 2,
+        "importance": 62,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "lodge_master"
+        ],
+        "duties": {
+          "fr": "Conduit les rites convenus avec les résidents et interrompt l’intervention si leur consentement est retiré.",
+          "en": "Leads agreed rites with residents and stops if consent is withdrawn."
+        },
+        "powers": [
+          "conduct",
+          "protect",
+          "stop"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "household_healer",
+        "key": "healer",
+        "function": "post_incident_care",
+        "level": 3,
+        "importance": 45,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "lodge_master"
+        ],
+        "duties": {
+          "fr": "Suit les personnes après l’intervention et les oriente vers un autre soignant si nécessaire.",
+          "en": "Follows up with residents after the intervention and refers them to other care when needed."
+        },
+        "powers": [
+          "care",
+          "monitor",
+          "refer"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "possession_witness_circle",
+    "family": "religious",
+    "label": {
+      "fr": "Cercle témoin des possessions",
+      "en": "Possession Witness Circle"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Petit cercle impartial qui documente les épisodes de possession déclarée et soutient la personne concernée sans trancher seul leur cause.",
+      "en": "A small impartial circle that documents reported possession episodes and supports the person without claiming sole authority over their cause."
+    },
+    "default_structure": "horizontal",
+    "default_authority": "consensual",
+    "related": [],
+    "roles": [
+      {
+        "id": "witness_circle",
+        "key": "assembly",
+        "function": "possession_review",
+        "level": 0,
+        "importance": 96,
+        "scope": "cell",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Écoute la personne et les témoins, consigne les versions distinctes et convient des mesures immédiates.",
+          "en": "Hears the person and witnesses, records distinct accounts and agrees immediate safeguards."
+        },
+        "powers": [
+          "hear",
+          "document",
+          "safeguard"
+        ],
+        "collective": true,
+        "optional": false
+      },
+      {
+        "id": "episode_recorder",
+        "key": "scribe",
+        "function": "possession_documentation",
+        "level": 1,
+        "importance": 79,
+        "scope": "cell",
+        "min_size": "tiny",
+        "reports_to": [
+          "witness_circle"
+        ],
+        "duties": {
+          "fr": "Note les faits datés, les paroles observées et les soins consentis sans effacer les désaccords.",
+          "en": "Records dated events, observed speech and consented care without erasing disagreement."
+        },
+        "powers": [
+          "record",
+          "attribute",
+          "preserve"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "care_companion",
+        "key": "healer",
+        "function": "possession_wellbeing",
+        "level": 2,
+        "importance": 62,
+        "scope": "cell",
+        "min_size": "tiny",
+        "reports_to": [
+          "witness_circle"
+        ],
+        "duties": {
+          "fr": "Reste auprès de la personne pendant les épisodes et arrête toute practice that causes harm.",
+          "en": "Stays with the person during episodes and stops any practice that causes harm."
+        },
+        "powers": [
+          "accompany",
+          "observe",
+          "protect"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "rite_advisor",
+        "key": "ritualist",
+        "function": "optional_possession_rites",
+        "level": 3,
+        "importance": 45,
+        "scope": "cell",
+        "min_size": "tiny",
+        "reports_to": [
+          "witness_circle"
+        ],
+        "duties": {
+          "fr": "Propose des rites facultatifs et vérifie avant chaque étape que la personne souhaite les poursuivre.",
+          "en": "Offers optional rites and checks before each step that the person wishes to continue."
+        },
+        "powers": [
+          "advise",
+          "ask",
+          "pause"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "plague_vow_fellowship",
+    "family": "religious",
+    "label": {
+      "fr": "Fraternité du vœu de peste",
+      "en": "Plague Vow Fellowship"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Association rituelle formée pendant une épidémie, qui organise soutien aux malades, veilles et rites funéraires.",
+      "en": "A ritual fellowship formed during an epidemic to organize aid for the ill, vigils and funerary rites."
+    },
+    "default_structure": "horizontal",
+    "default_authority": "consensual",
+    "related": [],
+    "roles": [
+      {
+        "id": "fellowship_circle",
+        "key": "assembly",
+        "function": "epidemic_vow_coordination",
+        "level": 0,
+        "importance": 96,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Définit les engagements communs et les révise selon l’état des malades et les ressources du quartier.",
+          "en": "Sets common commitments and revises them as illness and neighborhood resources change."
+        },
+        "powers": [
+          "deliberate",
+          "revise",
+          "coordinate"
+        ],
+        "collective": true,
+        "optional": false
+      },
+      {
+        "id": "sickroom_visitor",
+        "key": "healer",
+        "function": "sickroom_support",
+        "level": 1,
+        "importance": 79,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "fellowship_circle"
+        ],
+        "duties": {
+          "fr": "Apporte eau et messages aux malades tout en respectant les consignes de soin et d’isolement.",
+          "en": "Brings water and messages to the ill while following care and isolation instructions."
+        },
+        "powers": [
+          "support",
+          "deliver",
+          "follow"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "vigil_cantor",
+        "key": "cantor",
+        "function": "sickroom_vigils",
+        "level": 2,
+        "importance": 62,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "fellowship_circle"
+        ],
+        "duties": {
+          "fr": "Organise des veilles par relais afin qu’aucune famille ne soit laissée seule.",
+          "en": "Arranges rotating vigils so no household is left alone."
+        },
+        "powers": [
+          "schedule",
+          "comfort",
+          "lead"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "burial_helper",
+        "key": "keeper",
+        "function": "epidemic_funeral_support",
+        "level": 3,
+        "importance": 45,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "fellowship_circle"
+        ],
+        "duties": {
+          "fr": "Prépare les fournitures funéraires et aide les proches à accomplir les gestes autorisés.",
+          "en": "Prepares funerary supplies and helps relatives perform permitted rites."
+        },
+        "powers": [
+          "prepare",
+          "assist",
+          "supply"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "epidemic_recovery_house",
+    "family": "civic",
+    "label": {
+      "fr": "Maison de convalescence épidémique",
+      "en": "Epidemic Recovery House"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Hébergement temporaire pour personnes sorties de la phase aiguë qui ont besoin de repos, de repas et d’un retour progressif au foyer.",
+      "en": "Temporary lodging for people past the acute phase who need rest, meals and a gradual return home."
+    },
+    "default_structure": "hierarchical",
+    "default_authority": "bureaucratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "recovery_steward",
+        "key": "steward",
+        "function": "recovery_house_governance",
+        "level": 0,
+        "importance": 96,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Organise les admissions selon les capacités et coordonne la sortie avec les proches ou les soignants.",
+          "en": "Manages admissions within capacity and coordinates discharge with kin or caregivers."
+        },
+        "powers": [
+          "admit",
+          "coordinate",
+          "discharge"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "convalescent_healer",
+        "key": "healer",
+        "function": "recovery_monitoring",
+        "level": 1,
+        "importance": 79,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "recovery_steward"
+        ],
+        "duties": {
+          "fr": "Suit les symptômes pendant le repos et demande un avis médical si l’état se dégrade.",
+          "en": "Monitors symptoms during rest and seeks medical advice if a person worsens."
+        },
+        "powers": [
+          "monitor",
+          "refer",
+          "record"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "meal_keeper",
+        "key": "laborer",
+        "function": "recovery_meals",
+        "level": 2,
+        "importance": 62,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "recovery_steward"
+        ],
+        "duties": {
+          "fr": "Prépare des repas réguliers adaptés aux besoins déclarés et tient compte des allergies connues.",
+          "en": "Prepares regular meals for stated needs and accounts for known allergies."
+        },
+        "powers": [
+          "prepare",
+          "serve",
+          "accommodate"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "return_guide",
+        "key": "representative",
+        "function": "return_home_planning",
+        "level": 3,
+        "importance": 45,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "recovery_steward"
+        ],
+        "duties": {
+          "fr": "Établit avec chaque résident un calendrier réaliste de retour et signale les besoins d’entraide.",
+          "en": "Makes a practical return plan with each resident and identifies support needs."
+        },
+        "powers": [
+          "plan",
+          "mediate",
+          "refer"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "solar_clock_custodians",
+    "family": "religious",
+    "label": {
+      "fr": "Gardiens des horloges solaires",
+      "en": "Solar Clock Custodians"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Corps technique qui entretient les cadrans publics et synchronise les appels rituels avec le temps solaire local.",
+      "en": "A technical body maintaining public sundials and synchronizing ritual calls with local solar time."
+    },
+    "default_structure": "hierarchical",
+    "default_authority": "meritocratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "clock_custodian",
+        "key": "keeper",
+        "function": "public_sundial_care",
+        "level": 0,
+        "importance": 96,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Inspecte les cadrans, restaure les marques effacées et les protège des travaux voisins.",
+          "en": "Inspects dials, restores worn marks and protects them from nearby construction."
+        },
+        "powers": [
+          "inspect",
+          "repair",
+          "protect"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "gnomon_master",
+        "key": "chief_engineer",
+        "function": "sundial_calibration",
+        "level": 1,
+        "importance": 79,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "clock_custodian"
+        ],
+        "duties": {
+          "fr": "Calibre les repères selon la latitude et consigne les écarts saisonniers.",
+          "en": "Calibrates markers for local latitude and records seasonal offsets."
+        },
+        "powers": [
+          "calibrate",
+          "measure",
+          "record"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "time_caller",
+        "key": "herald",
+        "function": "ritual_time_signaling",
+        "level": 2,
+        "importance": 62,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "clock_custodian"
+        ],
+        "duties": {
+          "fr": "Annonce les heures rituelles au moyen des cloches ou des signaux convenus.",
+          "en": "Announces ritual hours using bells or agreed signals."
+        },
+        "powers": [
+          "signal",
+          "announce",
+          "schedule"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "dial_scribe",
+        "key": "scribe",
+        "function": "solar_time_records",
+        "level": 3,
+        "importance": 45,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "clock_custodian"
+        ],
+        "duties": {
+          "fr": "Tient le registre des corrections, remplacements et observations utiles aux autres cadrans.",
+          "en": "Keeps records of corrections, replacements and observations useful to other dials."
+        },
+        "powers": [
+          "record",
+          "compare",
+          "publish"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "astral_calendar_consortium",
+    "family": "educational",
+    "label": {
+      "fr": "Consortium des calendriers astraux",
+      "en": "Astral Calendar Consortium"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Réseau d’observatoires qui compare les cycles visibles et publie des calendriers communs pour la navigation et les rites.",
+      "en": "A network of observatories comparing visible cycles and publishing shared calendars for navigation and ritual."
+    },
+    "default_structure": "network",
+    "default_authority": "meritocratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "calendar_consortium",
+        "key": "assembly",
+        "function": "astral_calendar_adoption",
+        "level": 0,
+        "importance": 96,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Compare les propositions des observatoires et adopte une version commune avec les incertitudes notées.",
+          "en": "Compares observatory proposals and adopts a common edition with uncertainties recorded."
+        },
+        "powers": [
+          "compare",
+          "adopt",
+          "publish"
+        ],
+        "collective": true,
+        "optional": false
+      },
+      {
+        "id": "cycle_observer",
+        "key": "scholar",
+        "function": "astral_cycle_measurement",
+        "level": 1,
+        "importance": 79,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "calendar_consortium"
+        ],
+        "duties": {
+          "fr": "Mesure les cycles selon un protocole commun et signale les observations manquantes.",
+          "en": "Measures cycles using a shared protocol and flags missing observations."
+        },
+        "powers": [
+          "observe",
+          "measure",
+          "verify"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "almanac_editor",
+        "key": "scribe",
+        "function": "almanac_publication",
+        "level": 2,
+        "importance": 62,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "calendar_consortium"
+        ],
+        "duties": {
+          "fr": "Assemble les relevés en almanachs lisibles et distingue calcul, observation et estimation.",
+          "en": "Assembles readings into usable almanacs and distinguishes calculation, observation and estimate."
+        },
+        "powers": [
+          "edit",
+          "qualify",
+          "publish"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "port_messenger",
+        "key": "messenger",
+        "function": "calendar_distribution",
+        "level": 3,
+        "importance": 45,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "calendar_consortium"
+        ],
+        "duties": {
+          "fr": "Distribue les calendriers aux ports, caravanes et sanctuaires qui en ont fait la demande.",
+          "en": "Delivers calendars to ports, caravans and shrines that requested them."
+        },
+        "powers": [
+          "deliver",
+          "notify",
+          "confirm"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "sacred_grove_moot",
+    "family": "religious",
+    "label": {
+      "fr": "Assemblée du bosquet sacré",
+      "en": "Sacred Grove Moot"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Assemblée des communautés riveraines qui négocie les coupes, les pâtures et les rites autorisés dans un bosquet consacré.",
+      "en": "An assembly of neighboring communities negotiating felling, grazing and permitted rites in a consecrated grove."
+    },
+    "default_structure": "horizontal",
+    "default_authority": "consensual",
+    "related": [],
+    "roles": [
+      {
+        "id": "grove_moot",
+        "key": "assembly",
+        "function": "grove_use_agreements",
+        "level": 0,
+        "importance": 96,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Négocie des règles d’usage et peut suspendre une activité qui menace les ressources communes.",
+          "en": "Negotiates use rules and can suspend an activity threatening shared resources."
+        },
+        "powers": [
+          "negotiate",
+          "allocate",
+          "suspend"
+        ],
+        "collective": true,
+        "optional": false
+      },
+      {
+        "id": "grove_warden",
+        "key": "warden",
+        "function": "grove_condition_watch",
+        "level": 1,
+        "importance": 79,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "grove_moot"
+        ],
+        "duties": {
+          "fr": "Inspecte les arbres, les sources et les traces de prélèvement, puis signale les changements au moot.",
+          "en": "Inspects trees, springs and harvest signs, then reports changes to the moot."
+        },
+        "powers": [
+          "inspect",
+          "monitor",
+          "report"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "spirit_envoy",
+        "key": "representative",
+        "function": "place_spirit_petitions",
+        "level": 2,
+        "importance": 62,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "grove_moot"
+        ],
+        "duties": {
+          "fr": "Transmet les demandes rituelles adressées aux esprits du lieu et rapporte les réponses reconnues par les groupes.",
+          "en": "Carries ritual petitions to local spirits and reports responses recognized by participating groups."
+        },
+        "powers": [
+          "represent",
+          "mediate",
+          "report"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "use_scribe",
+        "key": "scribe",
+        "function": "grove_agreement_records",
+        "level": 3,
+        "importance": 45,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "grove_moot"
+        ],
+        "duties": {
+          "fr": "Consigne les limites, les saisons et les engagements acceptés par chaque communauté.",
+          "en": "Records boundaries, seasons and commitments accepted by each community."
+        },
+        "powers": [
+          "record",
+          "map",
+          "notify"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "migration_omen_watch",
+    "family": "civic",
+    "label": {
+      "fr": "Veille des migrations animales",
+      "en": "Animal Migration Watch"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Réseau local qui observe les migrations et avertit les villages des changements de passage, de pâture et de chasse.",
+      "en": "A local network observing migrations and warning villages of changes to routes, grazing and hunting."
+    },
+    "default_structure": "network",
+    "default_authority": "consensual",
+    "related": [],
+    "roles": [
+      {
+        "id": "migration_circle",
+        "key": "assembly",
+        "function": "migration_watch_coordination",
+        "level": 0,
+        "importance": 96,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Réunit les observateurs, compare les relevés et décide quand transmettre une alerte aux communautés.",
+          "en": "Brings observers together, compares reports and decides when to alert communities."
+        },
+        "powers": [
+          "compare",
+          "coordinate",
+          "notify"
+        ],
+        "collective": true,
+        "optional": false
+      },
+      {
+        "id": "trail_observer",
+        "key": "scout",
+        "function": "migration_route_observation",
+        "level": 1,
+        "importance": 79,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "migration_circle"
+        ],
+        "duties": {
+          "fr": "Suit les traces et les troupeaux sans les perturber et relève les dates de passage.",
+          "en": "Tracks herds and signs without disturbing them and records passage dates."
+        },
+        "powers": [
+          "observe",
+          "track",
+          "record"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "range_messenger",
+        "key": "messenger",
+        "function": "migration_warning_delivery",
+        "level": 2,
+        "importance": 62,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "migration_circle"
+        ],
+        "duties": {
+          "fr": "Achemine les alertes aux pâtres, chasseurs et gardiens des cultures en aval.",
+          "en": "Carries warnings to herders, hunters and crop wardens downstream."
+        },
+        "powers": [
+          "deliver",
+          "warn",
+          "confirm"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "season_scribe",
+        "key": "scribe",
+        "function": "migration_archive",
+        "level": 3,
+        "importance": 45,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "migration_circle"
+        ],
+        "duties": {
+          "fr": "Conserve les relevés d’année en année afin de distinguer les cycles habituels des ruptures.",
+          "en": "Keeps year-to-year records to distinguish usual cycles from disruptions."
+        },
+        "powers": [
+          "archive",
+          "compare",
+          "qualify"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "spring_spirit_compact",
+    "family": "civic",
+    "label": {
+      "fr": "Pacte de la source vive",
+      "en": "Living Spring Compact"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Accord entre villages et gardiens rituels qui protège une source, partage ses prélèvements et traite les atteintes au lieu.",
+      "en": "An agreement between villages and ritual keepers that protects a spring, shares withdrawals and addresses harm to the site."
+    },
+    "default_structure": "network",
+    "default_authority": "consensual",
+    "related": [],
+    "roles": [
+      {
+        "id": "spring_compact",
+        "key": "assembly",
+        "function": "spring_use_agreement",
+        "level": 0,
+        "importance": 96,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Fixe les tours de prélèvement, entend les besoins nouveaux et renégocie les parts en saison sèche.",
+          "en": "Sets withdrawal turns, hears new needs and renegotiates shares in dry seasons."
+        },
+        "powers": [
+          "allocate",
+          "negotiate",
+          "revise"
+        ],
+        "collective": true,
+        "optional": false
+      },
+      {
+        "id": "spring_keeper",
+        "key": "keeper",
+        "function": "spring_site_care",
+        "level": 1,
+        "importance": 79,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "spring_compact"
+        ],
+        "duties": {
+          "fr": "Inspecte la source, organise son nettoyage et interdit les usages qui la contaminent.",
+          "en": "Inspects the spring, organizes cleaning and bars uses that contaminate it."
+        },
+        "powers": [
+          "inspect",
+          "maintain",
+          "restrict"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "water_scribe",
+        "key": "scribe",
+        "function": "spring_usage_records",
+        "level": 2,
+        "importance": 62,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "spring_compact"
+        ],
+        "duties": {
+          "fr": "Note les volumes ou tours convenus et consigne les plaintes liées au partage.",
+          "en": "Records agreed volumes or turns and logs disputes over access."
+        },
+        "powers": [
+          "measure",
+          "record",
+          "refer"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "spirit_mediator",
+        "key": "ritualist",
+        "function": "spring_rite_mediation",
+        "level": 3,
+        "importance": 45,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "spring_compact"
+        ],
+        "duties": {
+          "fr": "Conduit les rites du lieu et sert d’intermédiaire lorsque les communautés contestent une obligation rituelle.",
+          "en": "Leads site rites and mediates when communities dispute ritual obligations."
+        },
+        "powers": [
+          "conduct",
+          "mediate",
+          "clarify"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "pass_shrine_wardens",
+    "family": "civic",
+    "label": {
+      "fr": "Gardiens du sanctuaire de col",
+      "en": "Mountain Pass Shrine Wardens"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Équipe de sanctuaire qui garde un passage dangereux, entretient l’abri et coordonne les secours aux voyageurs.",
+      "en": "A shrine crew guarding a hazardous pass, maintaining shelter and coordinating aid for travelers."
+    },
+    "default_structure": "hierarchical",
+    "default_authority": "bureaucratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "pass_warden",
+        "key": "warden",
+        "function": "mountain_pass_safety",
+        "level": 0,
+        "importance": 96,
+        "scope": "unit",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Ferme le passage lorsque les conditions dépassent les capacités de secours et rouvre après inspection.",
+          "en": "Closes the pass when conditions exceed rescue capacity and reopens it after inspection."
+        },
+        "powers": [
+          "inspect",
+          "close",
+          "reopen"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "beacon_keeper",
+        "key": "keeper",
+        "function": "mountain_beacon_service",
+        "level": 1,
+        "importance": 79,
+        "scope": "unit",
+        "min_size": "tiny",
+        "reports_to": [
+          "pass_warden"
+        ],
+        "duties": {
+          "fr": "Entretient les feux ou miroirs de signal et vérifie leur visibilité depuis les itinéraires.",
+          "en": "Maintains signal fires or mirrors and checks their visibility from the routes."
+        },
+        "powers": [
+          "maintain",
+          "signal",
+          "test"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "wayfinder",
+        "key": "navigator",
+        "function": "pass_route_guidance",
+        "level": 2,
+        "importance": 62,
+        "scope": "unit",
+        "min_size": "tiny",
+        "reports_to": [
+          "pass_warden"
+        ],
+        "duties": {
+          "fr": "Guide les voyageurs vers l’abri adapté et déconseille les traversées lors des tempêtes.",
+          "en": "Guides travelers to suitable shelter and advises against crossings during storms."
+        },
+        "powers": [
+          "guide",
+          "warn",
+          "route"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "rescue_captain",
+        "key": "captain",
+        "function": "mountain_rescue",
+        "level": 3,
+        "importance": 45,
+        "scope": "unit",
+        "min_size": "tiny",
+        "reports_to": [
+          "pass_warden"
+        ],
+        "duties": {
+          "fr": "Organise les recherches, répartit les cordes et les porteurs, puis consigne les incidents.",
+          "en": "Organizes searches, assigns ropes and carriers, then records incidents."
+        },
+        "powers": [
+          "rescue",
+          "assign",
+          "record"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "forge_initiation_order",
+    "family": "religious",
+    "label": {
+      "fr": "Ordre initiatique de la forge",
+      "en": "Forge Initiation Order"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Ordre de praticiens qui transmet les rites de forge, les règles de sécurité et les engagements liés aux objets consacrés.",
+      "en": "An order transmitting forge rites, safety rules and obligations attached to consecrated objects."
+    },
+    "default_structure": "hierarchical",
+    "default_authority": "meritocratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "forge_prior",
+        "key": "high_priest",
+        "function": "forge_order_governance",
+        "level": 0,
+        "importance": 96,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Convoque les maîtres de chapitre, attribue les enseignements et tranche les demandes de consécration.",
+          "en": "Convenes chapter masters, assigns instruction and decides requests for consecration."
+        },
+        "powers": [
+          "govern",
+          "appoint",
+          "consecrate"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "fire_keeper",
+        "key": "keeper",
+        "function": "sacred_forge_fire",
+        "level": 1,
+        "importance": 79,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "forge_prior"
+        ],
+        "duties": {
+          "fr": "Maintient le foyer rituel, contrôle le combustible et consigne les périodes d’allumage.",
+          "en": "Maintains the ritual hearth, checks fuel and records when it is lit."
+        },
+        "powers": [
+          "maintain",
+          "inspect",
+          "record"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "forge_instructor",
+        "key": "craft_master",
+        "function": "initiatory_forge_training",
+        "level": 2,
+        "importance": 62,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "forge_prior"
+        ],
+        "duties": {
+          "fr": "Enseigne les gestes de forge et vérifie leur maîtrise avant tout travail sur un objet consacré.",
+          "en": "Teaches forge techniques and checks proficiency before work on a consecrated object."
+        },
+        "powers": [
+          "teach",
+          "test",
+          "certify"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "oath_scribe",
+        "key": "scribe",
+        "function": "forge_vow_recording",
+        "level": 3,
+        "importance": 45,
+        "scope": "chapter",
+        "min_size": "tiny",
+        "reports_to": [
+          "forge_prior"
+        ],
+        "duties": {
+          "fr": "Consigne les vœux de métier et les conditions de retour ou de réparation des objets confiés.",
+          "en": "Records craft vows and terms for return or repair of entrusted objects."
+        },
+        "powers": [
+          "record",
+          "register",
+          "notify"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "communal_oath_hunt",
+    "family": "civic",
+    "label": {
+      "fr": "Compagnie de chasse sous serment",
+      "en": "Communal Oath Hunt"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Groupe saisonnier qui répartit les équipes et les prises selon des règles communes de sécurité et de subsistance.",
+      "en": "A seasonal group assigning teams and catches under shared rules for safety and subsistence."
+    },
+    "default_structure": "horizontal",
+    "default_authority": "consensual",
+    "related": [],
+    "roles": [
+      {
+        "id": "hunt_circle",
+        "key": "assembly",
+        "function": "communal_hunt_allocation",
+        "level": 0,
+        "importance": 96,
+        "scope": "unit",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Fixe les jours de chasse, les limites de prise et les parts dues aux foyers sans chasseurs.",
+          "en": "Sets hunt days, catch limits and shares for households without hunters."
+        },
+        "powers": [
+          "schedule",
+          "allocate",
+          "limit"
+        ],
+        "collective": true,
+        "optional": false
+      },
+      {
+        "id": "hunt_captain",
+        "key": "captain",
+        "function": "field_hunt_coordination",
+        "level": 1,
+        "importance": 79,
+        "scope": "unit",
+        "min_size": "tiny",
+        "reports_to": [
+          "hunt_circle"
+        ],
+        "duties": {
+          "fr": "Organise les équipes, signale les zones à éviter et suspend la chasse en cas de danger.",
+          "en": "Organizes teams, marks areas to avoid and suspends a hunt when danger arises."
+        },
+        "powers": [
+          "coordinate",
+          "warn",
+          "suspend"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "trail_scout",
+        "key": "scout",
+        "function": "game_tracking",
+        "level": 2,
+        "importance": 62,
+        "scope": "unit",
+        "min_size": "tiny",
+        "reports_to": [
+          "hunt_circle"
+        ],
+        "duties": {
+          "fr": "Relève les traces et transmet les observations sans poursuivre les bêtes hors des limites convenues.",
+          "en": "Reads tracks and reports observations without pursuing game beyond agreed bounds."
+        },
+        "powers": [
+          "track",
+          "observe",
+          "report"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "catch_steward",
+        "key": "steward",
+        "function": "catch_sharing",
+        "level": 3,
+        "importance": 45,
+        "scope": "unit",
+        "min_size": "tiny",
+        "reports_to": [
+          "hunt_circle"
+        ],
+        "duties": {
+          "fr": "Pèse les prises, distribue les parts convenues et réserve les restes à la conservation.",
+          "en": "Weighs the catch, distributes agreed shares and sets aside remains for preservation."
+        },
+        "powers": [
+          "measure",
+          "distribute",
+          "preserve"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "relic_authentication_chamber",
+    "family": "religious",
+    "label": {
+      "fr": "Chambre d’authentification des reliques",
+      "en": "Relic Authentication Chamber"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Collège qui examine les affirmations sur une relique, compare les registres et rédige un avis distinct du gardiennage matériel.",
+      "en": "A college examining claims about a relic, comparing records and issuing an opinion separate from physical custody."
+    },
+    "default_structure": "hierarchical",
+    "default_authority": "meritocratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "relic_examiner",
+        "key": "scholar",
+        "function": "relic_authentication",
+        "level": 0,
+        "importance": 96,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Compare inscriptions, matériaux et témoignages avant de qualifier une relique ou de suspendre son attribution.",
+          "en": "Compares inscriptions, materials and testimony before authenticating a relic or suspending its attribution."
+        },
+        "powers": [
+          "examine",
+          "compare",
+          "qualify"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "provenance_scribe",
+        "key": "archivist",
+        "function": "relic_provenance_records",
+        "level": 1,
+        "importance": 79,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "relic_examiner"
+        ],
+        "duties": {
+          "fr": "Assemble les actes de transfert et signale les lacunes ou contradictions dans la chaîne de garde.",
+          "en": "Assembles transfer records and flags gaps or contradictions in the chain of custody."
+        },
+        "powers": [
+          "archive",
+          "trace",
+          "report"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "relic_custodian",
+        "key": "keeper",
+        "function": "examined_relic_safekeeping",
+        "level": 2,
+        "importance": 62,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "relic_examiner"
+        ],
+        "duties": {
+          "fr": "Garde les objets pendant l’examen, limite les manipulations et restitue chaque pièce à son dépositaire.",
+          "en": "Safeguards objects during review, limits handling and returns each item to its custodian."
+        },
+        "powers": [
+          "safeguard",
+          "restrict",
+          "return"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "chamber_recorder",
+        "key": "scribe",
+        "function": "authentication_findings",
+        "level": 3,
+        "importance": 45,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "relic_examiner"
+        ],
+        "duties": {
+          "fr": "Publie les constatations, les désaccords et le degré de confiance retenu par les examinateurs.",
+          "en": "Publishes findings, disagreements and the confidence level adopted by examiners."
+        },
+        "powers": [
+          "record",
+          "qualify",
+          "publish"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "roadside_lantern_brotherhood",
+    "family": "civic",
+    "label": {
+      "fr": "Fraternité des lanternes de route",
+      "en": "Roadside Lantern Brotherhood"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Groupe de voisins qui éclaire les passages nocturnes, signale les dangers et accompagne les voyageurs vulnérables.",
+      "en": "A neighborhood group lighting night crossings, marking hazards and escorting vulnerable travelers."
+    },
+    "default_structure": "network",
+    "default_authority": "consensual",
+    "related": [],
+    "roles": [
+      {
+        "id": "lantern_circle",
+        "key": "assembly",
+        "function": "night_route_coordination",
+        "level": 0,
+        "importance": 96,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Répartit les veilles et choisit les passages à éclairer selon les besoins signalés.",
+          "en": "Assigns watches and chooses crossings to light based on reported need."
+        },
+        "powers": [
+          "schedule",
+          "prioritize",
+          "coordinate"
+        ],
+        "collective": true,
+        "optional": false
+      },
+      {
+        "id": "lantern_keeper",
+        "key": "keeper",
+        "function": "public_lantern_maintenance",
+        "level": 1,
+        "importance": 79,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "lantern_circle"
+        ],
+        "duties": {
+          "fr": "Remplit les lanternes, vérifie les supports et retire celles qui risquent de provoquer un incendie.",
+          "en": "Fills lanterns, checks mounts and removes any that risk starting a fire."
+        },
+        "powers": [
+          "maintain",
+          "inspect",
+          "remove"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "night_guide",
+        "key": "navigator",
+        "function": "night_traveler_escort",
+        "level": 2,
+        "importance": 62,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "lantern_circle"
+        ],
+        "duties": {
+          "fr": "Accompagne les voyageurs qui en font la demande jusqu’au prochain lieu habité.",
+          "en": "Escorts travelers who request it to the next inhabited place."
+        },
+        "powers": [
+          "escort",
+          "guide",
+          "protect"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "hazard_messenger",
+        "key": "messenger",
+        "function": "night_hazard_alerts",
+        "level": 3,
+        "importance": 45,
+        "scope": "network",
+        "min_size": "tiny",
+        "reports_to": [
+          "lantern_circle"
+        ],
+        "duties": {
+          "fr": "Transmet les alertes sur crues, glissements ou routes barrées aux veilleurs voisins.",
+          "en": "Carries warnings of floods, slides or closed roads to neighboring watchers."
+        },
+        "powers": [
+          "warn",
+          "carry",
+          "confirm"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  },
+  {
+    "id": "dream_incubation_sanctuary",
+    "family": "religious",
+    "label": {
+      "fr": "Sanctuaire d’incubation des rêves",
+      "en": "Dream Incubation Sanctuary"
+    },
+    "aliases": [],
+    "description": {
+      "fr": "Lieu de repos rituel où les visiteurs dorment sous observation et consignent leurs rêves à leur réveil, sans interprétation imposée.",
+      "en": "A ritual rest house where visitors sleep under care and record dreams on waking, without imposed interpretation."
+    },
+    "default_structure": "hierarchical",
+    "default_authority": "theocratic",
+    "related": [],
+    "roles": [
+      {
+        "id": "sleep_sanctuary_keeper",
+        "key": "keeper",
+        "function": "incubation_guest_care",
+        "level": 0,
+        "importance": 96,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [],
+        "duties": {
+          "fr": "Explique les conditions de séjour, protège l’intimité des visiteurs et interrompt une veille à leur demande.",
+          "en": "Explains the stay, protects visitor privacy and ends a vigil on request."
+        },
+        "powers": [
+          "host",
+          "protect",
+          "stop"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "night_watcher",
+        "key": "warden",
+        "function": "incubation_night_watch",
+        "level": 1,
+        "importance": 79,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "sleep_sanctuary_keeper"
+        ],
+        "duties": {
+          "fr": "Assure des rondes discrètes et appelle un soignant en cas de détresse nocturne.",
+          "en": "Keeps discreet rounds and calls a caregiver when a guest is distressed at night."
+        },
+        "powers": [
+          "watch",
+          "comfort",
+          "refer"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "dream_scribe",
+        "key": "scribe",
+        "function": "voluntary_dream_records",
+        "level": 2,
+        "importance": 62,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "sleep_sanctuary_keeper"
+        ],
+        "duties": {
+          "fr": "Consigne uniquement les rêves que le visiteur souhaite conserver et lui remet une copie.",
+          "en": "Records only dreams a visitor wishes to keep and provides them a copy."
+        },
+        "powers": [
+          "record",
+          "return",
+          "protect"
+        ],
+        "collective": false,
+        "optional": false
+      },
+      {
+        "id": "morning_cantor",
+        "key": "cantor",
+        "function": "sanctuary_morning_rite",
+        "level": 3,
+        "importance": 45,
+        "scope": "organization",
+        "min_size": "tiny",
+        "reports_to": [
+          "sleep_sanctuary_keeper"
+        ],
+        "duties": {
+          "fr": "Conduit le rite du matin et laisse chacun choisir entre silence, partage ou départ immédiat.",
+          "en": "Leads the morning rite and lets each person choose silence, sharing or immediate departure."
+        },
+        "powers": [
+          "lead",
+          "offer",
+          "respect"
+        ],
+        "collective": false,
+        "optional": false
+      }
+    ]
+  }
+]

@@ -1,115 +1,147 @@
 # Pecking Order
 
-**Qui porte le titre ? Qui détient le pouvoir ?** Une base de connaissances autonome
-pour les institutions, les fonctions et les titres culturels de vos mondes.
+**Un système. Une culture. Tous les rôles.**
 
-[English](README.en.md) · [Contrat](docs/contract.fr.md) · [Conception](docs/design.fr.md) ·
-[Couverture](docs/coverage.md) · [Sources](PROVENANCE.md)
+Moteur **Rust** de contenu institutionnel pour les générateurs de mondes : choisir
+un royaume, une nation, une ville, une guilde, une famille organisée, une religion
+ou une cellule secrète, puis appliquer un thème culturel et récupérer les titres,
+fonctions, responsabilités, niveaux d’autorité et importance de chaque rôle.
 
-Pecking Order fournit les structures que **Lineage Lab** peut peupler et que
-**Magna Urbis** peut situer. **Namebench** fournit les noms de leurs titulaires.
-Aucune dépendance entre ces projets : échanges par identifiants et JSON.
+[English](README.en.md) · [Contrat d’API](docs/API.fr.md) · [Catalogue](docs/CATALOG.md)
 
-![Explorateur local en français](docs/images/demo.png)
+![Explorateur des titres et rôles](docs/images/demo.png)
 
-Le socle livré comprend **85 modèles génériques**, **12 profils culturels**,
-**18 déclinaisons documentées** et **12 sources**. Les titres, fonctions, missions,
-pouvoirs et règles sont disponibles en **français et en anglais**, avec le titre
-d’origine lorsqu’il est renseigné. Les clés de langue sont extensibles.
-La taxonomie est large ; le corpus historique initial ne prétend pas couvrir toutes
-les cultures ni toute leur histoire.
+**242 systèmes**, **67 thèmes**, **1 713 rôles définis**, **6 124 entrées de titres
+FR/EN**. Les **41 cultures de Magna Urbis** sont toutes reprises avec leurs
+identifiants. Le catalogue ne se limite pas aux exemples de l’interface : tous les
+systèmes sont combinables avec tous les thèmes.
 
-## Lancer l’explorateur
+## Lancer
 
-Python 3.12 ou ultérieur. Sous Windows, double-cliquer sur **`demo.cmd`**, puis ouvrir
-**http://127.0.0.1:8773**. Ou :
+Rust 1.88 ou ultérieur. Sous Windows : double-cliquer sur **`demo.cmd`**.
 
 ```powershell
-python -m venv .venv
-.venv\Scripts\python.exe -m pip install -e ".[dev]"
-.venv\Scripts\python.exe -m pecking_order studio
+cargo run --release -- studio
 ```
 
-Sur Linux/macOS, utiliser `.venv/bin/python`. Le serveur écoute uniquement sur la
-boucle locale. Il fonctionne sans LLM, clé d’API, base externe ni autre dépôt.
+Ouvrir **http://127.0.0.1:8773**. Le premier lancement compile le programme.
+L’exécutable embarque le moteur, les données et l’interface : après compilation,
+`target/release/pecking-order.exe` fonctionne seul. Pas de Python, de LLM, de clé
+d’API ou de dépôt voisin nécessaire à l’exécution.
 
-L’explorateur propose des exemples, le passage FR/EN, la consultation des pouvoirs,
-des relations et des sources, ainsi que l’import/export des requêtes et des résultats.
+Dans l’interface : **système → taille / structure / pouvoir → culture**. Les filtres
+par titre, niveau et importance permettent d’explorer le résultat. Le lexique
+culturel montre également toutes les entrées d’un thème, indépendamment du système.
+Titres français, anglais et formes locales restent consultables côte à côte.
 
-## Poser une question
+## Requête minimale
+
+```json
+{"system":"kingdom","theme":"russian-kremlin"}
+```
 
 ```json
 {
-  "culture": "tswana_bogosi_contemporary",
-  "organization": {"kind": "village_council", "scale": "local"},
-  "role": "executive",
+  "system": "nation",
+  "theme": "russian-kremlin",
+  "authority": "aristocratic",
   "locale": "fr"
 }
 ```
 
-Résultat : une charge **Kgosi**, rendue par *chef coutumier / chief*, avec ses
-fonctions documentées, le forum **Kgotla**, la structure complète et les sources.
-Le rôle demandé sélectionne les charges à afficher ; il ne retire pas leur contexte.
+Exemples directs :
 
-```python
-from pecking_order import KnowledgeBase
-
-kb = KnowledgeBase()
-result = kb.resolve({
-    "culture": "huf",
-    "organization": {"kind": "corporate_household", "scale": "household"},
-    "role": "household_manager",
-})
-print(result.display["manager.title"])  # Karta (gestionnaire familial)
-```
+| Système | Thème | Titres dans le résultat |
+|---|---|---|
+| Nation aristocratique | Europe de l’Est | Tsar, Kniaz, Boiar, Voïvode, Namestnik… |
+| Même système | Europe de l’Ouest | King / roi, Duke / duc, Count / comte, Baron / baron… |
+| Village | Tswana | Kgosi, Mothusa kgosi, Kgotla, anciens… |
+| Famille indivise | Inde | Kulapati, Karta, responsables de branches et du patrimoine… |
+| Guilde artisanale | Naine | Maître des forges, maîtres, compagnons, apprentis… |
+| Cellule cultuelle, 4 membres | Drow ou culte chthonien | Responsable, officiant, gardien et adepte avec leurs fonctions propres |
 
 ```powershell
-.venv\Scripts\python.exe -m pecking_order resolve examples/tswana-village.json
-.venv\Scripts\python.exe -m pecking_order catalog
-.venv\Scripts\python.exe -m pecking_order validate
+cargo run -- resolve examples/nation-east.json
+cargo run -- resolve examples/secret-cell.json
+cargo run -- lexicon chinese
+cargo run -- catalog
 ```
 
-HTTP : `GET /api/catalog`, `GET /api/sources`, `POST /api/resolve`.
-Les [schémas JSON](schemas/) et le [contrat OpenAPI](schemas/openapi.json) sont versionnés.
+HTTP : **`POST /api/resolve`**, `GET /api/catalog`, `GET /api/themes/{id}` et
+`GET /api/schema/query`. Les requêtes et résultats s’exportent aussi depuis l’interface.
 
-## Les distinctions qui comptent
+## Ce que renvoie un rôle
 
-- **Fonction, titre, grade et personne** sont distincts. Le commandant d’un corps
-  britannique peut porter le grade de *Lieutenant General* ; le grade n’est pas la fonction.
-- **Le contexte fait le titre.** « Hindou » appelle une précision. Le *Raya* de
-  Vijayanagara et le *Sultan* d’une cour du Deccan ne se déduisent pas d’un simple
-  paramètre « autoritaire ». « Africain » ne détermine pas un chef universel.
-- **Un groupe peut avoir plusieurs centres de pouvoir.** Conseil, chefferie,
-  autorité rituelle, patrimoine et nomination ne forment pas toujours un arbre.
-- **Un titre sourcé ne rend pas tous ses pouvoirs historiques.** Chaque titre,
-  pouvoir, relation et règle porte son propre statut de preuve.
-- **Les familles ne sont présentes que comme institutions particulières** : maison
-  noble, lignage organisé, clan, famille indivise, maison matrilinéaire, dynastie ou
-  alliance entre maisons. Pas de modèles triviaux « père / mère / enfants ».
+```json
+{
+  "id": "sovereign",
+  "function": "aristocratic_sovereignty",
+  "title_key": "king",
+  "title": {"fr":"Tsar","en":"Tsar","native":"царь","variants":[]},
+  "level": 0,
+  "importance": 100,
+  "scope": "realm",
+  "reports_to": [],
+  "duties": {"fr":"Édicte lois et chartes, nomme les grands officiers…","en":"Issues law and charters, appoints senior officers…"}
+}
+```
 
-Le mode `historical` exige une déclinaison culturelle documentée ; `inspired`
-autorise une adaptation explicite ; `generic` exige `culture: "*"`. Une donnée
-absente produit un diagnostic, jamais un titre culturel inventé.
+Le niveau **0** est le sommet de l’organisation ; un niveau croissant descend dans
+ses échelons. L’importance **0–100** exprime le poids du rôle dans ce système,
+indépendamment de sa position : un oracle ou un trésorier peut être très important
+sans commander les autres. Un conseil peut être un organe collectif.
 
-Pour une monarchie fictive inspirée de Vijayanagara mais rendue autoritaire, voir
-[cet exemple](examples/authoritarian-raya.json). Les adaptations ne sont pas
-acceptées en mode historique et ne transforment jamais leur pouvoir fictif en fait sourcé.
+La structure fonctionnelle est séparée du lexique. Changer de culture change les
+titulatures, sans mélanger les identifiants des fonctions. Les thèmes sont du lore
+librement composable : pas de blocage pour combiner un système et une culture.
 
-## Vérifier et enrichir
+## Contenu
+
+- Gouvernements, empires, monarchies, républiques, fédérations, nations et échelons locaux.
+- Religions, temples, clergés, monastères, ordres, oracles, confréries, rites et cultes secrets.
+- Guildes, ateliers, métiers, compagnies, coopératives, marchés, banques et caravanes.
+- Armées et échelons du groupe d’armées à l’escouade, marines, équipages et services secrets.
+- Maisons nobles, familles à patrimoine commun, lignages, clans et dynasties.
+- Justice, enseignement, services publics, associations, spectacles et organisations criminelles.
+- Cours et collèges fantastiques, sociétés magiques, colonies et groupes non humains.
+
+Les cultures comprennent tous les thèmes de Magna Urbis ainsi que des variantes
+supplémentaires : tswana, asante, oromo, sumérien, égyptien, hellénique, polynésien,
+démocratique moderne, cultes animiste, solaire, ancestral, chthonien, astral, etc.
+La [liste complète](docs/CATALOG.md) est générée depuis les données réellement embarquées.
+
+## Intégrer et enrichir
+
+```rust
+use pecking_order::{Engine, Query};
+
+let engine = Engine::embedded()?;
+let query: Query = serde_json::from_str(
+    r#"{"system":"craft_guild","theme":"dwarven"}"#
+)?;
+let organization = engine.resolve(query)?;
+```
+
+Le cœur Rust ne dépend ni de l’interface ni du serveur HTTP. Il compile également
+pour `wasm32-unknown-unknown`. Les systèmes sont définis dans `data/systems*.json`,
+les thèmes dans `data/themes*.json`. Une entrée nouvelle n’exige pas de modifier
+le moteur. Les données sont embarquées à la compilation ; le catalogue externe
+peut aussi être chargé via `Engine::from_json`.
+
+Namebench peut nommer les titulaires ; Lineage Lab peut les affecter aux charges ;
+Magna Urbis peut placer les organisations. Ces intégrations n’imposent aucune
+dépendance entre dépôts. Voir [le contrat et les règles de composition](docs/API.fr.md).
 
 ```powershell
-.venv\Scripts\python.exe -m pytest
-.venv\Scripts\ruff.exe check src tests tools
-.venv\Scripts\python.exe tools/build_catalog.py
-.venv\Scripts\python.exe tools/export_schemas.py
-.venv\Scripts\python.exe -m build
-# Tests navigateur facultatifs, après lancement du serveur :
-.venv\Scripts\python.exe -m pip install -e ".[browser]"
-.venv\Scripts\python.exe tools/check_browser.py
+cargo fmt --check
+cargo clippy --all-targets -- -D warnings
+cargo test
+cargo run -- validate
+cargo check --lib --target wasm32-unknown-unknown
 ```
 
-La base distribuée est [catalog.json](src/pecking_order/data/catalog.json), construite
-depuis [le catalogue éditorial](tools/build_catalog.py). Un fichier personnalisé se
-charge avec `pecking-order --data chemin/catalog.json …` ou `KnowledgeBase(path)`.
-Il doit être complet et validé avant tout service de requêtes. Voir
-[le guide de contribution](docs/authoring.fr.md) et [l’intégration](docs/integration.fr.md).
+La validation résout les **16 214 combinaisons système × thème**, pas seulement un
+jeu d’exemples. Tests navigateur facultatifs : `npm ci`, démarrer le studio, puis
+`npm run test:browser`. `STUDIO_BROWSER` choisit le binaire Chromium/Edge.
+
+Cette version remplace le prototype Python initial. Le contrat actuel est **API 2.0**.

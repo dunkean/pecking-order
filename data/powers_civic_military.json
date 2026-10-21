@@ -1,0 +1,122 @@
+{
+  "recruit": {
+    "fr": "recruter",
+    "en": "recruit"
+  },
+  "conscript": {
+    "fr": "mobiliser par conscription",
+    "en": "conscript"
+  },
+  "demobilize": {
+    "fr": "démobiliser",
+    "en": "demobilize"
+  },
+  "sortie": {
+    "fr": "mener une sortie",
+    "en": "launch a sortie"
+  },
+  "surveil": {
+    "fr": "surveiller discrètement",
+    "en": "conduct surveillance"
+  },
+  "infiltrate": {
+    "fr": "infiltrer",
+    "en": "infiltrate"
+  },
+  "convoy": {
+    "fr": "escorter un convoi",
+    "en": "convoy"
+  },
+  "campaign": {
+    "fr": "mener campagne",
+    "en": "campaign"
+  },
+  "organize": {
+    "fr": "organiser",
+    "en": "organize"
+  },
+  "strike": {
+    "fr": "faire grève",
+    "en": "strike"
+  },
+  "arbitrate": {
+    "fr": "arbitrer",
+    "en": "arbitrate"
+  },
+  "charter": {
+    "fr": "octroyer une charte",
+    "en": "charter"
+  },
+  "incorporate": {
+    "fr": "constituer une société",
+    "en": "incorporate"
+  },
+  "underwrite": {
+    "fr": "garantir un financement",
+    "en": "underwrite"
+  },
+  "invest": {
+    "fr": "investir des capitaux",
+    "en": "invest"
+  },
+  "indemnify": {
+    "fr": "indemniser",
+    "en": "indemnify"
+  },
+  "perform": {
+    "fr": "présenter un spectacle",
+    "en": "perform"
+  },
+  "tour": {
+    "fr": "organiser une tournée",
+    "en": "tour"
+  },
+  "canvass": {
+    "fr": "faire du porte-à-porte électoral",
+    "en": "canvass"
+  },
+  "bargain": {
+    "fr": "négocier un accord",
+    "en": "bargain"
+  },
+  "requisition": {
+    "fr": "réquisitionner des ressources",
+    "en": "requisition"
+  },
+  "authorize_expenditure": {
+    "fr": "autoriser une dépense",
+    "en": "authorize expenditure"
+  },
+  "stand_watch": {
+    "fr": "tenir la garde",
+    "en": "stand watch"
+  },
+  "maintain_readiness": {
+    "fr": "maintenir l’état de préparation",
+    "en": "maintain readiness"
+  },
+  "coordinate_operations": {
+    "fr": "coordonner les opérations",
+    "en": "coordinate operations"
+  },
+  "protect_records": {
+    "fr": "protéger les registres",
+    "en": "protect records"
+  },
+  "broker": {
+    "fr": "mettre en relation et négocier pour autrui",
+    "en": "broker a deal or connection"
+  },
+  "consult": {
+    "fr": "consulter des spécialistes ou des parties concernées",
+    "en": "consult specialists or affected parties"
+  },
+  "receive": {
+    "fr": "recevoir officiellement une personne, un rapport ou une requête",
+    "en": "formally receive a person, report or petition"
+  },
+  "select": {
+    "fr": "choisir selon des critères définis",
+    "en": "select under stated criteria"
+  }
+}

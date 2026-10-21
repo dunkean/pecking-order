@@ -1,0 +1,22 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pecking Order</title><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body><header><a href="/" class="brand">♜ Pecking Order</a><nav aria-label="Navigation"><button id="view-roles" class="active" data-t="rolesView">Structures</button><button id="view-lexicon" data-t="lexiconView">Lexique culturel</button><a href="/api/schema/query" data-t="api">Contrat d’API</a></nav><label class="lang"><span data-t="language">Langue</span><select id="locale"><option value="fr">Français</option><option value="en">English</option></select></label></header>
+<main><section class="intro"><div><h1 data-t="headline">Un système. Une culture. Tous les rôles.</h1><p data-t="intro">Du trône impérial à la cellule d’un culte secret : choisissez l’organisation, puis donnez-lui les titres de votre monde.</p></div><p id="counts"></p></section>
+<div class="workspace"><aside class="controls"><form id="query-form">
+<h2 data-t="chooseSystem">Choisir un système</h2>
+<label><span data-t="family">Famille d’organisation</span><select id="family"></select></label>
+<label><span data-t="findSystem">Rechercher un système</span><input id="system-search" type="search" autocomplete="off"></label>
+<label><span data-t="system">Système</span><select id="system"></select></label>
+<p id="system-description" class="muted"></p>
+<h2 data-t="chooseTheme">Choisir les titres</h2>
+<label><span data-t="theme">Thème / culture</span><select id="theme"></select></label>
+<label><span data-t="size">Taille de l’organisation</span><select id="size"></select></label>
+<details id="advanced"><summary data-t="options">Structure et pouvoir</summary>
+<label><span data-t="structure">Structure</span><select id="structure"></select></label>
+<label><span data-t="authority">Exercice du pouvoir</span><select id="authority"></select></label>
+<label><span data-t="members">Effectif exact (facultatif)</span><input id="members" type="number" min="1" max="4294967295"></label>
+</details>
+<button class="primary" type="submit" data-t="resolve">Afficher les titres et rôles</button>
+</form><section class="examples"><h3 data-t="try">Aller directement à</h3><button data-example="east" data-t="east">Nation aristocratique, Europe de l’Est</button><button data-example="west" data-t="west">La même, Europe de l’Ouest</button><button data-example="tswana" data-t="tswana">Village tswana</button><button data-example="cult" data-t="cult">Cellule secrète de quatre personnes</button><button data-example="family" data-t="jointFamily">Famille hindoue indivise</button></section></aside>
+<section class="results" aria-live="polite"><div id="error" role="alert"></div><div id="result-heading"></div><div id="filter-panel"><label><span data-t="filterRoles">Filtrer les rôles et titres</span><input id="role-search" type="search"></label><label><span data-t="minImportance">Importance minimale</span><input id="importance" type="range" min="0" max="100" value="0"><output id="importance-value">0</output></label><label><span data-t="maxLevel">Jusqu’au niveau</span><select id="max-level"></select></label></div><div id="role-count" class="muted"></div><div id="roles"></div><div id="related"></div><div id="notes"></div><div id="lexicon" hidden></div></section></div>
+<section class="contract"><div><h2 data-t="request">La requête</h2><p data-t="requestDescription">Le moteur Rust renvoie les titres FR/EN, fonctions, niveaux, importance, responsabilités et relations. Aucun compte ni service externe.</p><div class="actions"><button id="copy" data-t="copy">Copier</button><button id="export-query" data-t="exportQuery">Exporter la requête</button><button id="export-result" data-t="exportResult">Exporter le résultat</button><label class="file-button"><span data-t="import">Importer une requête</span><input id="import-query" type="file" accept="application/json,.json"></label></div><p id="action-message" role="status"></p></div><pre id="request-json"></pre></section>
+<footer><span data-t="footer">Des thèmes de worldbuilding, librement combinables avec les systèmes. Les fonctions restent stables ; leurs titres changent avec la culture.</span><span>Rust · API 2.0</span></footer></main></body></html>
