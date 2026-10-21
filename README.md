@@ -34,6 +34,13 @@ par titre, niveau et importance permettent d’explorer le résultat. Le lexique
 culturel montre également toutes les entrées d’un thème, indépendamment du système.
 Titres français, anglais et formes locales restent consultables côte à côte.
 
+Le **[glossaire complet](http://127.0.0.1:8773/glossary)** expose les **4 484 termes
+distincts**, variantes comprises, sans choisir d’abord un système. Recherche,
+index A–Z, filtres par culture et fonction, responsabilités et liens vers toutes
+les organisations concernées ; choisir **Tout afficher** pour parcourir la liste
+entière. Il comprend aussi les 99 familles de rôles, les 242 organisations et les
+245 pouvoirs. Export de la sélection en CSV et du glossaire complet en JSON.
+
 ## Requête minimale
 
 ```json
@@ -65,6 +72,7 @@ cargo run -- resolve examples/nation-east.json
 cargo run -- resolve examples/secret-cell.json
 cargo run -- lexicon chinese
 cargo run -- catalog
+cargo run -- glossary
 ```
 
 HTTP : **`POST /api/resolve`**, `GET /api/catalog`, `GET /api/themes/{id}` et
@@ -142,6 +150,6 @@ cargo check --lib --target wasm32-unknown-unknown
 
 La validation résout les **16 214 combinaisons système × thème**, pas seulement un
 jeu d’exemples. Tests navigateur facultatifs : `npm ci`, démarrer le studio, puis
-`npm run test:browser`. `STUDIO_BROWSER` choisit le binaire Chromium/Edge.
+`npm run test:browser` et `npm run test:glossary`. `STUDIO_BROWSER` choisit le binaire Chromium/Edge.
 
 Cette version remplace le prototype Python initial. Le contrat actuel est **API 2.0**.

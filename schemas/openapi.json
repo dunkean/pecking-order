@@ -3,6 +3,7 @@
   "info":{"title":"Pecking Order","version":"2.0","description":"System-first, culture-themed offices, titles, levels and importance."},
   "servers":[{"url":"http://127.0.0.1:8773"}],
   "paths":{
+    "/api/glossary":{"get":{"operationId":"getGlossary","responses":{"200":{"description":"Complete bilingual glossary: distinct terms including variants and native forms, cultural bindings, every role definition and organization use, powers, counts and content version"}}}},
     "/api/resolve":{"post":{"operationId":"resolveOrganization","requestBody":{"required":true,"content":{"application/json":{"schema":{"$ref":"query.schema.json"}}}},"responses":{"200":{"description":"Resolved offices and titles","content":{"application/json":{"schema":{"$ref":"response.schema.json"}}}},"400":{"description":"Invalid request or selection"},"413":{"description":"Body exceeds 65536 bytes"}}}},
     "/api/catalog":{"get":{"operationId":"getCatalog","responses":{"200":{"description":"All systems, themes, options, aliases and content counts"}}}},
     "/api/themes/{id}":{"get":{"operationId":"getThemeLexicon","parameters":[{"name":"id","in":"path","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"Complete effective cultural title lexicon"},"404":{"description":"Unknown theme"}}}}

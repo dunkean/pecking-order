@@ -164,6 +164,17 @@ le titre ne remplace donc jamais l’ID ou la fonction dans les échanges entre 
 
 ## Transports et intégration
 
+Le glossaire global est disponible dans `/glossary`, via `GET /api/glossary`,
+`pecking-order glossary` ou `Engine::glossary()`. La réponse contient `terms`
+(libellés `fr`, `en`, `native` et tous leurs `bindings` culture/clé/forme),
+`functions` (clé lexicale, libellé et tous les `uses` dans les organisations),
+`systems`, `themes`, `powers` et `counts`. Chaque emploi conserve l’ID du système
+et du rôle, la fonction, les responsabilités, le niveau, l’importance et les
+pouvoirs. Les variantes sont des termes consultables ; `parent` indique leur
+titre principal. Les titres identiques sont regroupés par triplet FR/EN/forme
+locale, sans supprimer leurs contextes. La réponse livre tout le catalogue
+effectif, y compris les titres fonctionnels, sans pagination côté API.
+
 - Rust : `Engine::embedded()?.resolve(query)` ; conserver une instance pour les requêtes en série.
 - JSON pur : `pecking_order::resolve_json(request)`.
 - CLI : `pecking-order resolve request.json`, ou `resolve -` via l’entrée standard.

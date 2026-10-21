@@ -1,5 +1,6 @@
 //! Deterministic institutional content: system + size/organization + cultural theme.
 mod engine;
+mod glossary;
 pub mod model;
 pub use engine::Engine;
 pub use model::{Error, Query, Response};

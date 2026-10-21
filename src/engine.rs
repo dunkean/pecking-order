@@ -9,7 +9,7 @@ pub struct Engine {
     pub content: Content,
     system_aliases: BTreeMap<String, usize>,
     theme_aliases: BTreeMap<String, usize>,
-    lexicons: Vec<BTreeMap<String, (Title, String)>>,
+    pub(crate) lexicons: Vec<BTreeMap<String, (Title, String)>>,
 }
 
 fn normalize(input: &str) -> String {

@@ -25,6 +25,7 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
     let engine = Engine::embedded()?;
     match args.first().map(String::as_str).unwrap_or("studio") {
         "catalog"=>emit(&engine.catalog())?,
+        "glossary"=>emit(&engine.glossary())?,
         "validate"=>{
             // Resolve every combination, not only catalogue shape.
             let mut combinations=0usize;
@@ -86,6 +87,18 @@ fn server(engine: Engine, port: u16) -> Result<(), Box<dyn std::error::Error>> {
                 mime = "text/javascript; charset=utf-8";
                 include_bytes!("../web/app.js").to_vec()
             }
+            ("GET", "/glossary" | "/glossary.html") => {
+                mime = "text/html; charset=utf-8";
+                include_bytes!("../web/glossary.html").to_vec()
+            }
+            ("GET", "/glossary.js") => {
+                mime = "text/javascript; charset=utf-8";
+                include_bytes!("../web/glossary.js").to_vec()
+            }
+            ("GET", "/glossary.css") => {
+                mime = "text/css; charset=utf-8";
+                include_bytes!("../web/glossary.css").to_vec()
+            }
             ("GET", "/style.css") => {
                 mime = "text/css; charset=utf-8";
                 include_bytes!("../web/style.css").to_vec()
@@ -95,6 +108,7 @@ fn server(engine: Engine, port: u16) -> Result<(), Box<dyn std::error::Error>> {
                 include_bytes!("../web/favicon.svg").to_vec()
             }
             ("GET", "/api/catalog") => serde_json::to_vec(&engine.catalog())?,
+            ("GET", "/api/glossary") => serde_json::to_vec(&engine.glossary())?,
             ("GET", "/api/schema/query") => serde_json::to_vec(&schemars::schema_for!(Query))?,
             ("GET", "/api/schema/response") => {
                 serde_json::to_vec(&schemars::schema_for!(Response))?

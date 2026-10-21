@@ -43,6 +43,7 @@ const t = key => strings[locale][key] || key;
 const localized = value => value?.[locale] || value?.en || "";
 const normalized = value => value.normalize('NFKD').replace(/\p{M}/gu,'').toLowerCase().split(/[^\p{L}\p{N}]+/u).filter(Boolean).join('-');
 strings.fr.masculine="Masculin";strings.en.masculine="Masculine";
+strings.fr.glossary="Glossaire complet";strings.en.glossary="Complete glossary";
 function element(tag,text,cls) {
   const node=document.createElement(tag);
   if(text!==undefined)node.textContent=text;
@@ -186,4 +187,4 @@ $("view-roles").onclick=()=>switchView("roles");$("view-lexicon").onclick=()=>sw
 $("copy").onclick=async()=>{try{await navigator.clipboard.writeText(JSON.stringify(applied,null,2));$("action-message").textContent=t("copied");}catch{$("action-message").textContent=t("error");}};
 $("export-query").onclick=()=>download(applied,"pecking-order-request.json");$("export-result").onclick=()=>download(result,"pecking-order-result.json");
 $("import-query").onchange=async event=>{const file=event.target.files[0];if(!file)return;try{if(file.size>65536)throw new Error("size");const q=JSON.parse(await file.text());setQuery(q);await run(q);$("action-message").textContent=result?t("imported"):t("invalidImport");}catch{$("action-message").textContent=t("invalidImport");}finally{event.target.value="";}};
-(async()=>{try{const response=await fetch("/api/catalog");catalog=await response.json();translate();setQuery(examples.east);await run();}catch(error){showError(error);}})();
+(async()=>{try{const response=await fetch("/api/catalog");catalog=await response.json();translate();const params=new URLSearchParams(location.search);setQuery(params.has("system")?{system:params.get("system"),theme:params.get("theme")||"generic",locale:params.get("locale")||"fr"}:examples.east);await run();}catch(error){showError(error);}})();

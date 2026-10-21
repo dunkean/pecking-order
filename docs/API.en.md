@@ -66,6 +66,15 @@ language keys are extensible. No automatic translation or gender inference.
 
 ## Transports
 
+The global glossary is available at `/glossary`, through `GET /api/glossary`,
+`pecking-order glossary` or `Engine::glossary()`. It returns `terms` (FR/EN/native
+labels and all cultural, lexical-key and form `bindings`), `functions` (labels and
+all organization `uses`), `systems`, `themes`, `powers` and `counts`. Uses preserve
+system and role IDs, function, duties, level, importance and powers. Variants are
+searchable terms with a `parent` title. Identical FR/EN/native triples are grouped
+without losing any context. The API returns the complete effective catalogue,
+including functional titles, with no server-side pagination.
+
 - Rust: `Engine::embedded()?.resolve(query)`; reuse the engine for batch requests.
 - JSON: `pecking_order::resolve_json(request)`.
 - CLI: `pecking-order resolve request.json`, or `resolve -` from standard input.

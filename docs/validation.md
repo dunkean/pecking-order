@@ -4,7 +4,7 @@ Vérifié sous Windows avec Rust 1.99, le 21 octobre 2026.
 
 - `cargo fmt --check` : réussi.
 - `cargo clippy --all-targets -- -D warnings` : réussi.
-- `cargo test` : 15 tests réussis. Ils parcourent les 16 214 combinaisons système/thème,
+- `cargo test` : 17 tests réussis. Ils parcourent les 16 214 combinaisons système/thème,
   tous les systèmes à cinq tailles, ainsi que les 9 680 combinaisons système/structure/
   autorité. Les tests vérifient aussi les graphes après filtre, les alias usuels,
   les pouvoirs bilingues, les exemples livrés et les cas demandés par l’utilisateur.
@@ -21,6 +21,13 @@ entier, FR/EN, les filtres, l’import/export JSON et un viewport de 390 px.
 Commande : `npm run test:browser`, après lancement du studio. Les captures sont
 dans `output/screenshots/` ; la capture de bureau livrée avec le README est examinée
 visuellement.
+
+`npm run test:glossary` vérifie les 4 484 termes, l’affichage intégral, les variantes,
+les filtres culture/fonction, les quatre sections, les définitions et liens vers les
+structures, la restauration de l’URL, les exports CSV/JSON, FR/EN et le mobile.
+Deux tests Rust contrôlent que chaque titre et variante de chaque culture ainsi
+que les 1 713 rôles fonctionnels sont présents, sans doublon de libellé exact.
+Les captures `glossary-fr.png` et `glossary-mobile.png` ont été examinées visuellement.
 
 Les tests établissent que le contenu est disponible et que sa composition fonctionne.
 Les thèmes constituent du lore de worldbuilding. L’affectation de personnes, les

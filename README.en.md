@@ -26,6 +26,14 @@ Choose **system → size / structure / authority → culture**. Explore all matc
 offices or filter by title, level and importance. Switch FR/EN, browse whole cultural
 lexicons and import/export JSON requests and responses.
 
+The **[complete glossary](http://127.0.0.1:8773/glossary)** exposes all **4,484 distinct
+terms**, including variants, without selecting an organization first. Search FR/EN
+and original forms, browse A–Z, filter by culture or role, inspect responsibilities
+and open every relevant organization. Select **Show all** to display the entire
+list. Separate sections cover 99 role families, 242 organizations and 245 powers.
+Export the filtered selection as CSV or download the complete glossary as JSON.
+Available through `GET /api/glossary`, `cargo run -- glossary` and `Engine::glossary()`.
+
 ```json
 {"system":"kingdom","theme":"russian-kremlin"}
 ```
