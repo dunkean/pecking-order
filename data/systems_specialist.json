@@ -84,7 +84,7 @@
       },
       {
         "id": "ration_caller",
-        "key": "representative",
+        "key": "ration_clerk",
         "function": "ration_distribution",
         "level": 3,
         "importance": 45,
@@ -103,7 +103,11 @@
           "mediate"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Commis aux rations",
+          "en": "Ration Clerk"
+        }
       }
     ]
   },
@@ -341,7 +345,7 @@
     "roles": [
       {
         "id": "procession_marshal",
-        "key": "marshal",
+        "key": "procession_route_guide",
         "function": "procession_command",
         "level": 0,
         "importance": 96,
@@ -358,7 +362,11 @@
           "protect"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Conducteur de procession",
+          "en": "Procession Marshal"
+        }
       },
       {
         "id": "chant_leader",
@@ -493,7 +501,7 @@
       },
       {
         "id": "vow_witness",
-        "key": "representative",
+        "key": "consent_witness",
         "function": "consent_witness",
         "level": 2,
         "importance": 62,
@@ -512,7 +520,11 @@
           "protect"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Témoin du consentement",
+          "en": "Consent Witness"
+        }
       },
       {
         "id": "vow_mediator",
@@ -624,7 +636,7 @@
       },
       {
         "id": "release_witness",
-        "key": "elder",
+        "key": "vow_closure_witness",
         "function": "closure_witnessing",
         "level": 3,
         "importance": 45,
@@ -643,7 +655,11 @@
           "preserve"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Témoin de clôture",
+          "en": "Vow Closure Witness"
+        }
       }
     ]
   },
@@ -902,7 +918,7 @@
       },
       {
         "id": "house_host",
-        "key": "family_head",
+        "key": "commemorative_host",
         "function": "commemorative_hosting",
         "level": 1,
         "importance": 79,
@@ -921,7 +937,11 @@
           "provide"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Hôte du repas commémoratif",
+          "en": "Commemorative Feast Host"
+        }
       },
       {
         "id": "offering_steward",
@@ -1313,7 +1333,7 @@
     "roles": [
       {
         "id": "movement_voice",
-        "key": "proselytizer",
+        "key": "movement_preacher",
         "function": "itinerant_preaching",
         "level": 0,
         "importance": 96,
@@ -1330,7 +1350,11 @@
           "answer"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Prédicateur du mouvement",
+          "en": "Movement Preacher"
+        }
       },
       {
         "id": "route_messenger",
@@ -1421,13 +1445,15 @@
     "roles": [
       {
         "id": "route_preacher",
-        "key": "proselytizer",
+        "key": "itinerant_preacher",
         "function": "mendicant_preaching",
-        "level": 0,
-        "importance": 96,
+        "level": 1,
+        "importance": 79,
         "scope": "network",
         "min_size": "tiny",
-        "reports_to": [],
+        "reports_to": [
+          "fraternity_circle"
+        ],
         "duties": {
           "fr": "Répartit les quartiers de visite et adapte les sermons aux questions de la communauté.",
           "en": "Assigns visiting districts and adapts sermons to community questions."
@@ -1438,19 +1464,21 @@
           "listen"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Prédicateur itinérant",
+          "en": "Itinerant Preacher"
+        }
       },
       {
         "id": "fraternity_circle",
         "key": "assembly",
         "function": "fraternity_rule",
-        "level": 1,
-        "importance": 79,
+        "level": 0,
+        "importance": 96,
         "scope": "network",
         "min_size": "tiny",
-        "reports_to": [
-          "route_preacher"
-        ],
+        "reports_to": [],
         "duties": {
           "fr": "Adopte la règle de vie, partage les tâches et peut relever un frère de sa mission.",
           "en": "Sets the common rule, shares duties and can recall a member from service."
@@ -1472,7 +1500,7 @@
         "scope": "network",
         "min_size": "tiny",
         "reports_to": [
-          "route_preacher"
+          "fraternity_circle"
         ],
         "duties": {
           "fr": "Enregistre les dons volontaires et publie leur usage auprès des fraternités.",
@@ -1495,7 +1523,7 @@
         "scope": "network",
         "min_size": "tiny",
         "reports_to": [
-          "route_preacher"
+          "fraternity_circle"
         ],
         "duties": {
           "fr": "Porte les invitations et relie les frères aux hôtes qui offrent un espace de réunion.",
@@ -1529,7 +1557,7 @@
     "roles": [
       {
         "id": "almoner",
-        "key": "healer",
+        "key": "almonry_coordinator",
         "function": "alms_service",
         "level": 0,
         "importance": 96,
@@ -1546,7 +1574,11 @@
           "refer"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Responsable de l’aumônerie",
+          "en": "Almonry Coordinator"
+        }
       },
       {
         "id": "alms_steward",
@@ -1573,7 +1605,7 @@
       },
       {
         "id": "meal_cook",
-        "key": "laborer",
+        "key": "house_cook",
         "function": "communal_meals",
         "level": 2,
         "importance": 62,
@@ -1592,7 +1624,11 @@
           "accommodate"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Cuisinier de la maison",
+          "en": "House Cook"
+        }
       },
       {
         "id": "shelter_keeper",
@@ -1637,7 +1673,7 @@
     "roles": [
       {
         "id": "lodge_master",
-        "key": "high_priest",
+        "key": "exorcist_lodge_master",
         "function": "exorcist_standards",
         "level": 0,
         "importance": 96,
@@ -1654,7 +1690,11 @@
           "suspend"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Maître de la loge",
+          "en": "Lodge Master"
+        }
       },
       {
         "id": "case_examiner",
@@ -1799,7 +1839,7 @@
           "witness_circle"
         ],
         "duties": {
-          "fr": "Reste auprès de la personne pendant les épisodes et arrête toute practice that causes harm.",
+          "fr": "Reste auprès de la personne pendant les épisodes et met fin à toute pratique qui lui nuit.",
           "en": "Stays with the person during episodes and stops any practice that causes harm."
         },
         "powers": [
@@ -1920,7 +1960,7 @@
       },
       {
         "id": "burial_helper",
-        "key": "keeper",
+        "key": "funeral_assistant",
         "function": "epidemic_funeral_support",
         "level": 3,
         "importance": 45,
@@ -1939,7 +1979,11 @@
           "supply"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Assistant funéraire",
+          "en": "Funeral Assistant"
+        }
       }
     ]
   },
@@ -2005,7 +2049,7 @@
       },
       {
         "id": "meal_keeper",
-        "key": "laborer",
+        "key": "recovery_cook",
         "function": "recovery_meals",
         "level": 2,
         "importance": 62,
@@ -2024,11 +2068,15 @@
           "accommodate"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Cuisinier de la maison de convalescence",
+          "en": "Recovery House Cook"
+        }
       },
       {
         "id": "return_guide",
-        "key": "representative",
+        "key": "recovery_return_guide",
         "function": "return_home_planning",
         "level": 3,
         "importance": 45,
@@ -2047,7 +2095,11 @@
           "refer"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Accompagnateur du retour au foyer",
+          "en": "Return Home Guide"
+        }
       }
     ]
   },
@@ -2113,7 +2165,7 @@
       },
       {
         "id": "time_caller",
-        "key": "herald",
+        "key": "ritual_time_caller",
         "function": "ritual_time_signaling",
         "level": 2,
         "importance": 62,
@@ -2132,7 +2184,11 @@
           "schedule"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Annonceur des heures rituelles",
+          "en": "Ritual Time Caller"
+        }
       },
       {
         "id": "dial_scribe",
@@ -2306,7 +2362,7 @@
       },
       {
         "id": "grove_warden",
-        "key": "warden",
+        "key": "grove_custodian",
         "function": "grove_condition_watch",
         "level": 1,
         "importance": 79,
@@ -2325,7 +2381,11 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Gardien du bosquet",
+          "en": "Grove Custodian"
+        }
       },
       {
         "id": "spirit_envoy",
@@ -2609,7 +2669,7 @@
     "roles": [
       {
         "id": "pass_warden",
-        "key": "warden",
+        "key": "pass_safety_coordinator",
         "function": "mountain_pass_safety",
         "level": 0,
         "importance": 96,
@@ -2626,7 +2686,11 @@
           "reopen"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Gardien du col",
+          "en": "Mountain Pass Safety Warden"
+        }
       },
       {
         "id": "beacon_keeper",
@@ -2676,7 +2740,7 @@
       },
       {
         "id": "rescue_captain",
-        "key": "captain",
+        "key": "rescue_coordinator",
         "function": "mountain_rescue",
         "level": 3,
         "importance": 45,
@@ -2695,7 +2759,11 @@
           "record"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Coordinateur des secours",
+          "en": "Rescue Coordinator"
+        }
       }
     ]
   },
@@ -2717,7 +2785,7 @@
     "roles": [
       {
         "id": "forge_prior",
-        "key": "high_priest",
+        "key": "forge_prior",
         "function": "forge_order_governance",
         "level": 0,
         "importance": 96,
@@ -2734,7 +2802,11 @@
           "consecrate"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Prieur de la forge",
+          "en": "Forge Prior"
+        }
       },
       {
         "id": "fire_keeper",
@@ -2761,7 +2833,7 @@
       },
       {
         "id": "forge_instructor",
-        "key": "craft_master",
+        "key": "forge_instructor",
         "function": "initiatory_forge_training",
         "level": 2,
         "importance": 62,
@@ -2780,7 +2852,11 @@
           "certify"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Instructeur de forge",
+          "en": "Forge Instructor"
+        }
       },
       {
         "id": "oath_scribe",
@@ -2846,7 +2922,7 @@
       },
       {
         "id": "hunt_captain",
-        "key": "captain",
+        "key": "hunt_coordinator",
         "function": "field_hunt_coordination",
         "level": 1,
         "importance": 79,
@@ -2865,7 +2941,11 @@
           "suspend"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Coordinateur de chasse",
+          "en": "Hunt Coordinator"
+        }
       },
       {
         "id": "trail_scout",
@@ -3170,7 +3250,7 @@
       },
       {
         "id": "night_watcher",
-        "key": "warden",
+        "key": "night_watch",
         "function": "incubation_night_watch",
         "level": 1,
         "importance": 79,
@@ -3189,7 +3269,11 @@
           "refer"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Veilleur de nuit",
+          "en": "Night Watcher"
+        }
       },
       {
         "id": "dream_scribe",

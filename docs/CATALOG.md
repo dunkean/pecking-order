@@ -2,24 +2,24 @@
 
 Généré depuis les données embarquées avec `cargo run --example catalog_docs`.
 
-242 systèmes · 67 thèmes · 1713 rôles définis · 6124 entrées de titres bilingues · 41 cultures Magna Urbis.
+242 systèmes · 67 thèmes · 1731 rôles définis · 6124 entrées de titres bilingues · 41 cultures Magna Urbis.
 
 ## civic
 
 | ID | Français | English | Rôles |
 |---|---|---|---:|
-| `water_board` | Commission de l’eau | Water board | 6 |
-| `irrigation_council` | Conseil d’irrigation | Irrigation council | 6 |
-| `fire_watch` | Garde du feu | Fire watch | 6 |
-| `public_works_office` | Office des travaux publics | Public works office | 6 |
-| `sanitation_board` | Commission sanitaire | Sanitation board | 6 |
-| `harbor_authority` | Autorité portuaire | Harbor authority | 6 |
-| `commons_trust` | Fiducie des communs | Commons trust | 6 |
-| `neighborhood_watch` | Veille de quartier | Neighborhood watch | 6 |
-| `relief_society` | Société de secours | Relief society | 6 |
-| `burial_society` | Société funéraire | Burial society | 6 |
-| `public_market_board` | Régie du marché public | Public market board | 6 |
-| `road_wardens` | Garde-routes | Road wardens | 6 |
+| `water_board` | Commission de l’eau | Water board | 7 |
+| `irrigation_council` | Conseil d’irrigation | Irrigation council | 7 |
+| `fire_watch` | Garde du feu | Fire watch | 8 |
+| `public_works_office` | Office des travaux publics | Public works office | 8 |
+| `sanitation_board` | Commission sanitaire | Sanitation board | 8 |
+| `harbor_authority` | Autorité portuaire | Harbor authority | 8 |
+| `commons_trust` | Fiducie des communs | Commons trust | 7 |
+| `neighborhood_watch` | Veille de quartier | Neighborhood watch | 7 |
+| `relief_society` | Société de secours | Relief society | 8 |
+| `burial_society` | Société funéraire | Burial society | 7 |
+| `public_market_board` | Régie du marché public | Public market board | 8 |
+| `road_wardens` | Garde-routes | Road wardens | 7 |
 | `epidemic_recovery_house` | Maison de convalescence épidémique | Epidemic Recovery House | 4 |
 | `migration_omen_watch` | Veille des migrations animales | Animal Migration Watch | 4 |
 | `spring_spirit_compact` | Pacte de la source vive | Living Spring Compact | 4 |
@@ -103,7 +103,7 @@ Généré depuis les données embarquées avec `cargo run --example catalog_docs
 | `mage_college` | Collège de mages | Mage college | 7 |
 | `dragon_court` | Cour draconique | Dragon court | 6 |
 | `adventuring_company` | Compagnie d’aventuriers | Adventuring company | 6 |
-| `monster_hunters_lodge` | Loge de chasseurs de monstres | Monster hunters lodge | 6 |
+| `monster_hunters_lodge` | Loge de chasseurs de monstres | Monster hunters lodge | 7 |
 | `druid_grove` | Bosquet druidique | Druid grove | 6 |
 | `fey_court` | Cour féerique | Fey court | 6 |
 | `necromantic_college` | Collège nécromantique | Necromantic college | 6 |
@@ -111,15 +111,15 @@ Généré depuis les données embarquées avec `cargo run --example catalog_docs
 | `dragon_clan` | Clan draconique | Dragon clan | 6 |
 | `adventurers_guild` | Guilde des aventuriers | Adventurers guild | 6 |
 | `planar_gate_authority` | Autorité des portails | Planar gate authority | 6 |
-| `golem_workshop` | Atelier de golems | Golem workshop | 6 |
+| `golem_workshop` | Atelier de golems | Golem workshop | 7 |
 | `dragonflight` | Vol draconique | Dragonflight | 6 |
 | `arcane_registry` | Registre arcanique | Arcane registry | 6 |
-| `spirit_court` | Cour des esprits | Spirit court | 7 |
+| `spirit_court` | Cour des esprits | Spirit court | 6 |
 | `monster_pack` | Meute monstrueuse | Monster pack | 6 |
 | `relic_custodians` | Gardiens de reliques | Relic custodians | 6 |
 | `witch_coven` | Coven de sorcières | Witch coven | 6 |
 | `guild_of_enchanters` | Guilde des enchanteurs | Enchanters guild | 6 |
-| `oracle_network` | Réseau d’oracles | Oracle network | 7 |
+| `oracle_network` | Réseau d’oracles | Oracle network | 6 |
 | `undead_legion` | Légion des morts-vivants | Undead legion | 6 |
 | `demon_pact_court` | Cour des pactes infernaux | Demon pact court | 6 |
 

@@ -128,7 +128,7 @@
       },
       {
         "id": "regional_administrator",
-        "key": "steward",
+        "key": "regional_administrator",
         "function": "regional_administration",
         "level": 3,
         "importance": 76,
@@ -147,7 +147,11 @@
           "coordinate"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Administrateur régional",
+          "en": "Regional administrator"
+        }
       },
       {
         "id": "regional_assembly",
@@ -174,12 +178,12 @@
         "id": "mayor",
         "key": "mayor",
         "function": "municipal_government",
-        "level": 4,
+        "level": 5,
         "importance": 72,
         "scope": "municipality",
         "min_size": "small",
         "reports_to": [
-          "regional_administrator"
+          "local_councillor"
         ],
         "duties": {
           "fr": "Organise les services municipaux, met en œuvre les décisions du conseil local et protège les biens communs de la commune.",
@@ -195,26 +199,28 @@
       },
       {
         "id": "local_councillor",
-        "key": "councillor",
+        "key": "municipal_council",
         "function": "local_deliberation",
-        "level": 5,
-        "importance": 62,
+        "level": 4,
+        "importance": 74,
         "scope": "municipality",
         "min_size": "small",
-        "reports_to": [
-          "mayor"
-        ],
+        "reports_to": [],
         "duties": {
-          "fr": "Examine les besoins des quartiers, prépare les motions communales et suit les engagements pris par les services municipaux.",
-          "en": "Reviews neighborhood needs, drafts municipal motions and tracks commitments made by city departments."
+          "fr": "Délibère sur les besoins des quartiers, vote les motions communales et contrôle les engagements pris par les services municipaux.",
+          "en": "Deliberates on neighborhood needs, votes on municipal motions and oversees commitments made by city departments."
         },
         "powers": [
           "deliberate",
           "propose",
           "review"
         ],
-        "collective": false,
-        "optional": false
+        "collective": true,
+        "optional": false,
+        "title": {
+          "fr": "Conseil municipal",
+          "en": "Municipal council"
+        }
       },
       {
         "id": "chief_judge",
@@ -239,7 +245,7 @@
       },
       {
         "id": "election_commissioner",
-        "key": "clerk",
+        "key": "election_commissioner",
         "function": "election_administration",
         "level": 2,
         "importance": 83,
@@ -257,11 +263,15 @@
           "investigate"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Commissaire électoral",
+          "en": "Election commissioner"
+        }
       },
       {
         "id": "auditor_general",
-        "key": "treasurer",
+        "key": "auditor_general",
         "function": "public_finance_oversight",
         "level": 2,
         "importance": 84,
@@ -278,7 +288,11 @@
           "publish"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Auditeur général",
+          "en": "Auditor general"
+        }
       },
       {
         "id": "chief_diplomat",
@@ -305,7 +319,7 @@
       },
       {
         "id": "civil_service_commissioner",
-        "key": "chancellor",
+        "key": "civil_service_commissioner",
         "function": "public_service_standards",
         "level": 2,
         "importance": 79,
@@ -324,11 +338,15 @@
           "review"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Commissaire de la fonction publique",
+          "en": "Civil service commissioner"
+        }
       },
       {
         "id": "public_advocate",
-        "key": "representative",
+        "key": "public_ombudsman",
         "function": "citizen_complaints",
         "level": 3,
         "importance": 68,
@@ -342,10 +360,14 @@
         "powers": [
           "hear",
           "inquire",
-          "remedy"
+          "recommend"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Défenseur public",
+          "en": "Public advocate"
+        }
       }
     ]
   },
@@ -388,7 +410,7 @@
       },
       {
         "id": "army_group_operations",
-        "key": "marshal",
+        "key": "army_group_operations_officer",
         "function": "operational_planning",
         "level": 1,
         "importance": 88,
@@ -406,11 +428,15 @@
           "coordinate_operations"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Chef des opérations de théâtre",
+          "en": "Theater operations chief"
+        }
       },
       {
         "id": "army_group_intelligence",
-        "key": "scout",
+        "key": "army_group_intelligence_officer",
         "function": "intelligence",
         "level": 2,
         "importance": 76,
@@ -429,7 +455,11 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier de renseignement",
+          "en": "Intelligence officer"
+        }
       },
       {
         "id": "army_group_logistics",
@@ -456,7 +486,7 @@
       },
       {
         "id": "army_group_signals",
-        "key": "messenger",
+        "key": "army_group_signals_officer",
         "function": "communications",
         "level": 2,
         "importance": 70,
@@ -475,11 +505,15 @@
           "maintain"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier des transmissions",
+          "en": "Signals officer"
+        }
       },
       {
         "id": "army_group_senior_enlisted",
-        "key": "sergeant",
+        "key": "army_group_senior_enlisted_adviser",
         "function": "discipline_and_training",
         "level": 3,
         "importance": 72,
@@ -498,7 +532,11 @@
           "inspect"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Conseiller supérieur des sous-officiers",
+          "en": "Senior enlisted adviser"
+        }
       }
     ]
   },
@@ -541,7 +579,7 @@
       },
       {
         "id": "army_corps_operations",
-        "key": "marshal",
+        "key": "army_corps_operations_officer",
         "function": "operational_planning",
         "level": 1,
         "importance": 88,
@@ -559,11 +597,15 @@
           "coordinate_operations"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Chef d’état-major de corps",
+          "en": "Corps chief of staff"
+        }
       },
       {
         "id": "army_corps_intelligence",
-        "key": "scout",
+        "key": "army_corps_intelligence_officer",
         "function": "intelligence",
         "level": 2,
         "importance": 76,
@@ -582,7 +624,11 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier de renseignement",
+          "en": "Intelligence officer"
+        }
       },
       {
         "id": "army_corps_logistics",
@@ -609,7 +655,7 @@
       },
       {
         "id": "army_corps_signals",
-        "key": "messenger",
+        "key": "army_corps_signals_officer",
         "function": "communications",
         "level": 2,
         "importance": 70,
@@ -628,11 +674,15 @@
           "maintain"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier des transmissions",
+          "en": "Signals officer"
+        }
       },
       {
         "id": "army_corps_senior_enlisted",
-        "key": "sergeant",
+        "key": "army_corps_senior_enlisted_adviser",
         "function": "discipline_and_training",
         "level": 3,
         "importance": 72,
@@ -651,7 +701,11 @@
           "inspect"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Conseiller supérieur des sous-officiers",
+          "en": "Senior enlisted adviser"
+        }
       }
     ]
   },
@@ -694,7 +748,7 @@
       },
       {
         "id": "division_operations",
-        "key": "marshal",
+        "key": "division_operations_officer",
         "function": "operational_planning",
         "level": 1,
         "importance": 88,
@@ -712,11 +766,15 @@
           "coordinate_operations"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Chef d’état-major de division",
+          "en": "Division chief of staff"
+        }
       },
       {
         "id": "division_intelligence",
-        "key": "scout",
+        "key": "division_intelligence_officer",
         "function": "intelligence",
         "level": 2,
         "importance": 76,
@@ -735,7 +793,11 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier de renseignement",
+          "en": "Intelligence officer"
+        }
       },
       {
         "id": "division_logistics",
@@ -762,7 +824,7 @@
       },
       {
         "id": "division_signals",
-        "key": "messenger",
+        "key": "division_signals_officer",
         "function": "communications",
         "level": 2,
         "importance": 70,
@@ -781,11 +843,15 @@
           "maintain"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier des transmissions",
+          "en": "Signals officer"
+        }
       },
       {
         "id": "division_senior_enlisted",
-        "key": "sergeant",
+        "key": "division_senior_enlisted_adviser",
         "function": "discipline_and_training",
         "level": 3,
         "importance": 72,
@@ -804,7 +870,11 @@
           "inspect"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Conseiller supérieur des sous-officiers",
+          "en": "Senior enlisted adviser"
+        }
       }
     ]
   },
@@ -847,7 +917,7 @@
       },
       {
         "id": "brigade_operations",
-        "key": "marshal",
+        "key": "brigade_operations_officer",
         "function": "operational_planning",
         "level": 1,
         "importance": 88,
@@ -865,11 +935,15 @@
           "coordinate_operations"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier d’opérations de brigade",
+          "en": "Brigade operations officer"
+        }
       },
       {
         "id": "brigade_intelligence",
-        "key": "scout",
+        "key": "brigade_intelligence_officer",
         "function": "intelligence",
         "level": 2,
         "importance": 76,
@@ -888,7 +962,11 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier de renseignement",
+          "en": "Intelligence officer"
+        }
       },
       {
         "id": "brigade_logistics",
@@ -915,7 +993,7 @@
       },
       {
         "id": "brigade_signals",
-        "key": "messenger",
+        "key": "brigade_signals_officer",
         "function": "communications",
         "level": 2,
         "importance": 70,
@@ -934,11 +1012,15 @@
           "maintain"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier des transmissions",
+          "en": "Signals officer"
+        }
       },
       {
         "id": "brigade_senior_enlisted",
-        "key": "sergeant",
+        "key": "brigade_senior_enlisted_adviser",
         "function": "discipline_and_training",
         "level": 3,
         "importance": 72,
@@ -957,7 +1039,11 @@
           "inspect"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Conseiller supérieur des sous-officiers",
+          "en": "Senior enlisted adviser"
+        }
       }
     ]
   },
@@ -1000,7 +1086,7 @@
       },
       {
         "id": "regiment_operations",
-        "key": "marshal",
+        "key": "regiment_operations_officer",
         "function": "operational_planning",
         "level": 1,
         "importance": 88,
@@ -1018,11 +1104,15 @@
           "coordinate_operations"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier d’état-major régimentaire",
+          "en": "Regimental staff officer"
+        }
       },
       {
         "id": "regiment_intelligence",
-        "key": "scout",
+        "key": "regiment_intelligence_officer",
         "function": "intelligence",
         "level": 2,
         "importance": 76,
@@ -1041,7 +1131,11 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier de renseignement",
+          "en": "Intelligence officer"
+        }
       },
       {
         "id": "regiment_logistics",
@@ -1068,7 +1162,7 @@
       },
       {
         "id": "regiment_signals",
-        "key": "messenger",
+        "key": "regiment_signals_officer",
         "function": "communications",
         "level": 2,
         "importance": 70,
@@ -1087,11 +1181,15 @@
           "maintain"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier des transmissions",
+          "en": "Signals officer"
+        }
       },
       {
         "id": "regiment_senior_enlisted",
-        "key": "sergeant",
+        "key": "regiment_senior_enlisted_adviser",
         "function": "discipline_and_training",
         "level": 3,
         "importance": 72,
@@ -1110,7 +1208,11 @@
           "inspect"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Conseiller supérieur des sous-officiers",
+          "en": "Senior enlisted adviser"
+        }
       }
     ]
   },
@@ -1153,7 +1255,7 @@
       },
       {
         "id": "battalion_operations",
-        "key": "marshal",
+        "key": "battalion_operations_officer",
         "function": "operational_planning",
         "level": 1,
         "importance": 88,
@@ -1171,11 +1273,15 @@
           "coordinate_operations"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier d’opérations de bataillon",
+          "en": "Battalion operations officer"
+        }
       },
       {
         "id": "battalion_intelligence",
-        "key": "scout",
+        "key": "battalion_intelligence_officer",
         "function": "intelligence",
         "level": 2,
         "importance": 76,
@@ -1194,7 +1300,11 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier de renseignement",
+          "en": "Intelligence officer"
+        }
       },
       {
         "id": "battalion_logistics",
@@ -1221,7 +1331,7 @@
       },
       {
         "id": "battalion_signals",
-        "key": "messenger",
+        "key": "battalion_signals_officer",
         "function": "communications",
         "level": 2,
         "importance": 70,
@@ -1240,11 +1350,15 @@
           "maintain"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier des transmissions",
+          "en": "Signals officer"
+        }
       },
       {
         "id": "battalion_senior_enlisted",
-        "key": "sergeant",
+        "key": "battalion_senior_enlisted_adviser",
         "function": "discipline_and_training",
         "level": 3,
         "importance": 72,
@@ -1263,7 +1377,11 @@
           "inspect"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Conseiller supérieur des sous-officiers",
+          "en": "Senior enlisted adviser"
+        }
       }
     ]
   },
@@ -1306,7 +1424,7 @@
       },
       {
         "id": "company_operations",
-        "key": "marshal",
+        "key": "company_operations_officer",
         "function": "operational_planning",
         "level": 1,
         "importance": 88,
@@ -1324,11 +1442,15 @@
           "coordinate_operations"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Adjoint aux opérations de compagnie",
+          "en": "Company operations deputy"
+        }
       },
       {
         "id": "company_intelligence",
-        "key": "scout",
+        "key": "company_intelligence_officer",
         "function": "intelligence",
         "level": 2,
         "importance": 76,
@@ -1347,7 +1469,11 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier de renseignement",
+          "en": "Intelligence officer"
+        }
       },
       {
         "id": "company_logistics",
@@ -1374,7 +1500,7 @@
       },
       {
         "id": "company_signals",
-        "key": "messenger",
+        "key": "company_signals_officer",
         "function": "communications",
         "level": 2,
         "importance": 70,
@@ -1393,11 +1519,15 @@
           "maintain"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier des transmissions",
+          "en": "Signals officer"
+        }
       },
       {
         "id": "company_senior_enlisted",
-        "key": "sergeant",
+        "key": "company_senior_enlisted_adviser",
         "function": "discipline_and_training",
         "level": 3,
         "importance": 72,
@@ -1416,7 +1546,11 @@
           "inspect"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Conseiller supérieur des sous-officiers",
+          "en": "Senior enlisted adviser"
+        }
       }
     ]
   },
@@ -1459,7 +1593,7 @@
       },
       {
         "id": "platoon_operations",
-        "key": "marshal",
+        "key": "platoon_operations_officer",
         "function": "operational_planning",
         "level": 1,
         "importance": 88,
@@ -1477,11 +1611,15 @@
           "coordinate_operations"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Adjoint de peloton",
+          "en": "Platoon deputy"
+        }
       },
       {
         "id": "platoon_intelligence",
-        "key": "scout",
+        "key": "platoon_intelligence_officer",
         "function": "intelligence",
         "level": 2,
         "importance": 76,
@@ -1500,7 +1638,11 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier de renseignement",
+          "en": "Intelligence officer"
+        }
       },
       {
         "id": "platoon_logistics",
@@ -1527,7 +1669,7 @@
       },
       {
         "id": "platoon_signals",
-        "key": "messenger",
+        "key": "platoon_signals_officer",
         "function": "communications",
         "level": 2,
         "importance": 70,
@@ -1546,11 +1688,15 @@
           "maintain"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier des transmissions",
+          "en": "Signals officer"
+        }
       },
       {
         "id": "platoon_senior_enlisted",
-        "key": "sergeant",
+        "key": "platoon_senior_enlisted_adviser",
         "function": "discipline_and_training",
         "level": 3,
         "importance": 72,
@@ -1569,7 +1715,11 @@
           "inspect"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Conseiller supérieur des sous-officiers",
+          "en": "Senior enlisted adviser"
+        }
       }
     ]
   },
@@ -1612,8 +1762,8 @@
       },
       {
         "id": "squad_operations",
-        "key": "marshal",
-        "function": "operational_planning",
+        "key": "squad_operations_officer",
+        "function": "deputy_command",
         "level": 1,
         "importance": 88,
         "scope": "squad",
@@ -1622,24 +1772,29 @@
           "squad_commander"
         ],
         "duties": {
-          "fr": "Attribue les positions, fixe la séquence de déplacement et adapte la tâche au terrain immédiat.",
-          "en": "Assigns positions, sets movement sequence and adapts the task to immediate terrain."
+          "fr": "Seconde le chef d’équipe, coordonne les déplacements et prend le commandement si nécessaire.",
+          "en": "Assists the team leader, coordinates movement and assumes command when needed."
         },
         "powers": [
-          "plan",
-          "coordinate_operations"
+          "coordinate",
+          "report",
+          "assume_command"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Chef d’équipe adjoint",
+          "en": "Assistant team leader"
+        }
       },
       {
         "id": "squad_intelligence",
-        "key": "scout",
+        "key": "squad_intelligence_officer",
         "function": "intelligence",
         "level": 2,
         "importance": 76,
         "scope": "squad",
-        "min_size": "medium",
+        "min_size": "small",
         "reports_to": [
           "squad_commander"
         ],
@@ -1653,7 +1808,11 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier de renseignement",
+          "en": "Intelligence officer"
+        }
       },
       {
         "id": "squad_logistics",
@@ -1680,12 +1839,12 @@
       },
       {
         "id": "squad_signals",
-        "key": "messenger",
+        "key": "squad_signals_officer",
         "function": "communications",
         "level": 2,
         "importance": 70,
         "scope": "squad",
-        "min_size": "medium",
+        "min_size": "small",
         "reports_to": [
           "squad_operations"
         ],
@@ -1699,11 +1858,15 @@
           "maintain"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier des transmissions",
+          "en": "Signals officer"
+        }
       },
       {
         "id": "squad_senior_enlisted",
-        "key": "sergeant",
+        "key": "squad_senior_enlisted_adviser",
         "function": "discipline_and_training",
         "level": 3,
         "importance": 72,
@@ -1722,7 +1885,11 @@
           "inspect"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Conseiller supérieur des sous-officiers",
+          "en": "Senior enlisted adviser"
+        }
       }
     ]
   },
@@ -1903,7 +2070,7 @@
       },
       {
         "id": "chief_boatswain",
-        "key": "sergeant",
+        "key": "boatswain",
         "function": "crew_discipline",
         "level": 3,
         "importance": 69,
@@ -1922,7 +2089,11 @@
           "stand_watch"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Maître d’équipage",
+          "en": "Boatswain"
+        }
       }
     ]
   },
@@ -2034,7 +2205,7 @@
       },
       {
         "id": "boatswain",
-        "key": "sergeant",
+        "key": "boatswain",
         "function": "deck_crew",
         "level": 2,
         "importance": 78,
@@ -2053,7 +2224,11 @@
           "stand_watch"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Maître d’équipage",
+          "en": "Boatswain"
+        }
       },
       {
         "id": "purser",
@@ -2234,7 +2409,7 @@
       },
       {
         "id": "boatswain",
-        "key": "sergeant",
+        "key": "boatswain",
         "function": "cargo_handling",
         "level": 2,
         "importance": 77,
@@ -2253,7 +2428,11 @@
           "secure"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Maître d’équipage",
+          "en": "Boatswain"
+        }
       },
       {
         "id": "purser",
@@ -2280,14 +2459,14 @@
       },
       {
         "id": "ship_carpenter",
-        "key": "craft_master",
+        "key": "ship_carpenter",
         "function": "hull_repair",
         "level": 2,
         "importance": 65,
         "scope": "vessel",
         "min_size": "medium",
         "reports_to": [
-          "boatswain"
+          "ship_master"
         ],
         "duties": {
           "fr": "Répare les bordages, mâts et caisses de cargaison et estime le matériel nécessaire aux escales.",
@@ -2299,7 +2478,11 @@
           "assess"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Charpentier de marine",
+          "en": "Ship carpenter"
+        }
       },
       {
         "id": "cook_steward",
@@ -2310,7 +2493,7 @@
         "scope": "vessel",
         "min_size": "small",
         "reports_to": [
-          "boatswain"
+          "ship_master"
         ],
         "duties": {
           "fr": "Répartit l’eau et les vivres selon la durée de la traversée, limite les pertes et suit les réserves restantes.",
@@ -2326,7 +2509,7 @@
       },
       {
         "id": "watch_officer",
-        "key": "lieutenant",
+        "key": "watch_officer",
         "function": "watch_rotation",
         "level": 2,
         "importance": 63,
@@ -2345,7 +2528,11 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Officier de quart",
+          "en": "Watch officer"
+        }
       },
       {
         "id": "able_seafarer",
@@ -2415,7 +2602,7 @@
       },
       {
         "id": "operations_director",
-        "key": "marshal",
+        "key": "air_operations_director",
         "function": "flight_operations",
         "level": 1,
         "importance": 88,
@@ -2434,7 +2621,11 @@
           "deploy"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Directeur des opérations aériennes",
+          "en": "Air operations director"
+        }
       },
       {
         "id": "squadron_leader",
@@ -2484,7 +2675,7 @@
       },
       {
         "id": "air_traffic_controller",
-        "key": "navigator",
+        "key": "air_traffic_controller",
         "function": "airspace_control",
         "level": 2,
         "importance": 78,
@@ -2503,7 +2694,11 @@
           "alert"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Contrôleur aérien",
+          "en": "Air traffic controller"
+        }
       },
       {
         "id": "maintenance_chief",
@@ -2553,7 +2748,7 @@
       },
       {
         "id": "air_intelligence_officer",
-        "key": "spymaster",
+        "key": "air_intelligence_officer",
         "function": "air_intelligence",
         "level": 2,
         "importance": 70,
@@ -2572,7 +2767,11 @@
           "transmit"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Officier de renseignement aérien",
+          "en": "Air intelligence officer"
+        }
       },
       {
         "id": "ground_security_chief",
@@ -2640,7 +2839,7 @@
     "roles": [
       {
         "id": "expedition_leader",
-        "key": "commander",
+        "key": "expedition_leader",
         "function": "mission_command",
         "level": 0,
         "importance": 100,
@@ -2657,11 +2856,15 @@
           "decide"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Chef d’expédition",
+          "en": "Expedition leader"
+        }
       },
       {
         "id": "deputy_leader",
-        "key": "lieutenant",
+        "key": "expedition_deputy",
         "function": "field_coordination",
         "level": 1,
         "importance": 82,
@@ -2680,13 +2883,17 @@
           "deputize"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Adjoint au chef d’expédition",
+          "en": "Expedition deputy"
+        }
       },
       {
         "id": "route_scout",
         "key": "scout",
         "function": "route_finding",
-        "level": 1,
+        "level": 2,
         "importance": 76,
         "scope": "expedition",
         "min_size": "medium",
@@ -2753,7 +2960,7 @@
       },
       {
         "id": "interpreter",
-        "key": "representative",
+        "key": "mission_interpreter",
         "function": "cross_cultural_liaison",
         "level": 2,
         "importance": 65,
@@ -2772,11 +2979,15 @@
           "verify"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Interprète de mission",
+          "en": "Mission interpreter"
+        }
       },
       {
         "id": "surveyor",
-        "key": "chief_engineer",
+        "key": "field_surveyor",
         "function": "field_survey",
         "level": 2,
         "importance": 63,
@@ -2795,7 +3006,11 @@
           "record"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Géomètre de terrain",
+          "en": "Field surveyor"
+        }
       },
       {
         "id": "security_lead",
@@ -2907,7 +3122,7 @@
       },
       {
         "id": "entry_specialist",
-        "key": "assassin",
+        "key": "entry_specialist",
         "function": "breach_and_entry",
         "level": 2,
         "importance": 68,
@@ -2926,7 +3141,11 @@
           "inspect"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Spécialiste d’accès",
+          "en": "Entry specialist"
+        }
       },
       {
         "id": "stores_keeper",
@@ -3017,7 +3236,7 @@
     "roles": [
       {
         "id": "protection_chief",
-        "key": "guard",
+        "key": "protection_chief",
         "function": "detail_command",
         "level": 0,
         "importance": 100,
@@ -3034,11 +3253,15 @@
           "coordinate"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Chef de la protection",
+          "en": "Protection chief"
+        }
       },
       {
         "id": "principal_liaison",
-        "key": "representative",
+        "key": "principal_liaison",
         "function": "principal_liaison",
         "level": 1,
         "importance": 84,
@@ -3057,11 +3280,15 @@
           "coordinate"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Agent de liaison auprès du principal",
+          "en": "Principal liaison officer"
+        }
       },
       {
         "id": "route_planner",
-        "key": "scout",
+        "key": "protective_route_planner",
         "function": "route_security",
         "level": 1,
         "importance": 80,
@@ -3080,11 +3307,15 @@
           "alert"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Planificateur des itinéraires de protection",
+          "en": "Protective route planner"
+        }
       },
       {
         "id": "threat_analyst",
-        "key": "spymaster",
+        "key": "security_analyst",
         "function": "threat_assessment",
         "level": 1,
         "importance": 76,
@@ -3103,11 +3334,15 @@
           "report"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Analyste de sécurité",
+          "en": "Security analyst"
+        }
       },
       {
         "id": "close_protection_officer",
-        "key": "soldier",
+        "key": "close_protection_officer",
         "function": "personal_protection",
         "level": 2,
         "importance": 69,
@@ -3126,7 +3361,11 @@
           "secure"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Agent de protection rapprochée",
+          "en": "Close protection officer"
+        }
       },
       {
         "id": "detail_medic",
@@ -3153,7 +3392,7 @@
       },
       {
         "id": "communications_guard",
-        "key": "messenger",
+        "key": "protection_communications_officer",
         "function": "secure_communications",
         "level": 2,
         "importance": 58,
@@ -3172,11 +3411,15 @@
           "verify"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Officier de communications de protection",
+          "en": "Protection communications officer"
+        }
       },
       {
         "id": "relief_guard",
-        "key": "sergeant",
+        "key": "protection_shift_lead",
         "function": "watch_rotation",
         "level": 3,
         "importance": 52,
@@ -3195,7 +3438,11 @@
           "drill"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Chef de relève de protection",
+          "en": "Protection shift lead"
+        }
       }
     ]
   },
@@ -3217,7 +3464,7 @@
     "roles": [
       {
         "id": "household_head",
-        "key": "family_head",
+        "key": "household_superintendent",
         "function": "household_authority",
         "level": 0,
         "importance": 100,
@@ -3234,7 +3481,11 @@
           "coordinate"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Intendant de la maison royale",
+          "en": "Royal household superintendent"
+        }
       },
       {
         "id": "chamberlain",
@@ -3330,7 +3581,7 @@
       },
       {
         "id": "equerry",
-        "key": "keeper",
+        "key": "equerry",
         "function": "royal_transport",
         "level": 2,
         "importance": 65,
@@ -3349,7 +3600,11 @@
           "maintain"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Écuyer de la maison",
+          "en": "Equerry"
+        }
       },
       {
         "id": "household_guard",
@@ -3376,7 +3631,7 @@
       },
       {
         "id": "wardrobe_keeper",
-        "key": "keeper",
+        "key": "wardrobe_keeper",
         "function": "ceremonial_property",
         "level": 3,
         "importance": 52,
@@ -3395,7 +3650,11 @@
           "repair"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Garde-robe royale",
+          "en": "Royal wardrobe keeper"
+        }
       }
     ]
   },
@@ -3682,7 +3941,7 @@
       },
       {
         "id": "commercial_attaché",
-        "key": "merchant",
+        "key": "commercial_attache",
         "function": "trade_relations",
         "level": 2,
         "importance": 68,
@@ -3701,7 +3960,11 @@
           "represent"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Attaché commercial",
+          "en": "Commercial attaché"
+        }
       },
       {
         "id": "mission_interpreter",
@@ -3755,7 +4018,7 @@
       },
       {
         "id": "mission_security_officer",
-        "key": "guard",
+        "key": "mission_security_officer",
         "function": "mission_security",
         "level": 2,
         "importance": 56,
@@ -3774,7 +4037,11 @@
           "prepare"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Officier de sécurité de mission",
+          "en": "Mission security officer"
+        }
       },
       {
         "id": "courier",
@@ -3863,7 +4130,7 @@
       },
       {
         "id": "policy_director",
-        "key": "councillor",
+        "key": "policy_director",
         "function": "policy_design",
         "level": 1,
         "importance": 79,
@@ -3882,7 +4149,11 @@
           "consult"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Directeur des politiques publiques",
+          "en": "Policy director"
+        }
       },
       {
         "id": "operations_secretary",
@@ -3909,7 +4180,7 @@
       },
       {
         "id": "budget_controller",
-        "key": "treasurer",
+        "key": "budget_controller",
         "function": "appropriations_control",
         "level": 2,
         "importance": 74,
@@ -3928,11 +4199,15 @@
           "authorize_expenditure"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Contrôleur budgétaire",
+          "en": "Budget controller"
+        }
       },
       {
         "id": "chief_inspector",
-        "key": "inquisitor",
+        "key": "chief_inspector",
         "function": "program_inspection",
         "level": 2,
         "importance": 69,
@@ -3951,11 +4226,15 @@
           "remedy"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Inspecteur général",
+          "en": "Chief inspector"
+        }
       },
       {
         "id": "regional_liaison",
-        "key": "representative",
+        "key": "regional_liaison",
         "function": "field_coordination",
         "level": 3,
         "importance": 61,
@@ -3974,7 +4253,11 @@
           "verify"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Agent de liaison régional",
+          "en": "Regional liaison officer"
+        }
       },
       {
         "id": "public_records_officer",
@@ -4019,7 +4302,7 @@
     "roles": [
       {
         "id": "service_commissioner",
-        "key": "chancellor",
+        "key": "civil_service_commissioner",
         "function": "service_standards",
         "level": 0,
         "importance": 100,
@@ -4036,7 +4319,11 @@
           "protect"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Commissaire de la fonction publique",
+          "en": "Civil service commissioner"
+        }
       },
       {
         "id": "registrar_general",
@@ -4063,7 +4350,7 @@
       },
       {
         "id": "recruitment_director",
-        "key": "recruiter",
+        "key": "recruitment_director",
         "function": "merit_hiring",
         "level": 1,
         "importance": 79,
@@ -4082,11 +4369,15 @@
           "record"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Directeur du recrutement",
+          "en": "Recruitment director"
+        }
       },
       {
         "id": "examination_chief",
-        "key": "teacher",
+        "key": "examination_chief",
         "function": "civil_examinations",
         "level": 2,
         "importance": 70,
@@ -4105,7 +4396,11 @@
           "assess"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Responsable des concours",
+          "en": "Examination chief"
+        }
       },
       {
         "id": "career_appeals_judge",
@@ -4157,7 +4452,7 @@
       },
       {
         "id": "ethics_inspector",
-        "key": "inquisitor",
+        "key": "ethics_inspector",
         "function": "integrity_review",
         "level": 2,
         "importance": 68,
@@ -4176,7 +4471,11 @@
           "report"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Inspecteur déontologique",
+          "en": "Ethics inspector"
+        }
       },
       {
         "id": "records_archivist",
@@ -4286,7 +4585,7 @@
       },
       {
         "id": "policy_chair",
-        "key": "councillor",
+        "key": "policy_chair",
         "function": "platform_development",
         "level": 1,
         "importance": 76,
@@ -4305,11 +4604,15 @@
           "deliberate"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Président de la commission du programme",
+          "en": "Policy committee chair"
+        }
       },
       {
         "id": "campaign_director",
-        "key": "herald",
+        "key": "campaign_director",
         "function": "electoral_campaigns",
         "level": 1,
         "importance": 80,
@@ -4328,7 +4631,11 @@
           "canvass"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Directeur de campagne",
+          "en": "Campaign director"
+        }
       },
       {
         "id": "party_treasurer",
@@ -4378,7 +4685,7 @@
       },
       {
         "id": "candidate_selection_panel",
-        "key": "assembly_member",
+        "key": "candidate_selection_panel",
         "function": "candidate_nomination",
         "level": 2,
         "importance": 70,
@@ -4397,7 +4704,11 @@
           "publish"
         ],
         "collective": true,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Commission de sélection des candidats",
+          "en": "Candidate selection panel"
+        }
       }
     ]
   },
@@ -4484,7 +4795,7 @@
       },
       {
         "id": "bargaining_director",
-        "key": "councillor",
+        "key": "bargaining_director",
         "function": "collective_bargaining",
         "level": 1,
         "importance": 86,
@@ -4503,11 +4814,15 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Directeur de la négociation collective",
+          "en": "Collective bargaining director"
+        }
       },
       {
         "id": "industrial_action_coordinator",
-        "key": "marshal",
+        "key": "industrial_action_coordinator",
         "function": "labor_action",
         "level": 1,
         "importance": 78,
@@ -4521,16 +4836,20 @@
           "en": "Verifies strike ballots, coordinates timing across affiliates and organizes strike-support funds."
         },
         "powers": [
-          "strike",
+          "verify",
           "coordinate",
           "allocate"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Coordinateur des actions collectives",
+          "en": "Industrial action coordinator"
+        }
       },
       {
         "id": "union_legal_advocate",
-        "key": "judge",
+        "key": "labor_law_adviser",
         "function": "labor_law",
         "level": 2,
         "importance": 72,
@@ -4549,7 +4868,11 @@
           "review"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Conseiller en droit du travail",
+          "en": "Labor law adviser"
+        }
       },
       {
         "id": "membership_registrar",
@@ -4599,7 +4922,7 @@
       },
       {
         "id": "workplace_steward",
-        "key": "steward",
+        "key": "workplace_steward",
         "function": "workplace_representation",
         "level": 3,
         "importance": 55,
@@ -4618,7 +4941,11 @@
           "alert"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Délégué syndical",
+          "en": "Workplace union steward"
+        }
       }
     ]
   },
@@ -4640,7 +4967,7 @@
     "roles": [
       {
         "id": "board_of_directors",
-        "key": "assembly",
+        "key": "board_of_directors",
         "function": "corporate_governance",
         "level": 0,
         "importance": 100,
@@ -4657,11 +4984,15 @@
           "audit"
         ],
         "collective": true,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Conseil d’administration",
+          "en": "Board of directors"
+        }
       },
       {
         "id": "chief_executive",
-        "key": "head_of_government",
+        "key": "chief_executive",
         "function": "executive_management",
         "level": 1,
         "importance": 94,
@@ -4680,7 +5011,11 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Directeur général",
+          "en": "Chief executive"
+        }
       },
       {
         "id": "chief_financial_officer",
@@ -4707,7 +5042,7 @@
       },
       {
         "id": "operations_director",
-        "key": "steward",
+        "key": "operations_director",
         "function": "production_operations",
         "level": 2,
         "importance": 79,
@@ -4726,11 +5061,15 @@
           "prepare"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Directeur des opérations",
+          "en": "Operations director"
+        }
       },
       {
         "id": "compliance_officer",
-        "key": "inquisitor",
+        "key": "compliance_officer",
         "function": "regulatory_compliance",
         "level": 2,
         "importance": 75,
@@ -4749,11 +5088,15 @@
           "report"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Responsable de la conformité",
+          "en": "Compliance officer"
+        }
       },
       {
         "id": "shareholders_assembly",
-        "key": "assembly_member",
+        "key": "shareholders_assembly",
         "function": "shareholder_oversight",
         "level": 1,
         "importance": 86,
@@ -4770,7 +5113,11 @@
           "review"
         ],
         "collective": true,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Assemblée des actionnaires",
+          "en": "Shareholders assembly"
+        }
       },
       {
         "id": "chief_engineer",
@@ -4781,7 +5128,7 @@
         "scope": "corporation",
         "min_size": "medium",
         "reports_to": [
-          "operations_director"
+          "chief_executive"
         ],
         "duties": {
           "fr": "Conçoit les équipements et procédés, valide leur sécurité technique et organise leur entretien sur les sites.",
@@ -4797,7 +5144,7 @@
       },
       {
         "id": "workforce_representative",
-        "key": "representative",
+        "key": "workforce_representative",
         "function": "workforce_consultation",
         "level": 2,
         "importance": 62,
@@ -4816,7 +5163,11 @@
           "monitor"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Représentant du personnel",
+          "en": "Workforce representative"
+        }
       }
     ]
   },
@@ -4838,7 +5189,7 @@
     "roles": [
       {
         "id": "charter_board",
-        "key": "assembly",
+        "key": "charter_board",
         "function": "charter_governance",
         "level": 0,
         "importance": 100,
@@ -4855,7 +5206,11 @@
           "appoint"
         ],
         "collective": true,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Conseil de la charte",
+          "en": "Charter board"
+        }
       },
       {
         "id": "company_governor",
@@ -4882,7 +5237,7 @@
       },
       {
         "id": "chief_factor",
-        "key": "merchant",
+        "key": "chief_factor",
         "function": "trade_operations",
         "level": 1,
         "importance": 85,
@@ -4901,7 +5256,11 @@
           "audit"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Chef des opérations commerciales",
+          "en": "Chief trade factor"
+        }
       },
       {
         "id": "port_factor",
@@ -4928,7 +5287,7 @@
       },
       {
         "id": "route_commander",
-        "key": "captain",
+        "key": "convoy_commander",
         "function": "route_security",
         "level": 2,
         "importance": 65,
@@ -4947,7 +5306,11 @@
           "alert"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Chef de convoi",
+          "en": "Convoy commander"
+        }
       },
       {
         "id": "company_treasurer",
@@ -4997,7 +5360,7 @@
       },
       {
         "id": "local_liaison",
-        "key": "representative",
+        "key": "local_liaison",
         "function": "local_agreements",
         "level": 3,
         "importance": 56,
@@ -5016,7 +5379,11 @@
           "report"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Agent de liaison locale",
+          "en": "Local liaison officer"
+        }
       }
     ]
   },
@@ -5038,7 +5405,7 @@
     "roles": [
       {
         "id": "company_director",
-        "key": "head_of_government",
+        "key": "company_director",
         "function": "company_governance",
         "level": 0,
         "importance": 100,
@@ -5055,7 +5422,11 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Directeur général de la compagnie",
+          "en": "Company managing director"
+        }
       },
       {
         "id": "concession_administrator",
@@ -5082,7 +5453,7 @@
       },
       {
         "id": "contract_jurist",
-        "key": "judge",
+        "key": "contract_jurist",
         "function": "contract_enforcement",
         "level": 1,
         "importance": 78,
@@ -5097,15 +5468,19 @@
         },
         "powers": [
           "examine",
-          "judge",
+          "advise",
           "report"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Juriste des contrats",
+          "en": "Contract jurist"
+        }
       },
       {
         "id": "warehouse_factor",
-        "key": "steward",
+        "key": "warehouse_factor",
         "function": "concession_stores",
         "level": 2,
         "importance": 70,
@@ -5124,7 +5499,11 @@
           "audit"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Gestionnaire d’entrepôt",
+          "en": "Warehouse manager"
+        }
       },
       {
         "id": "labor_contracts_clerk",
@@ -5151,7 +5530,7 @@
       },
       {
         "id": "boundary_surveyor",
-        "key": "chief_engineer",
+        "key": "boundary_surveyor",
         "function": "land_survey",
         "level": 2,
         "importance": 63,
@@ -5170,11 +5549,15 @@
           "record"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Géomètre des concessions",
+          "en": "Concession surveyor"
+        }
       },
       {
         "id": "local_interpreter",
-        "key": "scribe",
+        "key": "local_interpreter",
         "function": "local_communication",
         "level": 2,
         "importance": 58,
@@ -5193,11 +5576,15 @@
           "verify"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Interprète local",
+          "en": "Local interpreter"
+        }
       },
       {
         "id": "charter_auditor",
-        "key": "inquisitor",
+        "key": "charter_auditor",
         "function": "concession_oversight",
         "level": 2,
         "importance": 66,
@@ -5216,7 +5603,11 @@
           "report"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Contrôleur de la charte",
+          "en": "Charter auditor"
+        }
       }
     ]
   },
@@ -5238,7 +5629,7 @@
     "roles": [
       {
         "id": "estate_steward",
-        "key": "family_manager",
+        "key": "estate_steward",
         "function": "estate_governance",
         "level": 0,
         "importance": 100,
@@ -5255,11 +5646,15 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Intendant du domaine",
+          "en": "Estate steward"
+        }
       },
       {
         "id": "land_bailiff",
-        "key": "steward",
+        "key": "land_bailiff",
         "function": "land_operations",
         "level": 1,
         "importance": 83,
@@ -5278,7 +5673,11 @@
           "record"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Bailli du domaine",
+          "en": "Estate bailiff"
+        }
       },
       {
         "id": "rents_clerk",
@@ -5305,7 +5704,7 @@
       },
       {
         "id": "works_overseer",
-        "key": "chief_engineer",
+        "key": "works_overseer",
         "function": "estate_works",
         "level": 1,
         "importance": 74,
@@ -5324,7 +5723,11 @@
           "inspect"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Responsable des travaux",
+          "en": "Works overseer"
+        }
       },
       {
         "id": "granary_keeper",
@@ -5438,7 +5841,7 @@
     "roles": [
       {
         "id": "family_boss",
-        "key": "family_head",
+        "key": "crime_family_boss",
         "function": "network_authority",
         "level": 0,
         "importance": 100,
@@ -5455,7 +5858,11 @@
           "conceal"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Chef de la famille criminelle",
+          "en": "Crime family boss"
+        }
       },
       {
         "id": "underboss",
@@ -5482,7 +5889,7 @@
       },
       {
         "id": "consigliere",
-        "key": "councillor",
+        "key": "consigliere",
         "function": "internal_arbitration",
         "level": 1,
         "importance": 78,
@@ -5501,11 +5908,15 @@
           "mediate"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Conseiller de la famille criminelle",
+          "en": "Crime family counsellor"
+        }
       },
       {
         "id": "crew_captain",
-        "key": "captain",
+        "key": "crew_leader",
         "function": "crew_direction",
         "level": 2,
         "importance": 70,
@@ -5524,7 +5935,11 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Chef de bande",
+          "en": "Crew leader"
+        }
       },
       {
         "id": "account_keeper",
@@ -5576,7 +5991,7 @@
         "id": "recruiter",
         "key": "recruiter",
         "function": "membership_screening",
-        "level": 2,
+        "level": 3,
         "importance": 58,
         "scope": "crew",
         "min_size": "medium",
@@ -5629,8 +6044,8 @@
     },
     "aliases": [],
     "description": {
-      "fr": "Groupe de quartier organisé autour de la protection des membres, de la présence territoriale et de ressources partagées.",
-      "en": "A neighborhood crew organized around member protection, territorial presence and shared resources."
+      "fr": "Bande urbaine structurée autour d’un chef, de la surveillance du territoire, de ressources communes et de relations avec les bandes rivales.",
+      "en": "An urban gang organized around a leader, territorial watch, shared resources and dealings with rival crews."
     },
     "default_structure": "hierarchical",
     "default_authority": "personal",
@@ -5638,7 +6053,7 @@
     "roles": [
       {
         "id": "block_leader",
-        "key": "captain",
+        "key": "gang_leader",
         "function": "crew_authority",
         "level": 0,
         "importance": 100,
@@ -5646,8 +6061,8 @@
         "min_size": "tiny",
         "reports_to": [],
         "duties": {
-          "fr": "Fixe les limites du groupe, répartit les tâches de veille et désamorce les conflits susceptibles d’attirer une intervention extérieure.",
-          "en": "Sets group boundaries, assigns watch duties and defuses conflicts likely to draw outside intervention."
+          "fr": "Dirige la bande, répartit les postes de veille, impose les règles internes et décide de sa conduite envers les groupes rivaux.",
+          "en": "Leads the gang, assigns lookout posts, enforces internal rules and decides how it deals with rival groups."
         },
         "powers": [
           "decide",
@@ -5655,11 +6070,15 @@
           "mediate"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Chef de bande",
+          "en": "Gang leader"
+        }
       },
       {
         "id": "deputy_leader",
-        "key": "deputy",
+        "key": "gang_second_in_command",
         "function": "crew_continuity",
         "level": 1,
         "importance": 80,
@@ -5669,8 +6088,8 @@
           "block_leader"
         ],
         "duties": {
-          "fr": "Organise les rencontres, maintient le contact entre membres et prend la relève lorsque le chef est absent.",
-          "en": "Organizes meetings, maintains contact between members and takes over when the leader is away."
+          "fr": "Transmet les ordres, coordonne les membres et prend la direction de la bande en l’absence du chef.",
+          "en": "Passes orders, coordinates members and leads the gang when its chief is absent."
         },
         "powers": [
           "organize",
@@ -5678,11 +6097,15 @@
           "deputize"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Second du chef",
+          "en": "Second-in-command"
+        }
       },
       {
         "id": "lookout",
-        "key": "scout",
+        "key": "gang_lookout",
         "function": "street_observation",
         "level": 1,
         "importance": 68,
@@ -5692,8 +6115,8 @@
           "block_leader"
         ],
         "duties": {
-          "fr": "Observe les accès et mouvements inhabituels, avertit le groupe et consigne les incidents sans provoquer d’affrontement.",
-          "en": "Watches access points and unusual movement, alerts the crew and records incidents without provoking confrontation."
+          "fr": "Surveille les accès et les mouvements dans le secteur, avertit la bande et consigne les changements observés.",
+          "en": "Watches entrances and movement in the gang’s territory, alerts the crew and records observed changes."
         },
         "powers": [
           "observe",
@@ -5701,13 +6124,17 @@
           "record"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Guetteur",
+          "en": "Lookout"
+        }
       },
       {
         "id": "mutual_aid_keeper",
-        "key": "quartermaster",
-        "function": "shared_resources",
-        "level": 1,
+        "key": "crew_resources_keeper",
+        "function": "crew_resources",
+        "level": 2,
         "importance": 64,
         "scope": "crew",
         "min_size": "small",
@@ -5715,8 +6142,8 @@
           "deputy_leader"
         ],
         "duties": {
-          "fr": "Gère les ressources communes et l’aide d’urgence, enregistre les contributions et rend compte aux membres.",
-          "en": "Manages shared resources and emergency aid, records contributions and reports to members."
+          "fr": "Tient la caisse et les réserves partagées, consigne les contributions, répartit les ressources autorisées et signale les pénuries au second.",
+          "en": "Keeps shared cash and supplies, records contributions, distributes resources authorized by the chief and reports shortages to the second-in-command."
         },
         "powers": [
           "allocate",
@@ -5724,12 +6151,16 @@
           "report"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Gestionnaire des ressources de la bande",
+          "en": "Crew resource keeper"
+        }
       },
       {
         "id": "street_mediator",
-        "key": "elder",
-        "function": "neighborhood_mediation",
+        "key": "crew_intermediary",
+        "function": "inter_crew_negotiation",
         "level": 1,
         "importance": 66,
         "scope": "neighborhood",
@@ -5738,20 +6169,24 @@
           "block_leader"
         ],
         "duties": {
-          "fr": "Intervient dans les différends, négocie des limites de conduite et accompagne les membres lors de réunions locales.",
-          "en": "Intervenes in disputes, negotiates conduct boundaries and accompanies members at local meetings."
+          "fr": "Négocie avec les bandes rivales sur les limites de territoire, les trêves et les rencontres, puis confirme les accords au chef.",
+          "en": "Negotiates territorial boundaries, truces and meetings with rival crews, then confirms agreements to the gang chief."
         },
         "powers": [
-          "hear",
-          "mediate",
-          "represent"
+          "negotiate",
+          "broker",
+          "verify"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Intermédiaire entre bandes",
+          "en": "Inter-crew intermediary"
+        }
       },
       {
         "id": "courier",
-        "key": "messenger",
+        "key": "gang_courier",
         "function": "crew_messages",
         "level": 2,
         "importance": 52,
@@ -5770,11 +6205,15 @@
           "secure"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Messager de la bande",
+          "en": "Gang courier"
+        }
       },
       {
         "id": "member",
-        "key": "member",
+        "key": "gang_member",
         "function": "crew_membership",
         "level": 2,
         "importance": 42,
@@ -5793,7 +6232,11 @@
           "alert"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Membre de la bande",
+          "en": "Gang member"
+        }
       }
     ]
   },
@@ -5859,7 +6302,7 @@
       },
       {
         "id": "mutual_aid_keeper",
-        "key": "quartermaster",
+        "key": "mutual_aid_keeper",
         "function": "shared_goods",
         "level": 1,
         "importance": 68,
@@ -5878,11 +6321,15 @@
           "store"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Responsable de l’entraide",
+          "en": "Mutual aid keeper"
+        }
       },
       {
         "id": "dispute_mediator",
-        "key": "elder",
+        "key": "dispute_mediator",
         "function": "internal_mediation",
         "level": 1,
         "importance": 72,
@@ -5901,11 +6348,15 @@
           "record"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Médiateur interne",
+          "en": "Internal mediator"
+        }
       },
       {
         "id": "lookout",
-        "key": "scout",
+        "key": "prison_lookout",
         "function": "unit_awareness",
         "level": 2,
         "importance": 54,
@@ -5924,7 +6375,11 @@
           "evade"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Guetteur",
+          "en": "Lookout"
+        }
       },
       {
         "id": "contraband_broker",
@@ -6013,7 +6468,7 @@
       },
       {
         "id": "field_observer",
-        "key": "scout",
+        "key": "field_observer",
         "function": "target_observation",
         "level": 1,
         "importance": 75,
@@ -6032,11 +6487,15 @@
           "record"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Observateur de terrain",
+          "en": "Field observer"
+        }
       },
       {
         "id": "infiltration_agent",
-        "key": "assassin",
+        "key": "infiltration_agent",
         "function": "access_and_cover",
         "level": 1,
         "importance": 69,
@@ -6055,7 +6514,11 @@
           "evade"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Agent d’infiltration",
+          "en": "Infiltration agent"
+        }
       },
       {
         "id": "courier",
@@ -6146,7 +6609,7 @@
     "roles": [
       {
         "id": "party_secretariat",
-        "key": "assembly",
+        "key": "party_secretariat",
         "function": "movement_direction",
         "level": 0,
         "importance": 100,
@@ -6162,12 +6625,16 @@
           "plan",
           "coordinate"
         ],
-        "collective": false,
-        "optional": false
+        "collective": true,
+        "optional": false,
+        "title": {
+          "fr": "Secrétariat du mouvement",
+          "en": "Movement secretariat"
+        }
       },
       {
         "id": "party_chair",
-        "key": "elected_leader",
+        "key": "party_chair",
         "function": "party_spokesmanship",
         "level": 1,
         "importance": 86,
@@ -6186,7 +6653,11 @@
           "coordinate"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Président du parti",
+          "en": "Party chair"
+        }
       },
       {
         "id": "membership_organizer",
@@ -6259,7 +6730,7 @@
       },
       {
         "id": "public_campaigner",
-        "key": "herald",
+        "key": "public_campaigner",
         "function": "public_mobilization",
         "level": 2,
         "importance": 65,
@@ -6278,7 +6749,11 @@
           "verify"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Chargé de campagne publique",
+          "en": "Public campaigner"
+        }
       },
       {
         "id": "movement_treasurer",
@@ -6305,7 +6780,7 @@
       },
       {
         "id": "legal_observer",
-        "key": "judge",
+        "key": "legal_observer",
         "function": "rights_monitoring",
         "level": 2,
         "importance": 59,
@@ -6324,7 +6799,11 @@
           "assist"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Observateur juridique",
+          "en": "Legal observer"
+        }
       }
     ]
   },
@@ -6392,7 +6871,7 @@
         "id": "coach",
         "key": "teacher",
         "function": "athlete_development",
-        "level": 1,
+        "level": 2,
         "importance": 80,
         "scope": "team",
         "min_size": "small",
@@ -6413,9 +6892,9 @@
       },
       {
         "id": "team_captain",
-        "key": "champion",
+        "key": "team_captain",
         "function": "team_coordination",
-        "level": 2,
+        "level": 3,
         "importance": 70,
         "scope": "team",
         "min_size": "medium",
@@ -6432,13 +6911,17 @@
           "report"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Capitaine d’équipe",
+          "en": "Team captain"
+        }
       },
       {
         "id": "club_registrar",
         "key": "clerk",
         "function": "membership_records",
-        "level": 1,
+        "level": 2,
         "importance": 68,
         "scope": "club",
         "min_size": "small",
@@ -6482,7 +6965,7 @@
       },
       {
         "id": "equipment_manager",
-        "key": "quartermaster",
+        "key": "equipment_manager",
         "function": "sports_equipment",
         "level": 2,
         "importance": 59,
@@ -6501,13 +6984,17 @@
           "prepare"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Responsable du matériel sportif",
+          "en": "Sports equipment manager"
+        }
       },
       {
         "id": "club_medic",
-        "key": "healer",
+        "key": "club_medic",
         "function": "sports_health",
-        "level": 2,
+        "level": 3,
         "importance": 56,
         "scope": "team",
         "min_size": "medium",
@@ -6524,7 +7011,11 @@
           "advise"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Médecin du club",
+          "en": "Club medic"
+        }
       }
     ]
   },
@@ -6546,7 +7037,7 @@
     "roles": [
       {
         "id": "company_manager",
-        "key": "steward",
+        "key": "company_manager",
         "function": "troupe_management",
         "level": 0,
         "importance": 100,
@@ -6563,11 +7054,15 @@
           "budget"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Directeur de troupe",
+          "en": "Company manager"
+        }
       },
       {
         "id": "artistic_director",
-        "key": "scholar",
+        "key": "artistic_director",
         "function": "repertoire_direction",
         "level": 1,
         "importance": 86,
@@ -6586,13 +7081,17 @@
           "appoint"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Directeur artistique",
+          "en": "Artistic director"
+        }
       },
       {
         "id": "stage_manager",
-        "key": "marshal",
+        "key": "stage_manager",
         "function": "rehearsal_and_stage",
-        "level": 1,
+        "level": 2,
         "importance": 80,
         "scope": "production",
         "min_size": "small",
@@ -6609,7 +7108,11 @@
           "record"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Régisseur de scène",
+          "en": "Stage manager"
+        }
       },
       {
         "id": "company_scribe",
@@ -6636,7 +7139,7 @@
       },
       {
         "id": "lead_performer",
-        "key": "champion",
+        "key": "lead_performer",
         "function": "principal_performance",
         "level": 2,
         "importance": 65,
@@ -6655,7 +7158,11 @@
           "mentor"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Artiste principal",
+          "en": "Lead performer"
+        }
       },
       {
         "id": "wardrobe_master",
@@ -6666,7 +7173,7 @@
         "scope": "troupe",
         "min_size": "medium",
         "reports_to": [
-          "stage_manager"
+          "artistic_director"
         ],
         "duties": {
           "fr": "Conçoit et répare costumes et accessoires, tient l’inventaire et adapte les pièces aux scènes et lieux de représentation.",
@@ -6705,7 +7212,7 @@
       },
       {
         "id": "booking_agent",
-        "key": "broker",
+        "key": "booking_agent",
         "function": "venue_bookings",
         "level": 2,
         "importance": 61,
@@ -6724,7 +7231,11 @@
           "announce"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Agent de réservation",
+          "en": "Booking agent"
+        }
       }
     ]
   },
@@ -6746,7 +7257,7 @@
     "roles": [
       {
         "id": "impresario",
-        "key": "merchant",
+        "key": "impresario",
         "function": "circus_direction",
         "level": 0,
         "importance": 100,
@@ -6763,11 +7274,15 @@
           "decide"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Directeur de cirque",
+          "en": "Circus impresario"
+        }
       },
       {
         "id": "ringmaster",
-        "key": "herald",
+        "key": "ringmaster",
         "function": "show_direction",
         "level": 1,
         "importance": 86,
@@ -6786,13 +7301,17 @@
           "verify"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Monsieur Loyal",
+          "en": "Ringmaster"
+        }
       },
       {
         "id": "acts_coordinator",
-        "key": "champion",
+        "key": "acts_coordinator",
         "function": "performance_programme",
-        "level": 1,
+        "level": 2,
         "importance": 78,
         "scope": "company",
         "min_size": "small",
@@ -6809,11 +7328,15 @@
           "inspect"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Coordinateur des numéros",
+          "en": "Acts coordinator"
+        }
       },
       {
         "id": "tour_manager",
-        "key": "navigator",
+        "key": "tour_manager",
         "function": "route_and_venues",
         "level": 1,
         "importance": 76,
@@ -6832,13 +7355,17 @@
           "verify"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Directeur de tournée",
+          "en": "Tour manager"
+        }
       },
       {
         "id": "rigging_master",
         "key": "chief_engineer",
         "function": "tent_and_rigging",
-        "level": 2,
+        "level": 3,
         "importance": 71,
         "scope": "site",
         "min_size": "medium",
@@ -6859,7 +7386,7 @@
       },
       {
         "id": "animal_caretaker",
-        "key": "healer",
+        "key": "animal_caretaker",
         "function": "animal_care",
         "level": 2,
         "importance": 65,
@@ -6878,11 +7405,15 @@
           "report"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Soigneur animalier",
+          "en": "Animal caretaker"
+        }
       },
       {
         "id": "circus_quartermaster",
-        "key": "quartermaster",
+        "key": "tour_supply_manager",
         "function": "tour_supply",
         "level": 2,
         "importance": 67,
@@ -6901,7 +7432,11 @@
           "catalog"
         ],
         "collective": false,
-        "optional": false
+        "optional": false,
+        "title": {
+          "fr": "Responsable du ravitaillement de tournée",
+          "en": "Tour supply manager"
+        }
       },
       {
         "id": "company_treasurer",
@@ -6992,7 +7527,7 @@
         "id": "guild_warden",
         "key": "warden",
         "function": "workshop_compliance",
-        "level": 1,
+        "level": 2,
         "importance": 75,
         "scope": "district",
         "min_size": "medium",
@@ -7059,7 +7594,7 @@
       },
       {
         "id": "craft_judge",
-        "key": "judge",
+        "key": "craft_adjudicator",
         "function": "quality_and_membership_disputes",
         "level": 2,
         "importance": 70,
@@ -7078,7 +7613,11 @@
           "interpret"
         ],
         "collective": false,
-        "optional": true
+        "optional": true,
+        "title": {
+          "fr": "Arbitre des métiers",
+          "en": "Craft adjudicator"
+        }
       },
       {
         "id": "civic_delegate",

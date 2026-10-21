@@ -7,11 +7,11 @@ un royaume, une nation, une ville, une guilde, une famille organisée, une relig
 ou une cellule secrète, puis appliquer un thème culturel et récupérer les titres,
 fonctions, responsabilités, niveaux d’autorité et importance de chaque rôle.
 
-[English](README.en.md) · [Contrat d’API](docs/API.fr.md) · [Catalogue](docs/CATALOG.md)
+[English](README.en.md) · [Contrat d’API](docs/API.fr.md) · [Catalogue](docs/CATALOG.md) · [Révision de cohérence](docs/COHERENCE.fr.md)
 
 ![Explorateur des titres et rôles](docs/images/demo.png)
 
-**242 systèmes**, **67 thèmes**, **1 713 rôles définis**, **6 124 entrées de titres
+**242 systèmes**, **67 thèmes**, **1 731 rôles définis**, **6 124 entrées de titres
 FR/EN**. Les **41 cultures de Magna Urbis** sont toutes reprises avec leurs
 identifiants. Le catalogue ne se limite pas aux exemples de l’interface : tous les
 systèmes sont combinables avec tous les thèmes.
@@ -34,12 +34,12 @@ par titre, niveau et importance permettent d’explorer le résultat. Le lexique
 culturel montre également toutes les entrées d’un thème, indépendamment du système.
 Titres français, anglais et formes locales restent consultables côte à côte.
 
-Le **[glossaire complet](http://127.0.0.1:8773/glossary)** expose les **4 484 termes
+Le **[glossaire complet](http://127.0.0.1:8773/glossary)** expose les **4 959 termes
 distincts**, variantes comprises, sans choisir d’abord un système. Recherche,
 index A–Z, filtres par culture et fonction, responsabilités et liens vers toutes
 les organisations concernées ; choisir **Tout afficher** pour parcourir la liste
-entière. Il comprend aussi les 99 familles de rôles, les 242 organisations et les
-245 pouvoirs. Export de la sélection en CSV et du glossaire complet en JSON.
+entière. Il comprend aussi les 609 types de rôles, les 242 organisations et les
+316 pouvoirs. Export de la sélection en CSV et du glossaire complet en JSON.
 
 ## Requête minimale
 

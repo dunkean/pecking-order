@@ -87,6 +87,14 @@ fn server(engine: Engine, port: u16) -> Result<(), Box<dyn std::error::Error>> {
                 mime = "text/javascript; charset=utf-8";
                 include_bytes!("../web/app.js").to_vec()
             }
+            ("GET", "/combobox.js") => {
+                mime = "text/javascript; charset=utf-8";
+                include_bytes!("../web/combobox.js").to_vec()
+            }
+            ("GET", "/combobox.css") => {
+                mime = "text/css; charset=utf-8";
+                include_bytes!("../web/combobox.css").to_vec()
+            }
             ("GET", "/glossary" | "/glossary.html") => {
                 mime = "text/html; charset=utf-8";
                 include_bytes!("../web/glossary.html").to_vec()

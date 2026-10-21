@@ -7,7 +7,7 @@ titles, offices, authority levels, importance, responsibilities and relationship
 
 ![Titles and roles explorer](docs/images/demo.png)
 
-**242 systems · 67 themes · 1,713 defined roles · 6,124 bilingual title entries.**
+**242 systems · 67 themes · 1,731 defined roles · 6,124 bilingual title entries.**
 All 41 Magna Urbis culture IDs are supported. Every system combines with every
 theme, from an empire to a four-person secret cult cell.
 
@@ -26,11 +26,11 @@ Choose **system → size / structure / authority → culture**. Explore all matc
 offices or filter by title, level and importance. Switch FR/EN, browse whole cultural
 lexicons and import/export JSON requests and responses.
 
-The **[complete glossary](http://127.0.0.1:8773/glossary)** exposes all **4,484 distinct
+The **[complete glossary](http://127.0.0.1:8773/glossary)** exposes all **4,959 distinct
 terms**, including variants, without selecting an organization first. Search FR/EN
 and original forms, browse A–Z, filter by culture or role, inspect responsibilities
 and open every relevant organization. Select **Show all** to display the entire
-list. Separate sections cover 99 role families, 242 organizations and 245 powers.
+list. Separate sections cover 609 role types, 242 organizations and 316 powers.
 Export the filtered selection as CSV or download the complete glossary as JSON.
 Available through `GET /api/glossary`, `cargo run -- glossary` and `Engine::glossary()`.
 

@@ -340,6 +340,7 @@ impl Engine {
         }
         if [Structure::Horizontal, Structure::Network].contains(&structure) {
             for spec in &mut specs {
+                let was_executive = executive_role(spec);
                 spec.reports_to.clear();
                 if structure == Structure::Horizontal {
                     spec.level = 0;
@@ -356,7 +357,7 @@ impl Engine {
                     if query.structure == Some(Structure::Horizontal)
                         && system.default_structure != Structure::Horizontal
                         && system.family != "kinship"
-                        && executive_key(&spec.key)
+                        && was_executive
                     {
                         spec.key = "representative".into();
                     }
@@ -591,6 +592,14 @@ fn executive_key(key: &str) -> bool {
     .contains(&key)
 }
 
+// Leadership is a structural property, not a consequence of a translated title.
+// Context-specific gang chiefs and service directors must obey the same query
+// transformations as leaders with a broad lexical key.
+fn executive_role(role: &RoleSpec) -> bool {
+    !role.collective
+        && (executive_key(&role.key) || (role.level == 0 && role.reports_to.is_empty()))
+}
+
 fn adapt_authority(role: &mut RoleSpec, authority: Authority, family: &str) {
     let state_head =
         ["king", "emperor", "head_of_state", "elected_leader"].contains(&role.key.as_str());
@@ -617,8 +626,15 @@ fn adapt_authority(role: &mut RoleSpec, authority: Authority, family: &str) {
         role.key = "council_nobles".into();
     }
     if authority == Authority::Authoritarian {
-        if executive_key(&role.key) && role.level == 0 {
-            role.powers.push("decree".into());
+        if executive_role(role) && role.level == 0 {
+            let decision = if ["political", "administrative", "government"].contains(&family) {
+                "decree"
+            } else {
+                "decide"
+            };
+            if !role.powers.iter().any(|p| p == decision) {
+                role.powers.push(decision.into());
+            }
         } else {
             role.powers
                 .retain(|p| !["veto", "elect_head", "depose"].contains(&p.as_str()));
@@ -670,7 +686,7 @@ fn selection(authority: Authority, role: &RoleSpec) -> Text {
             "Recognized mastery, completed training, examination or professional appointment.",
         );
     }
-    if authority == Authority::Hereditary && !executive_key(&role.key) {
+    if authority == Authority::Hereditary && !executive_role(role) {
         return Text::new(
             "Nomination par le titulaire compétent, délégation ou attribution par la coutume.",
             "Appointment by the competent officeholder, delegation or assignment by custom.",

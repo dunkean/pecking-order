@@ -37,6 +37,7 @@ fn main() {
         "data/powers_systems.json",
         "data/powers_specialist.json",
         "data/powers_civic_military.json",
+        "data/powers_context.json",
         "data/powers.json",
     ] {
         println!("cargo:rerun-if-changed={path}");

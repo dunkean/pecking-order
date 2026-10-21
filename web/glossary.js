@@ -72,7 +72,11 @@ function useMatches(use,binding) {
   return (!state.system||use.system===state.system)&&(!state.family||use.family===state.family)&&(!binding?.system||use.system===binding.system);
 }
 function bindingMatches(binding) {
-  if(state.theme && binding.theme!==state.theme)return false;
+  if(state.theme && binding.theme!==state.theme) {
+    // Functional titles are shared across cultures when no cultural lexical
+    // entry replaces them. Keep these context-specific roles visible too.
+    if(binding.theme || (termsByKey.get(binding.key)||[]).some(term=>term.bindings.some(b=>b.theme===state.theme)))return false;
+  }
   if(state.function && binding.key!==state.function)return false;
   if(!state.system&&!state.family)return true;
   return (functions.get(binding.key)?.uses||[]).some(use=>useMatches(use,binding));

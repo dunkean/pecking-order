@@ -65,7 +65,7 @@ les espaces, tirets et underscores. Un ID canonique a priorité sur un alias.
 ```json
 {
   "api_version":"2.0",
-  "content_version":"0.2.0",
+  "content_version":"0.3.0",
   "system":{"id":"aristocratic_nation","label":{"fr":"Nation aristocratique","en":"Aristocratic nation"}},
   "theme":{"id":"eastern-europe","label":{"fr":"Principautés de la Rus’","en":"Rus principalities"}},
   "size":"full",
