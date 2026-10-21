@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pecking Order</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+<header>
+  <a class="brand" href="/" aria-label="Pecking Order"><span class="mark" aria-hidden="true">♜</span> Pecking Order</a>
+  <label class="language"><span data-i18n="language">Langue</span><select id="locale"><option value="fr">Français</option><option value="en">English</option></select></label>
+</header>
+<main>
+  <section class="intro">
+    <div><h1 data-i18n="headline">Qui porte le titre ?<br>Qui détient le pouvoir ?</h1>
+    <p data-i18n="intro">Explorez les institutions d’un monde : leurs charges, leurs règles et leurs titres, dans leur contexte culturel.</p></div>
+    <aside><p id="coverage"></p><p data-i18n="scope">Des modèles réutilisables et des références culturelles délimitées. Le corpus historique est en cours de constitution.</p></aside>
+  </section>
+  <div class="workspace">
+  <aside class="query-panel">
+    <h2 data-i18n="queryHeading">Composer une institution</h2>
+    <label><span data-i18n="example">Point de départ</span><select id="example"></select></label>
+    <form id="query-form">
+      <label><span data-i18n="culture">Contexte culturel</span><select id="culture"></select></label>
+      <label><span data-i18n="domain">Domaine</span><select id="domain"></select></label>
+      <label><span data-i18n="kind">Institution</span><select id="kind"></select></label>
+      <label><span data-i18n="scale">Échelle de portée</span><select id="scale"></select></label>
+      <label><span data-i18n="role">Fonction recherchée (facultatif)</span><input id="role" type="text" placeholder="executive, sovereign, governing_body…" maxlength="96"></label>
+      <details><summary data-i18n="options">Contexte et mode</summary>
+        <label><span data-i18n="mode">Mode</span><select id="mode"><option value="historical" data-i18n="historical">Référence culturelle</option><option value="inspired" data-i18n="inspired">Adaptation pour un univers</option><option value="generic" data-i18n="generic">Modèle générique</option></select></label>
+        <label><span data-i18n="date">Année (facultatif)</span><input id="year" type="number" min="-10000" max="10000"></label>
+        <label><span data-i18n="traits">Caractéristiques exigées (séparées par des virgules)</span><input id="traits" type="text" maxlength="500" placeholder="customary, collegial…"></label>
+      </details>
+      <button class="primary" type="submit" data-i18n="resolve">Explorer la structure</button>
+    </form>
+    <p class="small" data-i18n="notice">Une religion ou un continent ne définit pas à lui seul un titre. Une référence manquante reste visible.</p>
+  </aside>
+  <section class="results" aria-live="polite" aria-busy="false">
+    <div id="diagnostics"></div>
+    <div id="candidates"></div>
+    <div id="institution"></div>
+    <div id="roles"></div>
+    <div id="structure"></div>
+    <div id="sources"></div>
+  </section>
+  </div>
+  <section class="contract">
+    <div><h2 data-i18n="contract">La même requête, partout</h2><p data-i18n="contractText">Python, ligne de commande et HTTP partagent le contrat JSON. Les identifiants restent stables d’une langue à l’autre.</p>
+      <div class="actions"><button id="copy" type="button" data-i18n="copy">Copier la requête</button><button id="download-query" type="button" data-i18n="exportQuery">Exporter la requête</button><button id="download-result" type="button" data-i18n="exportResult">Exporter le résultat</button><label class="file-button"><span data-i18n="importQuery">Importer une requête</span><input id="import-query" type="file" accept="application/json,.json"></label></div>
+      <p id="action-message" role="status"></p>
+      <p><a href="/api/schema/query" data-i18n="querySchema">Schéma de requête</a> · <a href="/api/schema/response" data-i18n="responseSchema">Schéma de réponse</a> · <a href="/api/catalog" data-i18n="catalog">Catalogue</a></p>
+    </div><pre id="request-preview"></pre>
+  </section>
+</main>
+<footer><span>Pecking Order</span><span data-i18n="footer">Des institutions et des fonctions. Les personnes et leur histoire appartiennent à votre monde.</span></footer>
+</body>
+</html>

@@ -1,0 +1,148 @@
+{
+  "$defs": {
+    "Adaptation": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "authoritarian",
+            "elective_succession",
+            "hereditary_succession"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "target_role": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "title": "Target Role",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "target_role"
+      ],
+      "title": "Adaptation",
+      "type": "object"
+    },
+    "Organization": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "title": "Kind",
+          "type": "string"
+        },
+        "scale": {
+          "enum": [
+            "household",
+            "local",
+            "district",
+            "regional",
+            "polity",
+            "imperial",
+            "transregional"
+          ],
+          "title": "Scale",
+          "type": "string"
+        },
+        "traits": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Traits",
+          "type": "array"
+        }
+      },
+      "required": [
+        "kind",
+        "scale"
+      ],
+      "title": "Organization",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "culture": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "title": "Culture",
+      "type": "string"
+    },
+    "organization": {
+      "$ref": "#/$defs/Organization"
+    },
+    "role": {
+      "anyOf": [
+        {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Role"
+    },
+    "as_of": {
+      "anyOf": [
+        {
+          "maximum": 10000,
+          "minimum": -10000,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "As Of"
+    },
+    "mode": {
+      "default": "historical",
+      "enum": [
+        "historical",
+        "inspired",
+        "generic"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "locale": {
+      "default": "fr",
+      "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+      "title": "Locale",
+      "type": "string"
+    },
+    "fallback_locale": {
+      "default": "en",
+      "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+      "title": "Fallback Locale",
+      "type": "string"
+    },
+    "adaptations": {
+      "items": {
+        "$ref": "#/$defs/Adaptation"
+      },
+      "maxItems": 8,
+      "title": "Adaptations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "culture",
+    "organization"
+  ],
+  "title": "Query",
+  "type": "object"
+}

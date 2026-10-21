@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pecking-order-kb"
+version = "0.1.0"
+description = "Culture-aware institutions, offices and titles for worldbuilders."
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2.10,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.9", "build>=1", "jsonschema>=4"]
+browser = ["playwright>=1.56,<2"]
+
+[project.scripts]
+pecking-order = "pecking_order.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pecking_order = ["data/*.json", "web/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

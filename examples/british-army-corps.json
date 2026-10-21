@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "locale": "fr",
+  "culture": "british_army_contemporary",
+  "organization": {
+    "kind": "army_corps",
+    "scale": "regional"
+  },
+  "role": "command"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "locale": "fr",
+  "culture": "vijayanagara_krishnadevaraya",
+  "organization": {
+    "kind": "hereditary_monarchy",
+    "scale": "polity",
+    "traits": [
+      "authoritarian"
+    ]
+  },
+  "role": "sovereign",
+  "mode": "inspired",
+  "adaptations": [
+    {
+      "kind": "authoritarian",
+      "target_role": "sovereign"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+include README.md README.en.md PROVENANCE.md AGENTS.md requirements.lock demo.cmd
+recursive-include docs *.md *.png
+recursive-include schemas *.json
+recursive-include examples *.json
+recursive-include tools *.py
+recursive-include tests *.py

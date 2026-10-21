@@ -1,0 +1,772 @@
+{
+  "$defs": {
+    "Binding": {
+      "additionalProperties": false,
+      "properties": {
+        "template": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "title": "Template",
+          "type": "string"
+        },
+        "roles": {
+          "items": {
+            "$ref": "#/$defs/Role"
+          },
+          "title": "Roles",
+          "type": "array"
+        },
+        "remove_roles": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+            "type": "string"
+          },
+          "title": "Remove Roles",
+          "type": "array"
+        },
+        "relations": {
+          "items": {
+            "$ref": "#/$defs/Relation"
+          },
+          "title": "Relations",
+          "type": "array"
+        },
+        "replace_relations": {
+          "default": false,
+          "title": "Replace Relations",
+          "type": "boolean"
+        },
+        "rules": {
+          "items": {
+            "$ref": "#/$defs/Rule"
+          },
+          "title": "Rules",
+          "type": "array"
+        },
+        "traits": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+            "type": "string"
+          },
+          "title": "Traits",
+          "type": "array"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceRef"
+        }
+      },
+      "required": [
+        "template",
+        "roles",
+        "evidence"
+      ],
+      "title": "Binding",
+      "type": "object"
+    },
+    "Blueprint": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "domain": {
+          "enum": [
+            "political",
+            "administrative",
+            "military",
+            "religious",
+            "economic",
+            "kinship",
+            "judicial",
+            "educational",
+            "civic",
+            "clandestine",
+            "diplomatic",
+            "fantastic"
+          ],
+          "title": "Domain",
+          "type": "string"
+        },
+        "label": {
+          "$ref": "#/$defs/Localized"
+        },
+        "description": {
+          "$ref": "#/$defs/Localized"
+        },
+        "scales": {
+          "items": {
+            "enum": [
+              "household",
+              "local",
+              "district",
+              "regional",
+              "polity",
+              "imperial",
+              "transregional"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Scales",
+          "type": "array"
+        },
+        "traits": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+            "type": "string"
+          },
+          "title": "Traits",
+          "type": "array"
+        },
+        "roles": {
+          "items": {
+            "$ref": "#/$defs/Role"
+          },
+          "minItems": 1,
+          "title": "Roles",
+          "type": "array"
+        },
+        "relations": {
+          "items": {
+            "$ref": "#/$defs/Relation"
+          },
+          "title": "Relations",
+          "type": "array"
+        },
+        "units": {
+          "items": {
+            "$ref": "#/$defs/Unit"
+          },
+          "title": "Units",
+          "type": "array"
+        },
+        "rules": {
+          "items": {
+            "$ref": "#/$defs/Rule"
+          },
+          "title": "Rules",
+          "type": "array"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceRef"
+        }
+      },
+      "required": [
+        "id",
+        "domain",
+        "label",
+        "description",
+        "scales",
+        "traits",
+        "roles",
+        "relations",
+        "units",
+        "rules",
+        "evidence"
+      ],
+      "title": "Blueprint",
+      "type": "object"
+    },
+    "Culture": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "$ref": "#/$defs/Localized"
+        },
+        "aliases": {
+          "items": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "title": "Aliases",
+          "type": "array"
+        },
+        "region": {
+          "$ref": "#/$defs/Localized"
+        },
+        "period": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Period",
+          "type": "array"
+        },
+        "description": {
+          "$ref": "#/$defs/Localized"
+        },
+        "bindings": {
+          "items": {
+            "$ref": "#/$defs/Binding"
+          },
+          "title": "Bindings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "aliases",
+        "region",
+        "period",
+        "description",
+        "bindings"
+      ],
+      "title": "Culture",
+      "type": "object"
+    },
+    "EvidenceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "default": "generic_model",
+          "enum": [
+            "generic_model",
+            "source_supported",
+            "adapted"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "sources": {
+          "items": {
+            "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+            "type": "string"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "note": {
+          "$ref": "#/$defs/Localized"
+        }
+      },
+      "required": [
+        "note"
+      ],
+      "title": "EvidenceRef",
+      "type": "object"
+    },
+    "Localized": {
+      "additionalProperties": false,
+      "description": "All authored text needs both launch languages; additional languages are welcome.",
+      "properties": {
+        "labels": {
+          "patternProperties": {
+            "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$": {
+              "maxLength": 4000,
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "title": "Labels",
+          "type": "object"
+        }
+      },
+      "required": [
+        "labels"
+      ],
+      "title": "Localized",
+      "type": "object"
+    },
+    "Power": {
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "title": "Action",
+          "type": "string"
+        },
+        "domain": {
+          "enum": [
+            "political",
+            "administrative",
+            "military",
+            "religious",
+            "economic",
+            "kinship",
+            "judicial",
+            "educational",
+            "civic",
+            "clandestine",
+            "diplomatic",
+            "fantastic"
+          ],
+          "title": "Domain",
+          "type": "string"
+        },
+        "basis": {
+          "enum": [
+            "de_jure",
+            "de_facto",
+            "ritual",
+            "advisory"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "scope": {
+          "$ref": "#/$defs/Localized"
+        },
+        "limits": {
+          "$ref": "#/$defs/Localized"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceRef"
+        }
+      },
+      "required": [
+        "action",
+        "domain",
+        "basis",
+        "scope",
+        "limits",
+        "evidence"
+      ],
+      "title": "Power",
+      "type": "object"
+    },
+    "Relation": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "title": "Source",
+          "type": "string"
+        },
+        "target": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "title": "Target",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "reports_to",
+            "advises",
+            "appoints",
+            "removes",
+            "elects",
+            "checks",
+            "represents",
+            "member_of",
+            "coordinates",
+            "ritually_legitimizes"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceRef"
+        }
+      },
+      "required": [
+        "source",
+        "target",
+        "kind",
+        "evidence"
+      ],
+      "title": "Relation",
+      "type": "object"
+    },
+    "Role": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "function": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "title": "Function",
+          "type": "string"
+        },
+        "label": {
+          "$ref": "#/$defs/Localized"
+        },
+        "title": {
+          "$ref": "#/$defs/Title"
+        },
+        "holder": {
+          "default": "person",
+          "enum": [
+            "person",
+            "collective"
+          ],
+          "title": "Holder",
+          "type": "string"
+        },
+        "min_holders": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Min Holders",
+          "type": "integer"
+        },
+        "max_holders": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": 1,
+          "title": "Max Holders"
+        },
+        "duties": {
+          "$ref": "#/$defs/Localized"
+        },
+        "powers": {
+          "items": {
+            "$ref": "#/$defs/Power"
+          },
+          "title": "Powers",
+          "type": "array"
+        },
+        "rules": {
+          "items": {
+            "$ref": "#/$defs/Rule"
+          },
+          "title": "Rules",
+          "type": "array"
+        },
+        "title_evidence": {
+          "$ref": "#/$defs/EvidenceRef"
+        },
+        "rank": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Title"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "function",
+        "label",
+        "title",
+        "duties",
+        "powers",
+        "rules",
+        "title_evidence"
+      ],
+      "title": "Role",
+      "type": "object"
+    },
+    "Rule": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "selection",
+            "succession",
+            "tenure",
+            "removal",
+            "eligibility",
+            "membership",
+            "inheritance",
+            "residence",
+            "marriage",
+            "decision",
+            "incompatibility",
+            "vacancy"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "method": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "title": "Method",
+          "type": "string"
+        },
+        "description": {
+          "$ref": "#/$defs/Localized"
+        },
+        "parameters": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            ]
+          },
+          "title": "Parameters",
+          "type": "object"
+        },
+        "evidence": {
+          "$ref": "#/$defs/EvidenceRef"
+        }
+      },
+      "required": [
+        "id",
+        "category",
+        "method",
+        "description",
+        "evidence"
+      ],
+      "title": "Rule",
+      "type": "object"
+    },
+    "Source": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "publisher": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Publisher",
+          "type": "string"
+        },
+        "url": {
+          "pattern": "^https://",
+          "title": "Url",
+          "type": "string"
+        },
+        "accessed": {
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "title": "Accessed",
+          "type": "string"
+        },
+        "locator": {
+          "maxLength": 4000,
+          "minLength": 1,
+          "title": "Locator",
+          "type": "string"
+        },
+        "supports": {
+          "$ref": "#/$defs/Localized"
+        },
+        "limitations": {
+          "$ref": "#/$defs/Localized"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "publisher",
+        "url",
+        "accessed",
+        "locator",
+        "supports",
+        "limitations"
+      ],
+      "title": "Source",
+      "type": "object"
+    },
+    "Title": {
+      "additionalProperties": false,
+      "properties": {
+        "labels": {
+          "patternProperties": {
+            "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$": {
+              "maxLength": 4000,
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "title": "Labels",
+          "type": "object"
+        },
+        "native": {
+          "anyOf": [
+            {
+              "maxLength": 4000,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Native"
+        },
+        "language": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Language"
+        },
+        "forms": {
+          "patternProperties": {
+            "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$": {
+              "additionalProperties": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "type": "string"
+              },
+              "type": "object"
+            }
+          },
+          "title": "Forms",
+          "type": "object"
+        },
+        "translation": {
+          "default": "equivalent",
+          "enum": [
+            "equivalent",
+            "gloss",
+            "loanword"
+          ],
+          "title": "Translation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "labels"
+      ],
+      "title": "Title",
+      "type": "object"
+    },
+    "Unit": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "title": "Kind",
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "contains",
+            "federates",
+            "oversees",
+            "affiliates"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "min_count": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Min Count",
+          "type": "integer"
+        },
+        "max_count": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Count"
+        },
+        "note": {
+          "$ref": "#/$defs/Localized"
+        }
+      },
+      "required": [
+        "kind",
+        "relation",
+        "note"
+      ],
+      "title": "Unit",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "title": "Version",
+      "type": "string"
+    },
+    "templates": {
+      "items": {
+        "$ref": "#/$defs/Blueprint"
+      },
+      "title": "Templates",
+      "type": "array"
+    },
+    "cultures": {
+      "items": {
+        "$ref": "#/$defs/Culture"
+      },
+      "title": "Cultures",
+      "type": "array"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/Source"
+      },
+      "title": "Sources",
+      "type": "array"
+    },
+    "broad_aliases": {
+      "additionalProperties": {
+        "items": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,95}$",
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Broad Aliases",
+      "type": "object"
+    }
+  },
+  "required": [
+    "version",
+    "templates",
+    "cultures",
+    "sources",
+    "broad_aliases"
+  ],
+  "title": "Dataset",
+  "type": "object"
+}
